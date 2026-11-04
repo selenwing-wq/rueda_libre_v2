@@ -1,0 +1,2763 @@
+
+
+============================================================
+PROYECTO: RUEDA LIBRE
+BITACORA DE DESARROLLO WEB
+VERSION DEL SITIO: v0.1
+AVANCE: HASTA EL MINIRETO DEL DIA 2
+============================================================
+
+DESCRIPCION GENERAL DEL PROYECTO
+
+Rueda Libre es un proyecto web para un negocio de alquiler
+de bicicletas ubicado en Medellín, Colombia.
+
+El sitio permite a los visitantes conocer el negocio,
+consultar sus servicios, revisar las tarifas de alquiler
+y los precios de los recorridos guiados, conocer los horarios
+de atención y contactar al negocio para realizar reservas.
+
+El proyecto se desarrolla con HTML y utiliza Git y GitHub
+para controlar las versiones y guardar el historial
+de los cambios realizados durante los MiniRetos.
+
+OBJETIVO GENERAL
+
+Construir un sitio web organizado, accesible y navegable,
+utilizando HTML semántico, enlaces entre páginas, imágenes,
+listas, tablas y una estructura de archivos clara.
+
+------------------------------------------------------------
+1. ESTRUCTURA DE CARPETAS Y ARCHIVOS
+------------------------------------------------------------
+
+La estructura prevista del proyecto es:
+
+rueda-libre/
+|
+|-- index.html
+|-- bitacora.txt
+|-- img/
+|   |-- portada.jpg
+|   |-- bicicleta.jpg
+|   |-- ruta.jpg
+|   |-- logo.png
+|
+|-- paginas/
+    |-- tarifas.html
+    |-- reservas.html
+
+NOTA:
+Los nombres de las imágenes son ejemplos utilizados en
+el código. Deben coincidir con los nombres y las extensiones
+de los archivos que realmente existen en la carpeta img/.
+
+DESCRIPCION DE LOS ARCHIVOS
+
+index.html:
+Página principal del sitio. Presenta el negocio, sus
+servicios, beneficios, los pasos para alquilar, información
+de ubicación y enlaces a las tarifas y las reservas.
+
+paginas/tarifas.html:
+Página que contiene las tablas de precios de alquiler
+de bicicletas y recorridos guiados, además de información
+sobre horarios, elementos que deben llevar los usuarios
+y enlaces para realizar reservas.
+
+paginas/reservas.html:
+Página inicial de reservas. Presenta el correo de contacto
+y los horarios de atención mientras se desarrolla
+el formulario de reservas.
+
+img/:
+Carpeta destinada a las fotografías y al logo del negocio.
+
+bitacora.txt:
+Documento que registra las decisiones, los conceptos
+aprendidos, las rutas utilizadas y las verificaciones
+realizadas durante el desarrollo.
+
+------------------------------------------------------------
+2. ANALISIS DE LA PETICION DEL CLIENTE
+------------------------------------------------------------
+
+El cliente necesita un sitio web que permita a los usuarios
+conocer Rueda Libre sin tener que solicitar toda la
+información por WhatsApp.
+
+La página debe presentar de forma clara:
+
+- La identidad y presentación del negocio.
+- El alquiler de bicicletas urbanas, de montaña y eléctricas.
+- Los recorridos guiados disponibles.
+- El servicio de taller básico.
+- Los beneficios del alquiler.
+- Los pasos para alquilar.
+- Las tarifas y los precios por duración.
+- Los horarios de atención.
+- Los datos de contacto y las opciones de reserva.
+
+La solución consiste en dividir el contenido en tres páginas
+relacionadas mediante un menú de navegación común:
+
+1. Inicio.
+2. Tarifas y rutas.
+3. Reservas.
+
+La organización del contenido permite que el visitante
+encuentre la información de forma más rápida y facilita
+el mantenimiento futuro del sitio.
+
+------------------------------------------------------------
+3. FUNDAMENTOS DE HTML
+------------------------------------------------------------
+
+HTML:
+Es el lenguaje de marcado utilizado para definir la
+estructura y el significado del contenido de una página web.
+
+ESTRUCTURA BASE:
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Titulo de la pagina</title>
+</head>
+<body>
+    <!-- Contenido visible -->
+</body>
+</html>
+
+DOCTYPE:
+Indica que el documento utiliza HTML moderno.
+
+html lang="es":
+Indica que el idioma principal del contenido es español.
+
+meta charset="UTF-8":
+Permite representar correctamente caracteres especiales,
+acentos y la letra ñ.
+
+meta viewport:
+Ayuda a que la página se adapte al ancho de la pantalla
+del dispositivo.
+
+title:
+Define el título que aparece en la pestaña del navegador.
+
+meta description:
+Proporciona una descripción de la página que los motores
+de búsqueda pueden utilizar como resumen.
+
+------------------------------------------------------------
+4. JERARQUIA DE ENCABEZADOS
+------------------------------------------------------------
+
+h1:
+Es el encabezado principal de la página. En este proyecto
+se utiliza un solo h1 por documento.
+
+h2:
+Representa las secciones principales, por ejemplo:
+¿Quiénes somos?, Nuestros servicios y ¿Cómo alquilar?
+
+h3:
+Representa subsecciones, como los servicios individuales
+dentro de Nuestros servicios.
+
+La jerarquía se define según la relación entre los temas
+y no únicamente según el tamaño visual de las letras.
+
+Los encabezados permiten comprender la organización del
+contenido y facilitan la navegación con tecnologías
+de asistencia.
+
+------------------------------------------------------------
+5. ELEMENTOS DE TEXTO Y LISTAS
+------------------------------------------------------------
+
+p:
+Define un párrafo.
+
+strong:
+Marca texto de especial importancia. Por ejemplo:
+"El alquiler incluye casco y candado".
+
+em:
+Añade énfasis a una expresión.
+
+ul:
+Crea una lista no ordenada, normalmente presentada
+con viñetas. Se utiliza para presentar los beneficios
+y los elementos que deben llevar los usuarios.
+
+ol:
+Crea una lista ordenada, normalmente numerada.
+Se utiliza para presentar los cuatro pasos del alquiler.
+
+li:
+Representa cada elemento de una lista.
+
+dl:
+Crea una lista de descripciones o definiciones.
+
+dt:
+Identifica el término o elemento descrito, como
+"Lunes a viernes".
+
+dd:
+Contiene la descripción correspondiente, como el horario
+"7:00 a. m. a 7:00 p. m.".
+
+------------------------------------------------------------
+6. IMAGENES Y RUTAS RELATIVAS
+------------------------------------------------------------
+
+Las imágenes se incorporan mediante la etiqueta img.
+
+Ejemplo desde index.html:
+
+<img src="img/bicicleta.jpg"
+     alt="Bicicleta disponible para alquilar"
+     width="500">
+
+src:
+Indica la ubicación del archivo de imagen.
+
+alt:
+Proporciona una descripción textual de la imagen.
+
+width:
+Define el ancho de la imagen en píxeles.
+
+Las rutas utilizadas son relativas al archivo HTML
+desde el cual se solicita el recurso.
+
+Desde index.html hacia una imagen:
+
+img/bicicleta.jpg
+
+Desde paginas/tarifas.html hacia el logo:
+
+../img/logo.png
+
+El segmento ../ permite subir un nivel desde la carpeta
+paginas hasta la carpeta principal.
+
+No se deben utilizar rutas locales de Windows, como
+C:\Users\..., porque no funcionan como rutas del sitio
+cuando se publica en otro computador o servidor.
+
+------------------------------------------------------------
+7. ENLACES Y NAVEGACION
+------------------------------------------------------------
+
+Los enlaces se crean con la etiqueta a y el atributo href.
+
+ENLACE ENTRE CARPETAS:
+
+Desde index.html hacia tarifas:
+
+<a href="paginas/tarifas.html">Tarifas y rutas</a>
+
+Desde index.html hacia reservas:
+
+<a href="paginas/reservas.html">Reservas</a>
+
+Desde tarifas.html hacia Inicio:
+
+<a href="../index.html">Inicio</a>
+
+Desde tarifas.html hacia reservas:
+
+<a href="reservas.html">Reservas</a>
+
+ENLACE A UNA SECCION DE OTRA PAGINA:
+
+<a href="paginas/tarifas.html#recorridos">
+    Consultar recorridos guiados
+</a>
+
+El fragmento #recorridos lleva a la sección que tenga
+el atributo id="recorridos".
+
+ENLACE DE CORREO:
+
+<a href="mailto:hola@ruedalibre.example">
+    Escríbenos
+</a>
+
+El prefijo mailto: solicita abrir la aplicación de correo
+configurada en el dispositivo.
+
+ENLACE EXTERNO EN OTRA PESTAÑA:
+
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Medellin%2C+Colombia"
+   target="_blank"
+   rel="noopener noreferrer">
+    Ver ubicación en Google Maps
+</a>
+
+target="_blank":
+Solicita abrir el destino en otra pestaña.
+
+rel="noopener noreferrer":
+Añade protección al abrir un enlace en otra pestaña.
+
+NOTA:
+La búsqueda de Google Maps utilizada es una ubicación
+general de Medellín y no una dirección comercial verificada
+de Rueda Libre.
+
+El correo hola@ruedalibre.example es una dirección
+de ejemplo y no se ha verificado que exista.
+
+------------------------------------------------------------
+8. TABLAS DE TARIFAS
+------------------------------------------------------------
+
+Las tablas se utilizan para representar datos relacionados
+entre sí mediante filas y columnas.
+
+ETIQUETAS UTILIZADAS:
+
+table:
+Define la tabla.
+
+caption:
+Describe el contenido de la tabla.
+
+thead:
+Agrupa las filas de encabezados.
+
+tbody:
+Agrupa las filas con datos.
+
+tr:
+Define una fila.
+
+th:
+Define una celda de encabezado.
+
+td:
+Define una celda de datos.
+
+scope="col":
+Indica que el encabezado describe una columna.
+
+scope="row":
+Indica que el encabezado describe una fila.
+
+TABLA DE ALQUILER DE BICICLETAS
+
+Tipo de bicicleta | 1 hora | Medio día (4 h) | Día completo
+
+Urbana            | $10.000 | $30.000            | $50.000
+Montaña           | $15.000 | $45.000            | $70.000
+Eléctrica         | $25.000 | $70.000            | $110.000
+
+TABLA DE RECORRIDOS GUIADOS
+
+Recorrido        | Distancia | Duración | Nivel  | Precio por persona
+
+Río y Parques    | 12 km     | 2 h      | Fácil  | $45.000
+Sabores de Barrio| 18 km     | 3 h      | Medio  | $60.000
+Reto Las Palmas  | 25 km     | 4 h      | Difícil| $85.000
+
+INFORMACION ADICIONAL
+
+Todas las tarifas de alquiler incluyen casco y candado.
+
+Los recorridos guiados salen sábados y domingos
+a las 7:00 a. m.
+
+Elementos que deben llevar los participantes:
+- Ropa cómoda.
+- Agua.
+- Protector solar.
+- Documento de identidad.
+
+Las tablas se utilizan exclusivamente para los datos
+tabulares. La información complementaria se presenta
+mediante párrafos, encabezados y listas.
+
+------------------------------------------------------------
+9. PAGINA DE RESERVAS
+------------------------------------------------------------
+
+La página reservas.html proporciona información de contacto
+mientras se desarrolla el formulario de reservas.
+
+TITULO PRINCIPAL:
+Reserva tu bicicleta.
+
+CORREO DE CONTACTO:
+hola@ruedalibre.example
+
+HORARIOS DE ATENCION:
+
+Lunes a viernes:
+7:00 a. m. a 7:00 p. m.
+
+Sábados, domingos y festivos:
+6:00 a. m. a 2:00 p. m.
+
+La información del horario se presenta con dl, dt y dd.
+
+El formulario de reservas todavía no forma parte de esta
+versión del proyecto.
+
+------------------------------------------------------------
+10. ESTRUCTURA SEMANTICA DEL DIA 2
+------------------------------------------------------------
+
+El HTML semántico permite identificar la función de las
+distintas regiones del documento.
+
+header:
+Contiene información introductoria o encabezados.
+En este proyecto se utiliza para el encabezado del sitio.
+
+nav:
+Identifica el menú principal de navegación.
+
+main:
+Contiene el contenido principal de la página.
+Cada documento debe tener un único main visible.
+
+section:
+Agrupa contenido relacionado por tema y debe tener
+un encabezado apropiado.
+
+article:
+Representa una unidad de contenido independiente.
+En Inicio se utiliza para cada servicio:
+- Alquiler de bicicletas.
+- Recorridos guiados.
+- Taller básico.
+
+aside:
+Representa contenido complementario.
+En Tarifas se utiliza para la información adicional
+y la lista de qué llevar.
+En Reservas se utiliza para el horario de atención.
+
+footer:
+Representa el pie de página. Contiene el nombre del negocio,
+el correo de contacto y el año.
+
+div y span:
+Son elementos genéricos que pueden utilizarse cuando no
+existe un elemento semántico más apropiado.
+
+En la versión reconstruida de las tres páginas no se
+necesitaron div ni span. Si se incorporan posteriormente
+para organizar estilos, se debe justificar su uso.
+
+------------------------------------------------------------
+11. ESQUEMAS SEMANTICOS DE LAS PAGINAS
+------------------------------------------------------------
+
+A. INDEX.HTML
+
+body
+├── header
+│   ├── h1: Rueda Libre
+│   └── nav: menú principal
+├── main
+│   ├── section: ¿Quiénes somos?
+│   ├── section: Nuestros servicios
+│   │   ├── article: Alquiler de bicicletas
+│   │   ├── article: Recorridos guiados
+│   │   └── article: Taller básico
+│   ├── section: Beneficios
+│   ├── section: ¿Cómo alquilar?
+│   ├── section: Encuéntranos
+│   └── section: Reserva ahora
+└── footer: nombre, correo y año
+
+B. PAGINAS/TARIFAS.HTML
+
+body
+├── header
+│   └── nav: menú principal
+├── main
+│   ├── h1: Tarifas de Rueda Libre
+│   ├── section: Tarifas de alquiler
+│   │   └── table
+│   ├── section: Tarifas de recorridos
+│   │   └── table
+│   ├── aside: Información adicional
+│   └── section: Contacto
+└── footer: nombre, correo y año
+
+C. PAGINAS/RESERVAS.HTML
+
+body
+├── header
+│   └── nav: menú principal
+├── main
+│   ├── section: Reserva tu bicicleta
+│   └── aside: Horario de atención
+└── footer: nombre, correo y año
+
+------------------------------------------------------------
+12. TABLA DE RUTAS RELATIVAS
+------------------------------------------------------------
+
+Archivo de origen | Destino | Ruta escrita
+
+index.html
+| Inicio
+| index.html
+
+index.html
+| Tarifas y rutas
+| paginas/tarifas.html
+
+index.html
+| Reservas
+| paginas/reservas.html
+
+paginas/tarifas.html
+| Inicio
+| ../index.html
+
+paginas/tarifas.html
+| Tarifas y rutas
+| tarifas.html
+
+paginas/tarifas.html
+| Reservas
+| reservas.html
+
+paginas/reservas.html
+| Inicio
+| ../index.html
+
+paginas/reservas.html
+| Tarifas y rutas
+| tarifas.html
+
+paginas/reservas.html
+| Reservas
+| reservas.html
+
+ENLACES ADICIONALES
+
+Desde index.html:
+Reservar ahora -> paginas/reservas.html
+
+Desde index.html:
+Recorridos guiados -> paginas/tarifas.html#recorridos
+
+Desde paginas/tarifas.html:
+Reservar ahora -> reservas.html
+
+Desde index.html:
+Imagen de bicicleta -> img/bicicleta.jpg
+
+Desde paginas/tarifas.html:
+Logo -> ../img/logo.png
+
+------------------------------------------------------------
+13. ANALISIS DE LA PETICION AL SERVIDOR
+------------------------------------------------------------
+
+Cuando una persona abre una página web, el navegador realiza
+una petición HTTP al servidor para solicitar el documento
+HTML o los recursos que necesita.
+
+Ejemplo del flujo de carga:
+
+1. El usuario abre index.html mediante el navegador
+   o mediante un servidor de desarrollo como Live Server.
+
+2. El navegador solicita el documento HTML.
+
+3. El servidor devuelve el documento solicitado.
+
+4. El navegador interpreta el HTML y construye el árbol
+   de elementos del documento.
+
+5. El navegador solicita recursos adicionales, como
+   imágenes, hojas de estilo y archivos JavaScript,
+   cuando están referenciados.
+
+6. El navegador presenta el contenido al usuario.
+
+7. Cuando el usuario pulsa un enlace a tarifas o reservas,
+   el navegador solicita el documento de destino.
+
+8. Si la ruta es incorrecta, el recurso puede no encontrarse
+   y aparecer un error 404.
+
+En DevTools, la pestaña Network permite revisar las peticiones,
+los recursos solicitados y los códigos de estado.
+
+Un código 200 suele indicar que la petición se completó
+correctamente. Un código 404 indica que el recurso solicitado
+no se encontró en esa ruta.
+
+La disponibilidad de un archivo depende de la estructura
+real del proyecto y de cómo se sirve o publica el sitio.
+
+------------------------------------------------------------
+14. FUNCIONES DE HTML, CSS Y JAVASCRIPT
+------------------------------------------------------------
+
+HTML:
+Define la estructura y el significado del contenido.
+En Rueda Libre organiza encabezados, párrafos, imágenes,
+listas, tablas, enlaces y regiones semánticas.
+
+CSS:
+Controla la presentación visual del sitio.
+Puede definir colores, tipografías, márgenes, espaciado,
+bordes, tamaños de imagen y diseño adaptable a móviles.
+
+JavaScript:
+Permite agregar comportamiento e interactividad.
+En una versión futura podría utilizarse para validar
+formularios, mostrar mensajes, calcular precios o gestionar
+interacciones de reserva.
+
+En la versión actual, la estructura principal está hecha
+con HTML. No es necesario JavaScript para que funcionen
+los enlaces básicos entre las páginas.
+
+------------------------------------------------------------
+15. DEVTOOLS Y VERIFICACION
+------------------------------------------------------------
+
+DevTools es el conjunto de herramientas de desarrollo
+integrado en navegadores como Chrome y Firefox.
+
+ELEMENTS:
+Permite inspeccionar el árbol HTML y revisar la estructura
+semántica del documento.
+
+NETWORK:
+Permite comprobar las peticiones de los documentos,
+las imágenes y otros recursos, además de identificar
+errores como 404.
+
+PRUEBAS PENDIENTES DE CONFIRMACION
+
+[ ] Inicio abre correctamente.
+[ ] Tarifas abre correctamente.
+[ ] Reservas abre correctamente.
+[ ] Desde cada página se puede navegar a las otras dos.
+[ ] El enlace directo #recorridos llega a la sección correcta.
+[ ] Las imágenes cargan sin errores.
+[ ] No hay errores 404 en Network.
+[ ] Cada página tiene un único main y un único h1.
+[ ] Las tablas conservan todos los datos.
+[ ] Los servicios de Inicio están en artículos.
+[ ] Cada sección tiene su encabezado correspondiente.
+[ ] Los pies de página son consistentes.
+[ ] El sitio mantiene su contenido después de los cambios.
+
+Las casillas deben marcarse solo después de realizar
+las pruebas en el navegador.
+
+------------------------------------------------------------
+16. CONTROL DE VERSIONES CON GIT Y GITHUB
+------------------------------------------------------------
+
+Git permite registrar los cambios realizados en los archivos
+y mantener un historial de versiones.
+
+GitHub permite alojar el repositorio remoto y compartir
+el proyecto.
+
+COMANDOS UTILIZADOS
+
+git status:
+Muestra los archivos modificados, nuevos y preparados.
+
+git add .:
+Prepara los cambios del directorio actual para el commit.
+
+git commit -m "Mensaje":
+Guarda un punto de control en el historial local.
+
+git push:
+Envía los commits locales al repositorio remoto.
+
+git log --oneline:
+Permite consultar el historial de commits.
+
+COMMIT DE LA VERSION V0.1
+
+Mensaje sugerido:
+MiniReto v0.1: integrar navegacion y reservas
+
+COMMIT DEL DIA 2
+
+Mensaje sugerido:
+Dia 2: agregar estructura semantica a las paginas
+
+IMPORTANTE:
+Los mensajes anteriores son los mensajes sugeridos para
+los commits. Deben comprobarse en el historial real de Git.
+
+No se debe afirmar que los cambios se subieron a GitHub
+hasta verificar que git push finalizó correctamente.
+
+------------------------------------------------------------
+17. ESTADO ACTUAL DEL PROYECTO
+------------------------------------------------------------
+
+FUNCIONALIDADES Y CONTENIDO DISEÑADOS
+
+- Página principal de Rueda Libre.
+- Presentación del negocio y sus servicios.
+- Lista de beneficios y pasos para alquilar.
+- Imágenes con texto alternativo y rutas relativas.
+- Tabla de tarifas de alquiler.
+- Tabla de precios de recorridos guiados.
+- Información adicional y lista de elementos necesarios.
+- Página inicial de reservas con correo y horarios.
+- Menú común para las tres páginas.
+- Pie de página común.
+- Enlaces entre páginas y enlace directo a recorridos.
+- Estructura semántica con header, nav, main, section,
+  article, aside y footer.
+
+VERIFICACIONES REALES
+
+Las comprobaciones de navegación, carga de imágenes,
+ausencia de errores 404, estado de los commits y publicación
+en GitHub deben completarse en el entorno local del proyecto.
+
+Estado de verificación: PENDIENTE DE CONFIRMAR.
+
+------------------------------------------------------------
+FIN DE LA BITACORA
+PROYECTO: RUEDA LIBRE
+VERSION DE REFERENCIA: V0.1
+------------------------------------------------------------
+
+## Reto: Formulario de reserva en HTML
+
+### Objetivo
+
+Construir un formulario de reserva para Rueda Libre que permita recopilar los datos del cliente y las características del alquiler de bicicletas. El formulario busca reducir errores en la información recibida por WhatsApp y organizar los datos necesarios para solicitar una reserva.
+
+### Archivo modificado
+
+- `paginas/reservas.html`
+
+### Estructura semántica
+
+Se mantuvo la estructura semántica implementada en el reto anterior:
+
+- `<header>`: contiene el título de la página y la navegación principal.
+- `<nav>`: permite acceder a Inicio, Tarifas y Reservas.
+- `<main>`: contiene el contenido principal de la página.
+- `<section>`: agrupa el formulario y la información de contacto.
+- `<form>`: contiene los campos que debe completar el cliente.
+- `<fieldset>`: agrupa campos relacionados.
+- `<legend>`: identifica cada grupo del formulario.
+- `<aside>`: contiene información complementaria sobre los horarios.
+- `<footer>`: presenta la información final del sitio.
+
+### Organización del formulario
+
+El formulario se dividió en tres grupos:
+
+**1. Tus datos**
+
+- Nombre completo.
+- Número de documento.
+- Correo electrónico.
+- Celular.
+
+**2. Tu alquiler**
+
+- Fecha del alquiler.
+- Tipo de bicicleta: urbana, montaña o eléctrica.
+- Plan: una hora, medio día o día completo.
+- Cantidad de bicicletas.
+- Recorrido guiado: ninguno, Río y Parques, Sabores de Barrio o Reto Las Palmas.
+- Comentarios adicionales.
+
+**3. Confirmación**
+
+- Casilla para aceptar las políticas de alquiler.
+
+Al final se agregó el botón «Enviar reserva».
+
+### Tipos de controles utilizados
+
+- `text`: para el nombre completo y el número de documento.
+- `email`: para el correo electrónico.
+- `tel`: para el número de celular.
+- `date`: para seleccionar la fecha del alquiler.
+- `radio`: para elegir un único tipo de bicicleta.
+- `select` y `option`: para seleccionar el plan y el recorrido guiado.
+- `number`: para indicar la cantidad de bicicletas.
+- `textarea`: para escribir comentarios adicionales.
+- `checkbox`: para aceptar las políticas de alquiler.
+- `button type="submit"`: para enviar el formulario.
+
+### Justificación de tres decisiones
+
+**1. Correo electrónico con `type="email"`**
+
+Se eligió este tipo de campo porque permite al navegador comprobar que el valor ingresado tenga un formato similar al de una dirección de correo electrónico. Esto ayuda a detectar errores comunes antes de enviar el formulario.
+
+**2. Tipo de bicicleta con botones `radio`**
+
+Se utilizaron botones de opción porque el cliente debe escoger solamente una categoría de bicicleta para la reserva. Los tres controles comparten el atributo `name="tipo_bicicleta"`, por lo que el navegador permite seleccionar solo una opción de ese grupo.
+
+**3. Aceptación de políticas con `checkbox`**
+
+Se eligió una casilla de verificación porque representa una aceptación que el cliente debe marcar expresamente. El atributo `required` impide el envío normal del formulario si la casilla no está seleccionada.
+
+**Decisiones adicionales**
+
+- Se usó `type="date"` para facilitar la selección de una fecha.
+- Se usó `type="number"` para la cantidad de bicicletas y se establecieron límites de 1 a 20.
+- Se usaron listas desplegables para el plan y el recorrido, ya que tienen opciones definidas.
+- Se utilizó `textarea` para permitir comentarios de varias líneas.
+
+### Asociación entre etiquetas y controles
+
+Cada campo tiene una etiqueta `<label>` con el atributo `for`. El valor de `for` coincide exactamente con el `id` del control correspondiente. De esta manera, al hacer clic en la etiqueta, el control recibe el foco o se selecciona, según el tipo de campo.
+
+Todos los controles del formulario tienen un atributo `name`, que identifica el dato al enviar el formulario.
+
+### Método y validaciones
+
+El formulario utiliza:
+
+- `method="post"` para indicar que los datos se enviarían mediante el método HTTP POST.
+- `action="#"` como destino provisional mientras no se implemente un servidor que reciba las reservas.
+- `required` en los campos obligatorios.
+- `min="1"`, `max="20"` y `step="1"` para controlar la cantidad de bicicletas.
+- `type="email"` para la validación básica del formato del correo electrónico.
+
+**Nota:** el formulario todavía no registra reservas ni comprueba la disponibilidad real de bicicletas. Para procesar los datos es necesario conectar el formulario a un backend o servicio que los reciba. El atributo `action="#"` es provisional y debe cambiarse cuando exista un destino de envío real.
+
+### Pruebas pendientes y verificación
+
+Antes de dar por terminado el reto, se debe comprobar:
+
+1. Que el formulario se encuentre dentro de `<main>`.
+2. Que existan los tres grupos con sus títulos.
+3. Que cada etiqueta esté asociada al control correcto.
+4. Que los tres botones `radio` compartan `name="tipo_bicicleta"` y solo permitan una selección.
+5. Que todos los controles tengan un atributo `name`.
+6. Que el navegador impida el envío si faltan campos obligatorios o no se aceptan las políticas.
+7. Que los enlaces de navegación continúen funcionando.
+8. Que la estructura semántica de la página se mantenga.
+
+Las pruebas deben marcarse como completadas únicamente después de realizarlas en el navegador.
+
+### Control de versiones
+
+Después de revisar y probar el formulario, guardar los cambios en Git y subirlos al repositorio remoto.
+
+Comandos previstos:
+
+`git status`
+
+`git add paginas/reservas.html bitacora.txt`
+
+`git commit -m "Reto formulario de reserva en HTML"`
+
+`git push`
+
+El commit y el push se consideran completados solo cuando Git confirma que la operación se realizó correctamente.
+
+## Reto: Validación nativa del formulario de reservas
+
+### Objetivo
+
+Aplicar las reglas de negocio definidas por el cliente al formulario de reservas de Rueda Libre utilizando atributos de validación nativa de HTML. También se busca garantizar que el formulario pueda recorrerse y completarse mediante el teclado.
+
+### Archivo modificado
+
+- `paginas/reservas.html`
+
+### Validaciones implementadas
+
+Se añadieron atributos HTML para comprobar los datos antes de permitir el envío normal del formulario:
+
+- **Nombre completo:** `required` y `minlength="3"`.
+- **Documento:** `required`, `pattern="[0-9]{6,10}"`, `minlength="6"`, `maxlength="10"` y `title`.
+- **Correo electrónico:** `required` y `type="email"`.
+- **Celular:** `required`, `pattern="3[0-9]{9}"`, `minlength="10"`, `maxlength="10"` y `title`.
+- **Fecha del alquiler:** `required`, `min="2026-11-01"` y `max="2026-12-31"`.
+- **Tipo de bicicleta:** botones `radio` obligatorios, agrupados mediante el mismo atributo `name`.
+- **Plan de alquiler:** lista desplegable obligatoria con una opción inicial vacía.
+- **Cantidad de bicicletas:** `required`, `min="1"`, `max="6"` y `step="1"`.
+- **Recorrido guiado:** lista desplegable con las opciones definidas por el cliente.
+- **Comentarios:** campo opcional con `maxlength="300"`.
+- **Políticas de alquiler:** casilla obligatoria con `required`.
+
+### Patrones de validación
+
+**Documento**
+
+El patrón `[0-9]{6,10}` permite únicamente dígitos del 0 al 9, con una longitud de entre 6 y 10 caracteres. El atributo `title` explica que no deben incluirse puntos, espacios ni guiones.
+
+**Celular**
+
+El patrón `3[0-9]{9}` exige que el primer dígito sea 3 y que después existan exactamente nueve dígitos adicionales. Por ejemplo, `3001234567` debe aceptarse, mientras que `1234567890` y `300123` deben rechazarse.
+
+### Uso del teclado
+
+Se conservó un orden de lectura y navegación lógico:
+
+1. Enlaces de navegación.
+2. Campos de la sección «Tus datos».
+3. Campos de la sección «Tu alquiler».
+4. Casilla de aceptación de políticas.
+5. Botón de envío.
+6. Elementos posteriores del documento.
+
+Para comprobar la accesibilidad mediante teclado:
+
+- `Tab`: avanzar al siguiente elemento interactivo.
+- `Shift + Tab`: regresar al elemento anterior.
+- Flechas: cambiar la selección entre opciones de un grupo de botones `radio` cuando el navegador les da el foco.
+- Barra espaciadora: marcar o desmarcar la casilla de aceptación cuando tiene el foco.
+- `Enter`: activar enlaces o intentar enviar el formulario desde el botón de envío.
+
+Las etiquetas están asociadas con sus controles mediante `for` e `id`. Esto permite activar el control al pulsar la etiqueta y facilita su identificación.
+
+### Tabla de pruebas
+
+**Instrucción:** ejecutar cada prueba en el navegador y registrar el resultado real en la última columna. Las pruebas de datos inválidos deben realizarse completando los demás campos obligatorios con valores válidos para comprobar específicamente la regla indicada.
+
+| Campo | Dato de prueba | Resultado esperado | Resultado obtenido |
+|---|---|---|---|
+| Nombre completo | `Al` | Rechazado: tiene menos de 3 caracteres. | Pendiente de probar |
+| Nombre completo | `Ana` | Aceptado por la validación de longitud. | Pendiente de probar |
+| Documento | `12345` | Rechazado: tiene menos de 6 dígitos. | Pendiente de probar |
+| Documento | `12345A` | Rechazado: contiene una letra. | Pendiente de probar |
+| Documento | `123456` | Aceptado por el patrón y la longitud. | Pendiente de probar |
+| Correo | `correo-invalido` | Rechazado por el formato de correo. | Pendiente de probar |
+| Celular | `3001234567` | Aceptado por el patrón. | Pendiente de probar |
+| Celular | `1234567890` | Rechazado: no comienza por 3. | Pendiente de probar |
+| Celular | `300123` | Rechazado: no tiene 10 dígitos. | Pendiente de probar |
+| Fecha | `2026-10-31` | Rechazada: es anterior a la fecha mínima. | Pendiente de probar |
+| Fecha | `2027-01-01` | Rechazada: es posterior a la fecha máxima. | Pendiente de probar |
+| Cantidad | `7` | Rechazada: supera el máximo de 6. | Pendiente de probar |
+| Cantidad | `1` | Aceptada por el rango permitido. | Pendiente de probar |
+| Comentarios | Texto de 301 caracteres | El campo no debe permitir más de 300 caracteres. | Pendiente de probar |
+| Políticas | Casilla sin marcar | El envío debe bloquearse. | Pendiente de probar |
+
+### Observaciones
+
+La validación nativa del navegador ayuda a detectar errores de formato y campos incompletos antes del envío. Sin embargo, todavía no se verifica la disponibilidad de las bicicletas ni se almacenan las reservas, porque el formulario no está conectado a un backend.
+
+Los resultados de la tabla deben actualizarse después de realizar las pruebas. No se deben marcar como aprobados casos que no se hayan ejecutado.
+
+### Control de versiones
+
+Una vez terminadas las pruebas y guardados los cambios:
+
+`git status`
+
+`git add paginas/reservas.html bitacora.txt`
+
+`git commit -m "Agregar validaciones al formulario de reservas"`
+
+`git push`
+
+El reto se considera entregado cuando los cambios quedan confirmados en Git y subidos al repositorio remoto.
+
+## Reto: Auditoría de accesibilidad, contraste y publicación — Rueda Libre v0.2
+
+### Objetivo
+
+Auditar y mejorar la accesibilidad de las páginas del sitio Rueda Libre, evaluar las combinaciones de colores de la marca mediante los criterios de contraste WCAG y publicar el proyecto con GitHub Pages.
+
+### Páginas auditadas
+
+- `index.html`: página de inicio.
+- `paginas/tarifas.html`: tarifas y recorridos.
+- `paginas/reservas.html`: formulario de reservas.
+
+### Hallazgos de accesibilidad y correcciones
+
+| N.º | Elemento revisado | Hallazgo o riesgo | Corrección aplicada o por verificar |
+|---|---|---|---|
+| 1 | Idioma del documento | Un idioma incorrecto o ausente dificulta que los lectores de pantalla interpreten el contenido. | Verificar `<html lang="es">` en las tres páginas. |
+| 2 | Texto alternativo | Las imágenes informativas necesitan una descripción útil; las decorativas deben usar `alt=""`. | Revisar todos los atributos `alt` y corregirlos según la función real de cada imagen. |
+| 3 | Jerarquía de encabezados | Los títulos deben reflejar la estructura del contenido y no utilizarse solo por su apariencia. | Verificar un `<h1>` principal por página y encabezados de sección organizados jerárquicamente. |
+| 4 | Texto de los enlaces | Los enlaces genéricos pueden ser confusos cuando se leen fuera de contexto. | Usar textos descriptivos, como «Consultar tarifas de alquiler y recorridos». |
+| 5 | Navegación con teclado | Todos los enlaces y controles deben poder alcanzarse sin usar el ratón. | Recorrer las tres páginas con `Tab` y `Shift + Tab`; comprobar que el foco sea visible. |
+| 6 | Formulario de reservas | Las etiquetas y controles deben estar asociados para facilitar su identificación y activación. | Verificar que cada `label` tenga un `for` coincidente con el `id` del control. |
+| 7 | Contraste de foco | Un indicador de foco poco visible puede dificultar la navegación. | Añadir un contorno visible con `:focus-visible` si resulta necesario y comprobar su contraste. |
+
+**Estado de la auditoría:** completar la revisión en el navegador y actualizar cada fila con el resultado real. Una corrección propuesta no equivale a una corrección verificada.
+
+### Estructura semántica del sitio
+
+Las páginas mantienen las regiones semánticas trabajadas en retos anteriores:
+
+- `<header>`: encabezado de la página.
+- `<nav>`: navegación principal.
+- `<main>`: contenido principal.
+- `<section>`: agrupación temática.
+- `<article>`: contenido independiente, como los servicios.
+- `<aside>`: información complementaria.
+- `<footer>`: información final y contacto.
+
+La página de reservas también contiene un formulario organizado mediante `<fieldset>` y `<legend>`.
+
+### Auditoría de contraste de la paleta
+
+Se utilizaron los valores hexadecimales de la marca para calcular la relación de contraste. La clasificación sigue los umbrales de contraste WCAG para texto normal y texto grande.
+
+| Combinación de texto y fondo | Contraste | Clasificación |
+|---|---:|---|
+| Blanco sobre Verde Ruta `#1E7A4F` | 5.31:1 | Apta para texto normal |
+| Blanco sobre Naranja Pedal `#F39A2B` | 2.22:1 | No apta |
+| Azul Noche `#14213D` sobre Naranja Pedal `#F39A2B` | 7.20:1 | Apta para texto normal |
+| Azul Noche `#14213D` sobre Crema `#FAF6EF` | 14.83:1 | Apta para texto normal |
+| Gris Asfalto `#5B6470` sobre Crema `#FAF6EF` | 5.57:1 | Apta para texto normal |
+| Verde Ruta `#1E7A4F` sobre Crema `#FAF6EF` | 4.93:1 | Apta para texto normal |
+| Naranja Pedal `#F39A2B` sobre Crema `#FAF6EF` | 2.06:1 | No apta |
+| Blanco sobre Azul Noche `#14213D` | 15.97:1 | Apta para texto normal |
+
+Criterios:
+
+- Texto normal: mínimo 4.5:1.
+- Texto grande: mínimo 3:1.
+- Menos de 3:1: no apta para texto.
+
+### Mapa de uso de color
+
+- **Azul Noche `#14213D`:** títulos, encabezados, texto principal sobre crema y texto de botones naranjas.
+- **Crema `#FAF6EF`:** fondo general y superficies claras.
+- **Verde Ruta `#1E7A4F`:** enlaces sobre crema y botones con texto blanco.
+- **Naranja Pedal `#F39A2B`:** destacados y botones secundarios con texto Azul Noche.
+- **Gris Asfalto `#5B6470`:** texto secundario sobre crema.
+
+No se utilizará texto blanco sobre naranja ni texto naranja sobre crema, porque esas combinaciones no alcanzan el contraste mínimo para texto grande.
+
+### Publicación con GitHub Pages
+
+El sitio se publicará desde la rama principal del repositorio mediante GitHub Pages.
+
+Pasos:
+
+1. Abrir el repositorio en GitHub.
+2. Entrar en Settings → Pages.
+3. En la sección de compilación y despliegue, elegir la opción para desplegar desde una rama.
+4. Seleccionar la rama `main` y la carpeta `/(root)`.
+5. Guardar la configuración.
+6. Esperar a que finalice el despliegue y copiar la URL pública que muestre GitHub Pages.
+7. Añadir esa URL a la descripción del repositorio y a esta bitácora.
+8. Abrir la URL pública y comprobar las tres páginas, las imágenes y los enlaces.
+
+### URL pública de Rueda Libre v0.2
+
+URL publicada: [PEGAR AQUÍ LA URL REAL QUE MUESTRE GITHUB PAGES]
+
+Estado de publicación: pendiente de confirmar hasta que GitHub Pages termine el despliegue y la página pueda abrirse desde el navegador.
+
+### Pruebas posteriores a la publicación
+
+| Prueba | Resultado |
+|---|---|
+| Inicio carga desde la URL pública | Pendiente de verificar |
+| Tarifas carga desde la URL pública | Pendiente de verificar |
+| Reservas carga desde la URL pública | Pendiente de verificar |
+| Las imágenes cargan correctamente | Pendiente de verificar |
+| Los enlaces internos funcionan | Pendiente de verificar |
+| El formulario conserva sus validaciones | Pendiente de verificar |
+| La navegación con teclado funciona | Pendiente de verificar |
+| La descripción del repositorio incluye la URL publicada | Pendiente de verificar |
+
+Si un archivo funciona localmente pero falla en GitHub Pages, revisar especialmente las mayúsculas y minúsculas de los nombres y las rutas relativas.
+
+### Control de versiones
+
+Después de terminar las correcciones, realizar un commit que represente este reto y subirlo a la rama principal. Verificar el estado de Git y confirmar que el despliegue público contiene la versión actualizada.
+
+rueda-libre/
+├── index.html
+├── bitacora.txt
+├── css/
+│   └── styles.css
+├── img/
+│   ├── portada.jpg
+│   ├── bicicleta.jpg
+│   └── ruta.jpg
+└── paginas/
+    ├── tarifas.html
+    └── reservas.html
+
+============================================================
+RETO: HOJA DE ESTILOS EXTERNA, VARIABLES Y TIPOGRAFÍAS
+Proyecto: Rueda Libre
+Fecha: 26/10/2026
+============================================================
+
+1. OBJETIVO
+
+Centralizar la presentación visual de las tres páginas del proyecto mediante una hoja de estilos CSS externa, utilizando variables personalizadas para los colores, las tipografías y el espaciado. Cargar Montserrat y Open Sans desde Google Fonts y aprovechar la herencia de CSS para mantener una identidad visual consistente.
+
+2. ESTRUCTURA ACTUALIZADA
+
+rueda-libre/
+├── index.html
+├── bitacora.txt
+├── css/
+│   └── styles.css
+├── img/
+│   ├── portada.jpg
+│   ├── bicicleta.jpg
+│   └── ruta.jpg
+└── paginas/
+    ├── tarifas.html
+    └── reservas.html
+
+Nota: conservar los nombres reales de las imágenes si son diferentes.
+
+3. CONEXIÓN DE LA HOJA DE ESTILOS
+
+Página principal: index.html
+
+<link rel="stylesheet" href="css/styles.css">
+
+Página de tarifas: paginas/tarifas.html
+
+<link rel="stylesheet" href="../css/styles.css">
+
+Página de reservas: paginas/reservas.html
+
+<link rel="stylesheet" href="../css/styles.css">
+
+Las rutas son relativas a la ubicación de cada documento HTML. En las páginas de la carpeta paginas se utiliza ../ para subir al directorio raíz y después acceder a css/styles.css.
+
+4. TIPOGRAFÍAS DE GOOGLE FONTS
+
+Familia para títulos:
+Montserrat, peso 700.
+
+Familia para textos:
+Open Sans, pesos 400 y 600.
+
+En las tres páginas se agregaron:
+- preconnect a fonts.googleapis.com.
+- preconnect a fonts.gstatic.com con crossorigin.
+- Hoja de Google Fonts con Montserrat 700 y Open Sans 400 y 600.
+- Enlace a la hoja de estilos local después de los enlaces de fuentes.
+
+CSS aplicado:
+--fuente-titulos: "Montserrat", Arial, sans-serif;
+--fuente-textos: "Open Sans", Arial, sans-serif;
+
+5. VARIABLES PERSONALIZADAS
+
+Las variables están declaradas en :root para que puedan reutilizarse en todo el documento.
+
+Colores:
+--verde-ruta: #1E7A4F;
+--naranja-pedal: #F39A2B;
+--azul-noche: #14213D;
+--crema: #FAF6EF;
+--gris-asfalto: #5B6470;
+
+Tipografías:
+--fuente-titulos: "Montserrat", Arial, sans-serif;
+--fuente-textos: "Open Sans", Arial, sans-serif;
+
+Espaciado:
+--espacio-pequeno: 0.5rem;
+--espacio-mediano: 1rem;
+--espacio-grande: 2rem;
+--espacio-extra-grande: 3rem;
+
+Otras variables:
+--ancho-contenido: 1100px;
+--radio-borde: 0.5rem;
+
+Las propiedades se consumen con var(), por ejemplo:
+color: var(--azul-noche);
+background-color: var(--crema);
+font-family: var(--fuente-textos);
+padding: var(--espacio-mediano);
+
+6. HERENCIA DE CSS
+
+El selector body define:
+- font-family: var(--fuente-textos).
+- color: var(--azul-noche).
+- background-color: var(--crema).
+
+Los párrafos heredan la familia tipográfica y el color de texto del body cuando no tienen una declaración propia que los sobrescriba. El fondo del body no se hereda como propiedad: el fondo de un párrafo transparente permite ver el fondo de su elemento contenedor.
+
+Los encabezados h1, h2, h3, h4, h5 y h6 comparten un selector agrupado que establece la fuente Montserrat y el peso 700.
+
+Comprobación pendiente en DevTools:
+1. Abrir la página en el navegador.
+2. Pulsar F12 y seleccionar la herramienta Elements/Inspector.
+3. Seleccionar un párrafo.
+4. En Styles, revisar las reglas heredadas desde body.
+5. En Computed, comprobar font-family y color.
+6. Seleccionar un encabezado y comprobar que usa Montserrat.
+7. Registrar los resultados reales después de ejecutar la prueba.
+
+Tabla de comprobación:
+
+Elemento: párrafo (p)
+Propiedad heredada: font-family.
+Valor esperado: Open Sans.
+Estado: Pendiente de comprobación en DevTools.
+
+Elemento: párrafo (p)
+Propiedad no heredada: margin-bottom.
+Valor esperado: valor declarado para p en styles.css.
+Estado: Pendiente de comprobación en DevTools.
+
+Elemento: encabezado (h1–h6)
+Propiedad: font-family.
+Valor esperado: Montserrat.
+Estado: Pendiente de comprobación en DevTools.
+
+7. MAPA DE USO DE COLOR
+
+Verde Ruta (#1E7A4F):
+- Enlaces sobre fondo Crema.
+- Botones con texto Crema.
+
+Naranja Pedal (#F39A2B):
+- Texto de navegación de página activa sobre fondo Azul Noche.
+- Acentos decorativos sobre fondos oscuros.
+- No usar texto blanco sobre fondo naranja.
+
+Azul Noche (#14213D):
+- Texto general sobre fondo Crema.
+- Títulos sobre fondo Crema.
+- Fondo de encabezado, pie de página y cabeceras de tablas.
+- Texto sobre fondo Naranja Pedal.
+
+Crema (#FAF6EF):
+- Fondo principal del sitio.
+- Texto sobre fondo Azul Noche o Verde Ruta.
+
+Gris Asfalto (#5B6470):
+- Texto secundario sobre Crema.
+- Bordes y separadores.
+
+Contrastes aprobados previamente:
+- Blanco sobre Verde Ruta: 5.31:1.
+- Azul Noche sobre Naranja Pedal: 7.20:1.
+- Azul Noche sobre Crema: 14.83:1.
+- Gris Asfalto sobre Crema: 5.57:1.
+- Verde Ruta sobre Crema: 4.93:1.
+- Blanco sobre Azul Noche: 15.97:1.
+
+Combinaciones no recomendadas para texto:
+- Blanco sobre Naranja Pedal: 2.22:1.
+- Naranja Pedal sobre Crema: 2.06:1.
+
+8. LIMPIEZA DEL HTML
+
+Se centralizaron los estilos en css/styles.css.
+
+Comprobaciones que deben realizarse:
+- No debe quedar ningún atributo style="..." en las tres páginas.
+- No debe quedar ninguna etiqueta <style>.
+- Cada página debe cargar Google Fonts y styles.css.
+- Los estilos deben utilizar variables CSS para colores y familias tipográficas.
+- Los documentos conservan lang="es" y la estructura semántica.
+
+Resultado esperado:
+Las tres páginas comparten tipografías, colores, navegación, tablas, formularios y espaciados mediante una única hoja de estilos.
+
+9. PRUEBAS EN DEVTOOLS
+
+Registrar el resultado después de ejecutar cada prueba:
+
+Prueba 1: abrir index.html y comprobar que styles.css carga sin error en Network.
+Resultado: Pendiente.
+
+Prueba 2: abrir paginas/tarifas.html y comprobar que ../css/styles.css carga sin error.
+Resultado: Pendiente.
+
+Prueba 3: abrir paginas/reservas.html y comprobar que ../css/styles.css carga sin error.
+Resultado: Pendiente.
+
+Prueba 4: comprobar que Google Fonts carga correctamente en las tres páginas.
+Resultado: Pendiente.
+
+Prueba 5: en Computed, verificar Montserrat 700 para los encabezados.
+Resultado: Pendiente.
+
+Prueba 6: en Computed, verificar Open Sans para los párrafos.
+Resultado: Pendiente.
+
+Prueba 7: comprobar que no existan errores 404 de CSS o fuentes en Network.
+Resultado: Pendiente.
+
+Prueba 8: buscar atributos style y etiquetas style en los tres archivos HTML.
+Resultado: Pendiente.
+
+10. CONTROL DE VERSIONES
+
+Comandos para guardar el trabajo:
+
+git status
+git add index.html paginas/tarifas.html paginas/reservas.html css/styles.css bitacora.txt
+git commit -m "Agregar estilos externos y tipografias de marca"
+git push origin main
+
+Después de ejecutar los comandos, revisar el repositorio remoto para confirmar que los archivos quedaron publicados.
+
+11. RESULTADO ESPERADO
+
+- Una hoja css/styles.css compartida por las tres páginas.
+- Variables globales para los cinco colores de marca.
+- Variables para tipografías y espaciado.
+- Montserrat 700 en encabezados.
+- Open Sans 400 y 600 en textos y controles.
+- Colores aplicados respetando el mapa de contraste.
+- Sin estilos en línea ni etiquetas style en HTML.
+- Evidencia documentada de las pruebas de herencia y carga de recursos.
+
+Fin del registro del reto.
+
+============================================================
+RETO: SELECTORES, PSEUDOCLASES Y ESPECIFICIDAD CSS
+Proyecto: Rueda Libre
+Fecha: 26/10/2026
+============================================================
+
+1. OBJETIVO
+
+Mejorar la navegación y los elementos interactivos del sitio utilizando selectores de ID, clases, selectores descendientes y pseudoclases. Resolver conflictos de cascada y especificidad sin utilizar !important ni estilos en línea.
+
+2. CAMBIOS REALIZADOS
+
+- Se agregó id="menu" a la lista ul del menú de navegación de las tres páginas.
+- Se agregó class="activo" al enlace que corresponde a la página actual.
+- Se agregó aria-current="page" al enlace activo.
+- Se creó la clase .boton-accion para enlaces que funcionan como llamadas a la acción.
+- Se agregaron estados :hover y :focus a enlaces, botones y campos.
+- Se conservaron las variables de color y tipografía definidas en el reto anterior.
+- Se mantiene una hoja de estilos compartida: css/styles.css.
+
+3. SELECTORES Y ESPECIFICIDAD
+
+En CSS, la especificidad se calcula de forma simplificada con tres grupos:
+(A, B, C)
+
+A = cantidad de selectores de ID.
+B = cantidad de clases, atributos y pseudoclases.
+C = cantidad de selectores de elemento y pseudoelementos.
+
+Selector: #menu a
+Especificidad: (1, 0, 1)
+Explicación: contiene un ID (#menu) y un elemento (a).
+
+Selector: .activo
+Especificidad: (0, 1, 0)
+Explicación: contiene una clase.
+
+Selector: #menu a.activo
+Especificidad: (1, 1, 1)
+Explicación: contiene un ID, una clase y un elemento.
+
+Selector: #menu a:hover
+Especificidad: (1, 1, 1)
+Explicación: contiene un ID, una pseudoclase y un elemento.
+
+Selector: #menu a.activo:hover
+Especificidad: (1, 2, 1)
+Explicación: contiene un ID, dos pseudoclases/clases y un elemento.
+
+Selector: .boton-accion
+Especificidad: (0, 1, 0)
+Explicación: contiene una clase.
+
+Selector: input:focus
+Especificidad: (0, 1, 1)
+Explicación: contiene un elemento y una pseudoclase.
+
+4. CAUSA DEL CONFLICTO Y SOLUCIÓN
+
+Reglas originales del compañero:
+
+#menu a {
+    color: var(--gris-asfalto);
+}
+
+.activo {
+    color: var(--verde-ruta);
+    font-weight: 600;
+}
+
+La clase .activo no puede imponerse por sí sola a #menu a cuando ambas reglas declaran la misma propiedad, porque el selector con ID tiene mayor especificidad.
+
+Comparación:
+- #menu a = (1, 0, 1).
+- .activo = (0, 1, 0).
+
+El selector #menu a gana por tener un ID, aunque .activo aparezca después en el archivo CSS.
+
+Solución aplicada:
+Se utiliza un selector más específico para la página actual:
+
+#menu a.activo {
+    color: var(--naranja-pedal);
+    font-weight: 700;
+}
+
+Su especificidad es (1, 1, 1), por lo que supera a #menu a, cuya especificidad es (1, 0, 1).
+
+La solución no utiliza !important ni estilos en línea. Los colores del enlace activo respetan el mapa de marca: Naranja Pedal sobre Azul Noche.
+
+5. NAVEGACIÓN Y PSEUDOCLASES
+
+Se utiliza #menu a para seleccionar enlaces descendientes de la lista del menú.
+
+Estados definidos:
+- #menu a:hover: cambia el fondo a Verde Ruta y conserva el texto Crema.
+- #menu a:focus: dibuja un contorno Crema visible al navegar por teclado.
+- #menu a.activo: distingue la página actual con Naranja Pedal sobre Azul Noche.
+- #menu a.activo:hover: mantiene la apariencia del enlace activo y evita perder su identificación.
+
+Los enlaces del contenido también cuentan con :hover y :focus.
+
+6. BOTONES DE LLAMADA A LA ACCIÓN
+
+Se creó la clase .boton-accion.
+
+Uso en HTML:
+<a class="boton-accion" href="paginas/reservas.html">Reservar ahora</a>
+
+Apariencia:
+- Fondo Verde Ruta.
+- Texto Crema.
+- Borde Verde Ruta.
+- Texto subrayado al pasar el mouse y fondo Azul Noche en hover.
+- Contorno Azul Noche visible en foco.
+
+El contraste de texto de los estados principales cumple el mínimo de 4.5:1 según el mapa de contraste previo.
+
+7. CAMPOS DEL FORMULARIO
+
+Se definieron estados para input, select y textarea.
+
+Estado hover:
+- El borde cambia a Verde Ruta.
+
+Estado focus:
+- El borde cambia a Verde Ruta.
+- Aparece un contorno de 3 píxeles Azul Noche.
+- Se conserva un espacio entre el control y el contorno para facilitar su identificación.
+
+Los controles mantienen texto Azul Noche sobre fondo Crema. No se elimina el contorno sin reemplazarlo por otro indicador visible.
+
+8. PRUEBAS CON DEVTOOLS
+
+Procedimiento:
+1. Abrir el sitio en el navegador.
+2. Pulsar F12.
+3. En Elements, seleccionar el enlace activo del menú.
+4. Revisar Styles y buscar las reglas #menu a, .activo y #menu a.activo.
+5. Revisar qué declaraciones están tachadas y cuál selector gana.
+6. Pulsar el botón :hov para forzar :hover o :focus cuando corresponda.
+7. Recorrer las tres páginas usando Tab y comprobar el indicador de foco.
+
+Resultados que deben registrarse después de ejecutar las pruebas:
+
+- Página principal: pendiente de comprobación.
+- Página de tarifas: pendiente de comprobación.
+- Página de reservas: pendiente de comprobación.
+- Estado hover del menú: pendiente de comprobación.
+- Estado focus del menú: pendiente de comprobación.
+- Estado hover y focus del botón de llamada a la acción: pendiente de comprobación.
+- Estado focus de campos del formulario: pendiente de comprobación.
+
+9. PRUEBA MANUAL DE NAVEGACIÓN CON TAB
+
+Pasos:
+1. Abrir index.html.
+2. Pulsar Tab varias veces.
+3. Comprobar que cada enlace enfocado tiene un contorno visible.
+4. Continuar hasta llegar al botón Reservar ahora.
+5. Abrir la página de tarifas y repetir la prueba.
+6. Abrir la página de reservas y comprobar los campos, radios, casilla de confirmación y botón de envío.
+7. Confirmar que el enlace de la página actual se distingue visualmente.
+
+Estado: pendiente de ejecutar y registrar.
+
+10. CONTRASTE DE LOS ESTADOS
+
+Combinaciones utilizadas:
+- Texto Crema sobre Verde Ruta: 5.31:1.
+- Texto Crema sobre Azul Noche: 15.97:1.
+- Texto Naranja Pedal sobre Azul Noche: aproximadamente 7.20:1.
+- Texto Azul Noche sobre Crema: 14.83:1.
+- Texto Verde Ruta sobre Crema: 4.93:1.
+
+No se utiliza texto Gris Asfalto sobre Azul Noche, ni texto blanco sobre Naranja Pedal. Los colores de foco se han seleccionado para distinguirse de los fondos donde se aplican.
+
+11. CONTROL DE VERSIONES
+
+Comandos:
+
+git status
+git add css/styles.css index.html paginas/tarifas.html paginas/reservas.html bitacora.txt
+git commit -m "Mejorar navegacion y estados de foco"
+git push origin main
+
+Después del push, revisar el repositorio remoto para confirmar que todos los cambios están guardados.
+
+12. RESULTADO ESPERADO
+
+- Las tres páginas identifican el enlace activo.
+- La navegación tiene estados hover y focus visibles.
+- Los enlaces de llamada a la acción tienen apariencia de botón.
+- Los campos muestran un indicador de foco visible.
+- El conflicto de especificidad está documentado y resuelto sin !important.
+- La bitácora conserva el registro de los retos anteriores y añade este nuevo reto.
+
+Fin del registro del reto.
+
+============================================================
+RETO: BOX MODEL, DIMENSIONES Y ESPACIADO CSS
+Proyecto: Rueda Libre
+Fecha: 26/10/2026
+============================================================
+
+1. OBJETIVO
+
+Mejorar la distribución visual del sitio mediante el modelo de caja de CSS, el control de dimensiones y el uso de unidades relativas. Se ajustaron las tarjetas de servicios, las tablas, el formulario, la navegación y el contenedor principal.
+
+2. BOX MODEL
+
+El modelo de caja está compuesto por:
+
+- Content: área donde aparece el contenido.
+- Padding: espacio interno entre el contenido y el borde.
+- Border: borde que rodea el elemento.
+- Margin: espacio externo que separa un elemento de los demás.
+
+Se agregó esta regla global:
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+Con border-box, el ancho declarado incluye el contenido, el padding y el borde. Esto facilita calcular dimensiones y evita que el relleno haga que una tarjeta supere el ancho previsto.
+
+3. CONTENEDOR PRINCIPAL
+
+El elemento main utiliza:
+- width: 92%.
+- max-width: 70rem.
+- margin-left: auto.
+- margin-right: auto.
+
+El ancho porcentual permite adaptarse a pantallas pequeñas, mientras que max-width limita el ancho en pantallas grandes. Los márgenes automáticos centran el contenido.
+
+La portada principal utiliza la clase .portada y min-height: 60vh. Esto establece una altura mínima equivalente al 60 % de la altura de la ventana del navegador.
+
+4. TARJETAS DE SERVICIOS
+
+La sección #servicios utiliza CSS Grid para distribuir las tarjetas.
+
+Las reglas principales son:
+- Tres columnas en pantallas amplias.
+- Dos columnas en pantallas medianas.
+- Una columna en pantallas pequeñas.
+- Separación entre tarjetas mediante var(--espacio-grande).
+- Relleno interno mediante var(--espacio-mediano).
+- Borde de 1px.
+- Esquinas redondeadas mediante var(--radio-borde).
+- Imágenes con width: 100% y max-width: 100%.
+
+Se utiliza min-width: 0 en las tarjetas para permitir que se ajusten a las columnas sin desbordarse.
+
+5. TABLAS
+
+Las tablas de tarifas y recorridos se mejoraron mediante:
+- width: 100%.
+- padding en las celdas.
+- Bordes de 1px.
+- Encabezados con fondo Azul Noche y texto Crema.
+- Alineación vertical superior.
+- Separación inferior con la escala de espaciado.
+- Desplazamiento horizontal en pantallas estrechas.
+
+El contraste de los encabezados utiliza la combinación aprobada de texto Crema sobre Azul Noche.
+
+6. FORMULARIO
+
+Se ajustó el formulario para que:
+- Tenga width: 100%.
+- No supere 48rem de ancho.
+- Quede centrado con márgenes automáticos.
+- Cada etiqueta aparezca encima de su campo.
+- Los campos de texto, fecha, selección y comentarios ocupen todo el ancho disponible.
+- Cada grupo fieldset tenga relleno y separación inferior.
+- El botón de envío tenga relleno generoso.
+
+Los campos conservan el indicador visible de foco y los estilos de interacción del reto anterior.
+
+7. NAVEGACIÓN
+
+La lista #menu utiliza:
+- display: flex.
+- flex-direction: row.
+- flex-wrap: wrap.
+- gap: var(--espacio-mediano).
+
+Esto presenta las opciones en una fila cuando existe espacio suficiente y permite que pasen a otra línea si la pantalla es estrecha.
+
+Los enlaces mantienen la clase activo para identificar la página actual.
+
+8. UNIDADES CSS UTILIZADAS
+
+rem:
+- Escala de espaciado.
+- Ancho máximo del contenido.
+- Ancho máximo del formulario.
+- Rellenos, márgenes y radios.
+- Indicadores de foco.
+
+%:
+- Ancho del contenedor principal.
+- Ancho de las imágenes de las tarjetas.
+- Ancho de los campos del formulario.
+
+vh:
+- Altura mínima de la portada.
+
+px:
+- Bordes de tarjetas, tablas, campos y botones.
+
+La escala de espaciado es:
+- 0.5rem: espacio pequeño.
+- 1rem: espacio mediano.
+- 2rem: espacio grande.
+- 3rem: espacio extra grande.
+
+9. PRUEBAS EN DEVTOOLS: BOX MODEL
+
+Objetivo: medir el ancho total de una tarjeta antes y después de aplicar box-sizing: border-box.
+
+Procedimiento:
+1. Abrir index.html con Live Server.
+2. Pulsar F12 y abrir Elements.
+3. Seleccionar una tarjeta, por ejemplo #alquiler-bicicletas.
+4. Abrir Computed y buscar width, padding, border y box-sizing.
+5. Registrar el ancho y comprobar el valor de box-sizing.
+6. Desactivar temporalmente la regla global border-box en Styles.
+7. Medir de nuevo la tarjeta con box-sizing: content-box.
+8. Restaurar la regla y confirmar el ancho con border-box.
+9. Registrar las medidas observadas en el navegador.
+
+Tabla de mediciones:
+
+Elemento: #alquiler-bicicletas
+
+Prueba A:
+box-sizing: content-box
+Ancho declarado: __________
+Padding horizontal total: __________
+Borde horizontal total: __________
+Ancho exterior calculado: __________
+Resultado real en Computed: __________
+
+Prueba B:
+box-sizing: border-box
+Ancho declarado: __________
+Padding horizontal total: __________
+Borde horizontal total: __________
+Ancho exterior calculado: __________
+Resultado real en Computed: __________
+
+Conclusión:
+Con content-box, el ancho declarado corresponde al área de contenido y el padding y los bordes se suman al ancho exterior. Con border-box, el ancho declarado ya incluye el padding y el borde.
+
+Nota: las medidas deben completarse con los valores reales obtenidos en DevTools; no se deben inventar.
+
+10. LISTA DE VERIFICACIÓN
+
+- [ ] Todos los elementos utilizan box-sizing: border-box.
+- [ ] El contenido principal está centrado y limitado a 70rem.
+- [ ] La portada tiene una altura mínima relativa a la ventana.
+- [ ] Las tarjetas tienen relleno, borde y separación.
+- [ ] Las imágenes de las tarjetas no se salen de su contenedor.
+- [ ] Las tablas tienen celdas espaciadas y encabezados legibles.
+- [ ] El formulario está centrado y los campos ocupan el ancho disponible.
+- [ ] El menú muestra sus opciones en fila cuando hay espacio suficiente.
+- [ ] Se comprobaron las dimensiones en DevTools.
+- [ ] Se registraron las medidas de content-box y border-box.
+
+11. CONTROL DE VERSIONES
+
+Comandos para guardar los cambios:
+
+git status
+git add css/styles.css index.html paginas/tarifas.html paginas/reservas.html bitacora.txt
+git commit -m "Mejorar box model y espaciado del sitio"
+git push origin main
+
+Después del push, verificar que todos los archivos estén guardados en el repositorio remoto.
+
+12. RESULTADO ESPERADO
+
+El sitio Rueda Libre presenta una distribución más ordenada y adaptable. El modelo de caja controla las dimensiones, el contenido principal mantiene una anchura legible, las tarjetas tienen separación, las tablas son más cómodas de leer y el formulario dispone de espacio suficiente.
+
+Fin del registro del reto.
+
+============================================================
+MINIRETO 12: RUEDA LIBRE V1.0 — LANZAMIENTO
+============================================================
+
+Fecha: [escribir fecha de realización]
+Proyecto: Rueda Libre
+Objetivo: integrar posicionamiento, acceso fijo a WhatsApp,
+revisión de calidad, publicación y cierre de la semana.
+
+1. OBJETIVOS DEL MINIRETO
+
+- Agregar una etiqueta "Nuevo" a la tarjeta de bicicletas
+  eléctricas sin desplazar el contenido.
+- Incorporar un enlace fijo a WhatsApp en las tres páginas.
+- Mantener un espacio inferior para evitar que el enlace
+  cubra el contenido al final del documento.
+- Consolidar los estilos en una sola hoja CSS.
+- Revisar navegación, accesibilidad, imágenes, fuentes y
+  validación del formulario.
+- Publicar la versión 1.0 en GitHub Pages.
+- Documentar el trabajo realizado durante los 12 MiniRetos.
+
+2. CAMBIOS REALIZADOS
+
+A. Posicionamiento de la etiqueta "Nuevo"
+
+Se utilizó position: relative en la tarjeta del servicio
+de bicicletas eléctricas y position: absolute en la etiqueta.
+
+La etiqueta se posiciona con top y right. Al estar fuera
+del flujo normal del documento, no desplaza el contenido
+de la tarjeta.
+
+B. Acceso fijo a WhatsApp
+
+Se incorporó un enlace con la clase .whatsapp-fijo en las
+tres páginas. Se usó position: fixed, bottom y right para
+mantenerlo visible en la esquina inferior derecha.
+
+Se configuró el enlace para abrir en otra pestaña mediante
+target="_blank" y rel="noopener noreferrer".
+
+Se agregó espacio inferior al body para reducir el riesgo
+de que el acceso fijo cubra contenido al final de la página.
+
+C. Consolidación del CSS
+
+Se organizaron los estilos en secciones comentadas:
+
+1. Variables de diseño.
+2. Reglas generales y modelo de caja.
+3. Encabezado, navegación y pie.
+4. Contenedor principal y secciones.
+5. Portada y botones.
+6. Tarjetas y etiqueta "Nuevo".
+7. Listas y tablas.
+8. Formulario de reservas.
+9. Acceso fijo a WhatsApp.
+10. Diseño adaptable a pantallas pequeñas.
+
+Se agruparon selectores relacionados y se mantuvieron las
+variables de color, tipografía, espaciado y bordes.
+
+3. DECISIONES DE DISEÑO
+
+- Se mantuvo la paleta de colores definida anteriormente.
+- Se utilizó el naranja para destacar "Nuevo" y el verde
+  para el acceso de WhatsApp.
+- Se conservaron las tipografías Montserrat y Open Sans.
+- Se mantuvo una única hoja de estilos para las tres páginas.
+- Se emplearon rutas relativas según la ubicación de cada
+  archivo HTML.
+- Se añadieron estados de foco visibles para facilitar la
+  navegación mediante teclado.
+- Se mantuvieron los diseños adaptables para escritorio,
+  tabletas y teléfonos.
+
+4. PRUEBAS DE CALIDAD
+
+Completar esta sección después de ejecutar las pruebas.
+
+Prueba 1: etiqueta "Nuevo"
+Resultado: [pendiente de verificar]
+Observación: comprobar que aparece en la esquina superior
+derecha de la tarjeta eléctrica y no desplaza su contenido.
+
+Prueba 2: WhatsApp en Inicio
+Resultado: [pendiente de verificar]
+Observación: comprobar visibilidad al desplazarse y apertura
+del enlace en una pestaña nueva.
+
+Prueba 3: WhatsApp en Tarifas
+Resultado: [pendiente de verificar]
+Observación: comprobar posición fija y espacio al final.
+
+Prueba 4: WhatsApp en Reservas
+Resultado: [pendiente de verificar]
+Observación: comprobar posición fija y que no cubra el botón
+de envío ni los últimos campos del formulario.
+
+Prueba 5: navegación entre páginas
+Resultado: [pendiente de verificar]
+Observación: probar Inicio, Tarifas y Reservas desde cada
+página y verificar la clase activa del menú.
+
+Prueba 6: imágenes y tipografías
+Resultado: [pendiente de verificar]
+Observación: revisar que no existan errores 404 en la pestaña
+Network de las herramientas de desarrollo.
+
+Prueba 7: formulario
+Resultado: [pendiente de verificar]
+Observación: intentar enviar campos obligatorios vacíos y
+datos con formatos incorrectos; comprobar los mensajes
+de validación del navegador.
+
+Prueba 8: teclado
+Resultado: [pendiente de verificar]
+Observación: recorrer los enlaces, controles y botones con
+Tab; usar Shift+Tab para regresar y Enter para activar enlaces.
+Verificar que el foco sea siempre visible.
+
+Prueba 9: diseño adaptable
+Resultado: [pendiente de verificar]
+Observación: revisar las tres páginas en escritorio y en
+un ancho móvil. Comprobar que las tablas no desborden
+horizontalmente el sitio y que WhatsApp siga siendo accesible.
+
+Prueba 10: consola y estilos
+Resultado: [pendiente de verificar]
+Observación: revisar errores en Console y declaraciones
+tachadas inesperadas en Styles de DevTools.
+
+5. MEDICIONES
+
+Registrar valores reales en DevTools; no completar con
+estimaciones.
+
+Elemento                 Medición                  Resultado
+Contenedor main           Ancho observado           [anotar]
+Tarjeta eléctrica         Ancho observado           [anotar]
+Etiqueta Nuevo            Posición respecto tarjeta [anotar]
+WhatsApp                  Distancia inferior        [anotar]
+WhatsApp                  Distancia derecha         [anotar]
+Formulario                Ancho máximo observado    [anotar]
+
+6. MAPA DE CONSTRUCCIÓN: LOS 12 MINIRETOS
+
+MiniReto 1 — Kilómetro 0: el repositorio y la página base
+Se creó la estructura inicial del proyecto, el repositorio,
+la página base y la bitácora. Este trabajo estableció los
+cimientos del sitio.
+
+MiniReto 2 — La vitrina de Rueda Libre
+Se construyó el contenido de Inicio con títulos, párrafos,
+listas, imágenes y enlaces. Se organizó la información
+para presentar el servicio al visitante.
+
+MiniReto 3 — Tarifas claras: tablas y rutas relativas
+Se desarrolló la página de tarifas y recorridos, incluyendo
+tablas y enlaces entre archivos ubicados en carpetas distintas.
+
+MiniReto 4 — Rueda Libre v0.1: un sitio navegable
+Se integraron las páginas de Inicio, Tarifas y Reservas,
+con menú de navegación y pie de página comunes.
+
+MiniReto 5 — Estructura con significado
+Se organizaron las páginas con regiones semánticas como
+header, nav, main, section, aside y footer, según el contenido.
+
+MiniReto 6 — El formulario de reservas
+Se construyó el formulario con etiquetas, controles,
+agrupaciones y campos para registrar una solicitud de reserva.
+
+MiniReto 7 — Reservas sin errores: validación y teclado
+Se incorporaron reglas de validación nativa y se revisó
+el acceso a los controles mediante teclado.
+
+MiniReto 8 — Rueda Libre v0.2 en línea
+Se trabajó en accesibilidad, revisión de colores y publicación
+inicial del sitio, preparando una versión navegable en línea.
+
+MiniReto 9 — La identidad de Rueda Libre
+Se creó la hoja de estilos externa y se definieron variables
+para colores, tipografías, espaciados y otros elementos visuales.
+
+MiniReto 10 — Navegación con estados y sin conflictos
+Se estilizaron los estados hover y focus, los enlaces activos
+y los botones para mejorar la interacción.
+
+MiniReto 11 — Todo en su lugar: modelo de caja
+Se trabajó con márgenes, rellenos, bordes, dimensiones,
+tarjetas, tablas y formulario para ordenar el contenido.
+
+MiniReto 12 — Rueda Libre v1.0: lanzamiento
+Se incorporaron la etiqueta "Nuevo", el acceso fijo a
+WhatsApp y una organización final del CSS. Se preparó
+la revisión de calidad y la publicación de la versión 1.0.
+
+7. QUÉ CONSTRUÍ DURANTE LA SEMANA
+
+El resultado de los 12 MiniRetos es un sitio informativo
+de alquiler de bicicletas con tres páginas principales:
+Inicio, Tarifas y rutas, y Reservas.
+
+El sitio reúne contenido organizado, navegación compartida,
+imágenes, tablas de precios, información de recorridos,
+un formulario con validación nativa, identidad visual propia
+y acceso fijo a WhatsApp.
+
+El proyecto también me permitió practicar HTML semántico,
+rutas relativas, CSS externo, variables, tipografías, modelo
+de caja, posicionamiento, diseño adaptable, accesibilidad,
+herramientas de desarrollo, Git y GitHub Pages.
+
+8. QUÉ MEJORARÍA
+
+- Conectar el formulario con un servicio o backend para
+  almacenar y gestionar reservas reales.
+- Confirmar que el número de WhatsApp sea el oficial.
+- Añadir pruebas automatizadas de navegación y formulario.
+- Optimizar el peso y el formato de las imágenes.
+- Revisar accesibilidad con herramientas adicionales y
+  usuarios reales.
+- Mejorar la gestión de errores y los mensajes al usuario.
+- Añadir información real de disponibilidad de bicicletas.
+- Incorporar analítica para conocer el uso del sitio.
+- Mantener la bitácora actualizada en cada cambio importante.
+
+9. PUBLICACIÓN Y CONTROL DE VERSIONES
+
+Repositorio:
+https://github.com/selenwing-wq/proyecto_semana_1
+
+URL esperada de GitHub Pages:
+https://selenwing-wq.github.io/proyecto_semana_1/
+
+La publicación debe confirmarse abriendo la URL y verificando
+que las tres páginas carguen correctamente.
+
+Commit de lanzamiento propuesto:
+"Rueda Libre v1.0: posicionamiento y revisión final"
+
+Comandos previstos:
+
+git status
+git add index.html paginas/tarifas.html paginas/reservas.html css/styles.css bitacora.txt
+git commit -m "Rueda Libre v1.0: posicionamiento y revisión final"
+git push origin main
+
+Estado del commit: [pendiente de ejecutar]
+Estado de GitHub Pages: [pendiente de verificar]
+URL comprobada: [anotar fecha y resultado]
+
+10. CIERRE DE LA SEMANA
+
+Con este MiniReto concluye la primera semana de construcción
+de Rueda Libre. El proyecto pasó de una estructura básica a
+un sitio de tres páginas con contenido, navegación, estilos,
+formulario y elementos de contacto.
+
+La versión 1.0 queda lista para su revisión final y publicación
+una vez se completen las pruebas pendientes. La siguiente
+etapa podrá enfocarse en mejorar la experiencia del usuario,
+gestionar reservas reales y ampliar las funcionalidades.
+
+============================================================
+FIN DE LA BITÁCORA DE LA SEMANA
+============================================================
+
+============================================================
+Semana 2 — Día 1 — Reto 1:
+BITÁCORA — MiniReto: Flexbox en encabezado, menú y pie de página
+============================================================
+
+Objetivo
+Aplicar Flexbox para organizar el encabezado, los enlaces de navegación y el pie de página, manteniendo una presentación adaptable a diferentes tamaños de pantalla.
+
+Cambios realizados
+1. Encabezado:
+   - Se creó el contenedor .contenedor-encabezado.
+   - Se aplicó display: flex, align-items: center y justify-content: space-between.
+   - La marca (logo y nombre) queda a un lado y el menú al otro.
+2. Menú:
+   - #menu utiliza display: flex, gap y flex-wrap: wrap.
+   - Se eliminaron márgenes individuales de los elementos li para separar enlaces; la separación se controla con gap.
+3. Pie de página:
+   - Se organizaron marca, contacto y horarios en tres secciones dentro de .pie-contenido.
+   - Se usaron align-items: flex-start, justify-content: space-between y gap.
+   - El copyright queda en una línea independiente debajo de los tres bloques.
+4. Diseño adaptable:
+   - En pantallas pequeñas, el encabezado pasa a una distribución vertical.
+   - Los enlaces pueden pasar a otra línea mediante flex-wrap.
+   - Los tres bloques del pie se apilan en móviles para mejorar la lectura.
+5. Revisión adicional:
+   - Se recuperó el contenedor semántico #servicios de la página de inicio, que faltaba en el HTML recibido.
+   - Se mantuvieron las rutas relativas del logo y de la hoja de estilos para las tres páginas.
+   - Se mantuvo el acceso fijo a WhatsApp.
+
+Pruebas manuales recomendadas
+- Abrir index.html y revisar el encabezado y el pie.
+- Repetir en Tarifas y rutas y Reservas.
+- Probar el navegador a unos 1200 px, 800 px y 375 px de ancho.
+- Confirmar que los enlaces del menú saltan de línea sin desbordarse y que en móvil los bloques del pie quedan apilados.
+- Verificar que el logo carga y que los enlaces entre páginas funcionan.
+
+Aprendizaje
+Flexbox permite distribuir elementos en una fila o columna y alinearlos con propiedades como justify-content y align-items. La propiedad gap controla el espacio entre elementos sin tener que añadir márgenes a cada uno. flex-wrap permite que los elementos pasen a otra línea cuando falta espacio.
+
+Nota
+El formulario sigue siendo una solicitud de reserva de demostración: action="#" no envía los datos a un servidor ni confirma una reserva real.
+
+============================================================
+Semana 2 — Día 1 — Reto 2:
+BITÁCORA — Reto: Nuestra flota con CSS Grid y Flexbox
+============================================================
+
+
+OBJETIVO
+Crear en la página de inicio una sección llamada “Nuestra flota” con siete tarjetas de bicicletas. La cuadrícula debe adaptarse automáticamente al ancho disponible y los enlaces “Reservar” deben quedar alineados al final de las tarjetas.
+
+CAMBIOS REALIZADOS
+1. Se agregó la sección #flota en index.html.
+2. Se crearon siete artículos (article), uno para cada modelo:
+   - Urbana Clásica — $10.000 por hora.
+   - Urbana Plegable — $12.000 por hora.
+   - Montaña Trail — $15.000 por hora.
+   - Gravel Aventura — $18.000 por hora.
+   - Eléctrica Urbana — $25.000 por hora.
+   - Infantil — $8.000 por hora.
+   - Tándem — $20.000 por hora.
+3. Cada tarjeta contiene imagen, nombre, descripción, precio y enlace “Reservar”.
+4. En styles.css se creó .flota-grid con display: grid y:
+   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+   gap: var(--espacio-grande);
+5. Cada .tarjeta-bicicleta usa display: flex, flex-direction: column y justify-content: space-between.
+6. El enlace .enlace-reservar usa margin-top: auto para permanecer al final de la tarjeta.
+7. Se conservaron padding, borde, radio de esquina y colores del diseño de Rueda Libre.
+
+CÓMO FUNCIONA
+- repeat() repite el patrón de columnas.
+- auto-fit hace que el navegador calcule cuántas columnas caben.
+- minmax(15rem, 1fr) establece un ancho mínimo de 15rem y permite que las columnas crezcan y compartan el espacio.
+- gap crea una separación uniforme entre filas y columnas.
+- Flexbox organiza el contenido de cada tarjeta en una columna.
+- margin-top: auto empuja el enlace “Reservar” hacia la parte inferior.
+- Grid estira las tarjetas de una misma fila para que tengan la misma altura.
+
+PRUEBA RESPONSIVE CON DEVTOOLS
+Anchos solicitados por el reto:
+- 1280 px: resultado esperado con el contenedor actual: 4 columnas.
+- 900 px: resultado esperado con el contenedor actual: 3 columnas.
+- 500 px: resultado esperado con el contenedor actual: 1 columna.
+
+IMPORTANTE: los conteos anteriores son una previsión calculada según el ancho máximo de main, el ancho mínimo de 15rem y el gap de 2rem. Abrir DevTools > Toggle Device Toolbar y comprobarlos en el navegador. Si el resultado real difiere, reemplazar esta previsión por el número observado.
+
+IMÁGENES
+Se actualizaron las siete tarjetas para utilizar las fotografías específicas que el usuario agregó a la carpeta img/:
+- Urbana Clásica: img/urbana_clasica.jpg
+- Urbana Plegable: img/urbana_plegable.jpg
+- Montaña Trail: img/montana_trail.jpg
+- Gravel Aventura: img/gravel_aventura.jpg
+- Eléctrica Urbana: img/electrica_urbana.jpg
+- Infantil: img/infantil.jpg
+- Tándem: img/tandem.jpg
+
+Los nombres y extensiones deben coincidir exactamente con los archivos reales. Git los mostrará como “untracked” hasta ejecutar git add. Se debe comprobar en el navegador que cada imagen cargue correctamente.
+
+PENDIENTE DE VERIFICACIÓN
+- Confirmar que las imágenes bicicleta.jpg y bicicleta_electrica.jpg cargan.
+- Comprobar los enlaces “Reservar”.
+- Registrar el número real de columnas a 1280, 900 y 500 px.
+- Revisar que el enlace de cada tarjeta quede abajo y que las tarjetas de una misma fila tengan la misma altura.
+
+APRENDIZAJE
+Aprendí que CSS Grid distribuye las tarjetas en filas y columnas, mientras que Flexbox organiza los elementos dentro de cada tarjeta. Al usar auto-fit y minmax(), la cuadrícula se adapta sin necesitar media queries para definir el número de columnas.
+
+
+CONSERVACIÓN DE IMÁGENES ANTERIORES
+Se conservaron las fotografías que ya pertenecían al sitio y sus usos fuera de la nueva cuadrícula:
+- img/logo.jpg: logotipo del encabezado.
+- img/portada.jpg: imagen de presentación de la página de inicio.
+- img/bicicleta.jpg: imagen del servicio general “Alquiler de bicicletas”.
+- img/bicicleta_electrica.jpg: imagen del servicio “Bicicletas eléctricas”.
+- img/ruta.jpg: imagen del servicio “Recorridos guiados”.
+
+Las siete imágenes nuevas (urbana_clasica.jpg, urbana_plegable.jpg, montana_trail.jpg, gravel_aventura.jpg, electrica_urbana.jpg, infantil.jpg y tandem.jpg) se utilizan exclusivamente en las nuevas tarjetas de la sección “Nuestra flota”. Ninguna reemplaza las fotografías anteriores.
+
+============================================================
+BITÁCORA — RUEDA LIBRE
+Semana 2 — Día 1 — Reto 3: Layout general con Grid y Flexbox
+============================================================
+
+OBJETIVO
+Construir el layout de escritorio de inicio y reservas combinando Grid y
+Flexbox según la necesidad de cada componente.
+
+ARCHIVOS MODIFICADOS
+- index.html
+- css/styles.css
+- paginas/reservas.html
+
+CAMBIOS REALIZADOS Y JUSTIFICACIÓN DE LAS SEIS DECISIONES
+
+1. PORTADA DE INICIO — GRID
+Se organizaron el bloque de texto y la fotografía en dos columnas.
+Se utilizó grid-template-columns: 1.1fr 0.9fr y align-items: center.
+Grid es adecuado porque se necesitan dos zonas paralelas en una estructura
+de dos dimensiones; fr reparte el espacio disponible de forma flexible.
+
+2. GALERÍA “NUESTRAS RUTAS” — GRID
+Se creó una sección independiente con tres tarjetas: Río y Parques,
+Sabores de Barrio y Reto Las Palmas. Se utilizó repeat(3, minmax(0, 1fr))
+y gap para distribuir las tarjetas en una fila en escritorio.
+Grid permite controlar columnas y filas de una galería.
+
+3. PÁGINA DE RESERVAS — GRID
+Se agruparon el formulario y la información de contacto dentro de
+.layout-reservas. Se utilizó grid-template-columns: 2fr 1fr para que
+el formulario ocupe dos partes y la información una parte.
+Grid permite controlar las dos columnas y su proporción.
+
+4. FILA DOCUMENTO/CELULAR — FLEXBOX
+Se agruparon los dos campos en .fila-campos y se utilizó Flexbox
+con align-items y gap. Flexbox es suficiente porque solo se necesita
+alinear dos elementos en una dirección horizontal. Se conservaron
+los atributos de validación HTML originales de ambos campos.
+
+5. ENCABEZADO — FLEXBOX
+Se utilizó Flexbox en .contenedor-encabezado para alinear la marca
+y el menú con align-items, justify-content y gap.
+Es una distribución principalmente unidimensional.
+
+6. PIE DE PÁGINA — FLEXBOX
+Se agruparon marca, contacto y horarios en tres bloques y se alinearon
+en una fila con align-items: flex-start, justify-content y gap.
+Flexbox facilita distribuir bloques en una sola dirección.
+
+DISEÑO ADAPTABLE
+Se añadieron reglas para tabletas y celulares. En pantallas pequeñas,
+la portada y reservas pasan a una columna; la galería reduce sus columnas;
+documento y celular se apilan; y los bloques del pie pasan a vertical.
+Las columnas principales de escritorio se definen con unidades fr.
+
+IMÁGENES
+La galería reutiliza img/ruta.jpg en las tres tarjetas porque es la imagen
+de rutas disponible en los archivos revisados. Si más adelante se agregan
+fotos específicas para cada recorrido, se podrán cambiar únicamente los src.
+
+PRUEBAS PENDIENTES
+- Verificar portada: texto a la izquierda e imagen a la derecha.
+- Verificar galería: tres tarjetas en una fila en escritorio.
+- Verificar reservas: formulario e información en proporción 2:1.
+- Verificar documento y celular en una fila en escritorio.
+- Confirmar navegación, flota y validaciones del formulario.
+- Probar también tableta y celular.
+
+RESULTADOS DE DEVTOOLS — COMPLETAR DESPUÉS DE PROBAR
+- Encabezado: bien
+- Portada: bien
+- Galería: bien
+- Reservas: bien
+- Fila documento/celular: bien
+- Pie de página: bien
+
+APRENDIZAJE
+Grid permite organizar contenido en dos dimensiones (filas y columnas).
+Flexbox facilita alinear elementos en una dimensión. Elegir la herramienta
+adecuada hace que el código sea más claro, ordenado y fácil de mantener.
+
+BITÁCORA — RUEDA LIBRE
+Ajustes previos al último reto
+
+OBJETIVO
+Actualizar las siete bicicletas en tarifas y reservas e incorporar las nuevas fotografías de rutas.
+
+ARCHIVOS MODIFICADOS
+- index.html
+- css/styles.css
+- paginas/tarifas.html
+- paginas/reservas.html
+
+CAMBIOS
+1. Tarifas: se muestran los siete modelos con descripción y precio por hora: Urbana Clásica $10.000; Urbana Plegable $12.000; Montaña Trail $15.000; Gravel Aventura $18.000; Eléctrica Urbana $25.000; Infantil $8.000; Tándem $20.000 (todos COP por hora).
+2. Reservas: el selector permite elegir cualquiera de los siete modelos y muestra el precio por hora. Se conserva required y las demás validaciones.
+3. Galería: Río y Parques usa img/rio.jpg; Sabores de Barrio usa img/barrio.png; Reto Las Palmas conserva img/ruta.jpg. Las tres imágenes usan la misma regla CSS de tamaño, relación de aspecto 16:10 y object-fit: cover.
+
+NOTA SOBRE PRECIOS
+No se proporcionaron precios de medio día ni día completo para los siete modelos. Por eso solo se publican los precios por hora confirmados; no se inventan tarifas adicionales.
+
+PRUEBAS PENDIENTES
+- Confirmar que img/rio.jpg e img/barrio.png existan y que el nombre/extensión coincidan exactamente.
+- Revisar las tres fotos de rutas y su tamaño uniforme.
+- Verificar los siete modelos en tarifas y reservas.
+- Probar enlaces y validaciones del formulario.
+
+BITÁCORA — RUEDA LIBRE
+Ajustes previos al último reto
+
+OBJETIVO
+Actualizar las siete bicicletas en tarifas y reservas e incorporar las nuevas fotografías de rutas.
+
+ARCHIVOS MODIFICADOS
+- index.html
+- css/styles.css
+- paginas/tarifas.html
+- paginas/reservas.html
+
+CAMBIOS
+1. Tarifas: se muestran los siete modelos con descripción y precio por hora: Urbana Clásica $10.000; Urbana Plegable $12.000; Montaña Trail $15.000; Gravel Aventura $18.000; Eléctrica Urbana $25.000; Infantil $8.000; Tándem $20.000 (todos COP por hora).
+2. Reservas: el selector permite elegir cualquiera de los siete modelos y muestra el precio por hora. Se conserva required y las demás validaciones.
+3. Galería: Río y Parques usa img/rio.jpg; Sabores de Barrio usa img/barrio.png; Reto Las Palmas conserva img/ruta.jpg. Las tres imágenes usan la misma regla CSS de tamaño, relación de aspecto 16:10 y object-fit: cover.
+
+NOTA SOBRE PRECIOS
+No se proporcionaron precios de medio día ni día completo para los siete modelos. Por eso solo se publican los precios por hora confirmados; no se inventan tarifas adicionales.
+
+PRUEBAS PENDIENTES
+- Confirmar que img/rio.jpg e img/barrio.png existan y que el nombre/extensión coincidan exactamente.
+- Revisar las tres fotos de rutas y su tamaño uniforme.
+- Verificar los siete modelos en tarifas y reservas.
+- Probar enlaces y validaciones del formulario.
+
+============================================================
+SEMANA 2 - DÍA 1 - MINIRETO 4: DISEÑO MOBILE-FIRST
+============================================================
+
+Objetivo:
+Reorganizar styles.css para que la versión base funcione primero en celulares y ampliar la distribución con media queries desde 768 px (tablet) y 1200 px (escritorio).
+
+Cambios realizados en el código:
+1. Los estilos base ya no dependen de media queries y organizan el contenido en una columna: encabezado, menú, portada, servicios, rutas, flota, formulario y pie de página.
+2. El encabezado móvil coloca la marca arriba y el menú debajo, ambos centrados. Desde 768 px, Flexbox recupera la distribución horizontal.
+3. La portada utiliza una columna en móvil y dos columnas desde 768 px.
+4. Las rutas y la flota muestran una tarjeta por fila en móvil, dos columnas en tablet y tres en escritorio (desde 1200 px).
+5. El bloque de reservas queda apilado en móvil y pasa a dos columnas desde 768 px. Los campos de documento y celular se apilan en móvil y quedan en una fila desde tablet.
+6. El pie de página apila sus bloques en móvil y los distribuye horizontalmente desde tablet.
+7. Todas las imágenes tienen max-width: 100%; las tablas usan ancho 100%, distribución fija, texto ajustable y relleno/tamaño de letra reducido en móvil para evitar desplazamiento lateral.
+
+Problemas responsive identificados al revisar el CSS anterior y solución aplicada:
+- Problema 1: el logo tenía un ancho fijo de 32rem, demasiado grande para una pantalla pequeña. Solución: tamaño compacto y fluido en móvil; aumenta gradualmente en tablet y escritorio.
+- Problema 2: la portada y la galería de rutas tenían varias columnas desde los estilos generales, lo que comprimía las tarjetas en móvil. Solución: una columna como base y columnas adicionales únicamente en los breakpoints.
+- Problema 3: las tablas podían provocar desplazamiento horizontal y su contenido quedaba apretado. Solución: table-layout: fixed, ancho máximo del 100%, ajuste de palabras, letra y padding reducidos en móvil.
+- Problema 4: el formulario de reservas y sus campos de documento/celular estaban distribuidos en columnas incluso en pantallas estrechas. Solución: apilarlos en móvil y activar Grid/Flexbox horizontal desde 768 px.
+
+IMPORTANTE: los problemas anteriores se identificaron al inspeccionar las reglas CSS previas y se corrigieron en el código. Falta realizar la comprobación visual en DevTools y en un celular real; no se registran como pruebas ya ejecutadas.
+
+Registro de pruebas que debe completarse después de abrir la página en Chrome DevTools > Toggle device toolbar:
+- 360 px (móvil): [anotar si no hay scroll horizontal, si la tabla se lee completa y cualquier ajuste pendiente].
+- 768 px (tablet): [anotar distribución de encabezado, rutas, flota, reservas y pie].
+- 1280 px (escritorio): [anotar distribución de tres columnas y comportamiento general].
+- Celular real: [anotar modelo/tamaño de pantalla y resultado de la revisión].
+
+Decisiones de diseño:
+- Flexbox se utiliza para alinear los elementos del encabezado, el menú, los campos del formulario y los bloques del pie.
+- CSS Grid se utiliza para distribuir la portada, servicios, galería de rutas, flota y panel de reservas.
+- Se eligió mobile-first porque la mayoría de las visitas del cliente provienen de celulares.
+
+Publicación:
+La publicación de GitHub Pages v1.5 queda pendiente de realizar desde la cuenta del estudiante. Después de activar Pages, pegar aquí la URL pública y verificarla desde un celular real.
+
+============================================================
+SEMANA 2 - DÍA 2 - RETO 5: CATÁLOGO CON BOOTSTRAP
+============================================================
+
+OBJETIVO
+Reconstruir la sección de la flota usando Bootstrap 5.3
+y comparar el resultado con la versión desarrollada con CSS propio.
+
+ARCHIVO CREADO
+- pruebas/catalogo-bootstrap.html
+
+IMPLEMENTACIÓN
+- Bootstrap 5.3.3 integrado mediante CDN.
+- CSS y JavaScript Bundle cargados desde CDN.
+- Se conservaron los siete modelos, imágenes, descripciones y precios.
+- Se utilizó container, row, col-12, col-sm-6, col-lg-4,
+  col-xl-3 y g-4.
+- No se enlazó css/styles.css.
+- No se escribió CSS propio para la distribución de la flota.
+
+COMPARACIÓN
+
+Versión con CSS propio:
+- Tiempo invertido: 10 mins.
+- Líneas de CSS dedicadas a la distribución de la flota:
+ 
+
+Versión con Bootstrap:
+- Tiempo invertido: 10 mins.
+- Clases de distribución utilizadas:
+  col-12, col-sm-6, col-lg-4, col-xl-3 y g-4.
+
+VENTAJAS DE BOOTSTRAP
+Bootstrap proporciona una grilla responsive y espacios entre
+tarjetas sin tener que escribir media queries ni reglas Grid propias.
+También ofrece componentes y utilidades visuales reutilizables.
+
+CONTROL QUE SE PIERDE
+La distribución depende de los breakpoints y reglas definidos
+por Bootstrap. Para modificar su comportamiento de una manera
+muy específica se necesita conocer mejor el framework o agregar
+personalizaciones.
+
+PRUEBAS EN DEVTOOLS
+- 375 px: bien.
+- 768 px: bien.
+- 1024 px: bien.
+- 1280 px: bien.
+- Network: correcta.
+
+============================================================
+SEMANA 2 - DÍA 2 - RETO 6: UTILIDADES DE BOOTSTRAP
+============================================================
+
+OBJETIVO
+Construir la sección de beneficios y una franja de llamada
+a la acción utilizando únicamente clases utilitarias Bootstrap 5.3.
+
+ARCHIVO MODIFICADO
+- pruebas/catalogo-bootstrap.html
+
+CAMBIOS REALIZADOS
+1. Se agregó la sección "¿Por qué Rueda Libre?" con cuatro beneficios.
+2. Se utilizó la grilla Bootstrap para distribuir los beneficios.
+3. Se aplicaron utilidades de espaciado, tipografía, color y alineación.
+4. Se agregó la franja "¿Listo para rodar?" con enlace a reservas.
+5. La franja cambia de columna a fila desde el breakpoint md.
+6. La imagen decorativa se oculta en móvil y aparece desde md.
+7. No se agregó CSS propio, etiquetas style ni atributos style.
+
+CINCO CLASES CONSULTADAS
+
+1. p-4: agrega espacio interno alrededor del contenido.
+2. text-center: centra el texto.
+3. fw-bold: aplica negrita.
+4. d-none d-md-block: oculta un elemento en móvil y lo muestra
+   como bloque desde md.
+5. flex-column flex-md-row: organiza elementos en columna
+   y cambia a fila desde md.
+
+CONCLUSIÓN
+Bootstrap permite construir secciones visualmente organizadas
+y adaptables a diferentes pantallas mediante clases utilitarias,
+sin necesidad de escribir reglas CSS propias para estos elementos.
+
+PRUEBAS PENDIENTES
+- Revisar la sección en móvil y escritorio con DevTools.
+- Confirmar que la imagen decorativa aparezca desde 768 px.
+- Confirmar que el enlace lleve correctamente al formulario de reservas.
+
+============================================================
+SEMANA 2 - DÍA 2 - RETO 7: MIGRACIÓN DE INICIO A BOOTSTRAP
+============================================================
+
+OBJETIVO
+
+Integrar Bootstrap 5.3.3 en la página principal de Rueda Libre,
+reemplazando la distribución realizada con CSS propio por la
+grilla y las utilidades del framework, sin perder la identidad
+visual del negocio ni afectar las páginas de tarifas y reservas.
+
+ARCHIVOS MODIFICADOS
+
+- index.html
+- css/styles.css
+- bitacora.txt
+
+1. INTEGRACIÓN DE BOOTSTRAP
+
+Se agregó Bootstrap 5.3.3 mediante CDN.
+
+Orden de carga:
+- Primero Bootstrap CSS.
+- Después css/styles.css.
+- Al final del documento se agregó Bootstrap JavaScript Bundle.
+
+Se mantuvieron las fuentes Montserrat y Open Sans, además
+de los colores de marca de Rueda Libre.
+
+2. MIGRACIÓN DE LA DISTRIBUCIÓN
+
+Portada:
+- Se reemplazó la distribución Grid propia por row y col.
+- Se utilizaron col-12 y col-md-6.
+- En móvil el texto y la imagen se apilan.
+- Desde 768 px se distribuyen en dos columnas.
+
+Servicios:
+- Se organizaron las tarjetas con row y g-4.
+- Se utilizaron col-12, col-md-6 y col-xl-4.
+- Se utilizaron card y h-100 para las tarjetas.
+- Se aplicaron d-flex y flex-column para organizar el contenido.
+
+Galería de rutas:
+- Se reemplazó la cuadrícula CSS propia por la grilla Bootstrap.
+- Se utilizaron col-12, col-md-6 y col-xl-4.
+- Se mantuvieron las tres fotografías y sus textos alternativos.
+
+Flota:
+- Se migraron los siete modelos a la grilla Bootstrap.
+- Se utilizaron col-12, col-sm-6, col-lg-4 y col-xl-3.
+- Se conservaron los nombres, descripciones, imágenes y precios.
+- Se utilizaron card, h-100, d-flex, flex-column y mt-auto
+  para organizar el contenido y mantener los precios y botones
+  en posiciones uniformes.
+
+Beneficios:
+- Se construyeron cuatro tarjetas de beneficios.
+- Se utilizaron col-12, col-md-6 y col-xl-3.
+- Se aplicaron utilidades de espaciado, alineación y tipografía.
+
+Encabezado y pie de página:
+- Se utilizó la grilla Bootstrap y utilidades Flexbox.
+- Se mantuvieron el logo, la navegación y la información
+  de contacto y horarios.
+
+3. LIMPIEZA DE CSS
+
+Se retiraron las reglas de distribución propias de Inicio
+para portada, servicios, rutas, flota y pie de página.
+
+Se conservaron los estilos de identidad visual:
+- Variables de colores.
+- Tipografías.
+- Logo.
+- Botones.
+- Fondos, bordes y fotografías.
+- Acceso fijo a WhatsApp.
+
+Se conservaron y marcaron las reglas que siguen utilizando
+las páginas de tarifas y reservas, especialmente:
+- Tablas.
+- Formularios.
+- .layout-reservas.
+- .fila-campos.
+- Media queries relacionadas con reservas y tarifas.
+
+4. CONFLICTOS ENTRE BOOTSTRAP Y CSS PROPIO
+
+Registrar aquí los tres conflictos observados en DevTools.
+
+Conflicto 1: enlaces de navegación.
+- Elemento inspeccionado: enlace del menú.
+- Regla de Bootstrap revisada: .nav-link.
+- Regla propia: #menu .nav-link.
+- Solución: selector propio más específico para conservar
+  los colores de marca y los estados del menú.
+
+Conflicto 2: tipografía y márgenes.
+- Elemento inspeccionado: títulos y párrafos.
+- Regla de Bootstrap revisada: estilos base de Reboot.
+- Regla propia: estilos tipográficos de Rueda Libre.
+- Solución: definir las fuentes propias después de Bootstrap
+  sin utilizar !important.
+
+Conflicto 3: apariencia de las tarjetas.
+- Elemento inspeccionado: tarjeta de servicio o bicicleta.
+- Regla de Bootstrap revisada: .card.
+- Regla propia: .tarjeta-servicio, .tarjeta-ruta
+  o .tarjeta-bicicleta.
+- Solución: conservar fondos y bordes propios mediante
+  clases específicas cargadas después de Bootstrap.
+
+NOTA:
+Los tres conflictos deben verificarse en DevTools.
+Si una regla no aparece tachada, registrar el resultado real
+de la inspección y no afirmar que hubo un conflicto efectivo.
+
+5. PRUEBAS RESPONSIVE
+
+Anotar el resultado después de probar cada ancho en DevTools.
+
+- 360 px: pendiente de verificar.
+- 768 px: pendiente de verificar.
+- 1280 px: pendiente de verificar.
+
+Verificar:
+- Encabezado y menú.
+- Portada.
+- Tarjetas de servicios.
+- Galería de rutas.
+- Siete tarjetas de bicicletas.
+- Cuatro beneficios.
+- Pie de página.
+- Acceso fijo a WhatsApp.
+- Ausencia de desplazamiento horizontal.
+- Carga de las imágenes y funcionamiento de los enlaces.
+
+6. APRENDIZAJES
+
+Aprendí que Bootstrap permite construir distribuciones
+adaptables mediante un sistema de 12 columnas y clases
+responsive, reduciendo la cantidad de reglas de distribución
+que se deben escribir manualmente en CSS.
+
+También aprendí que el orden de carga y la especificidad
+de los selectores determinan qué estilos prevalecen cuando
+Bootstrap y una hoja propia afectan al mismo elemento.
+
+La migración no implica eliminar toda la hoja de estilos:
+los estilos de marca y las reglas que todavía necesitan
+otras páginas deben conservarse.
+
+7. CONTROL DE VERSIONES
+
+Commit sugerido:
+
+Reto 7: migrar página de inicio a Bootstrap
+
+Comandos:
+
+git status
+git add index.html css/styles.css bitacora.txt
+git commit -m "Reto 7: migrar pagina de inicio a Bootstrap"
+git push origin semana_2
+
+Estado del commit: pendiente de ejecutar.
+Estado del push: pendiente de confirmar.
+============================================================
+
+============================================================
+# BITÁCORA – RUEDA LIBRE
+## Semana 2 – Día 2 – Reto 8
+### Migración de páginas a Bootstrap 5.3.3
+============================================================
+
+**Objetivo del reto**
+
+Migrar las páginas Tarifas y Reservas a Bootstrap 5.3.3, manteniendo la identidad visual del proyecto Rueda Libre y reduciendo la dependencia de CSS personalizado para la distribución de los elementos.
+
+### 1. Actividades realizadas
+
+- Se integró Bootstrap 5.3.3 mediante CDN en las páginas Tarifas y Reservas.
+- Se utilizaron los contenedores `container` para organizar el contenido.
+- Se implementaron las clases `row` y `col-*` para distribuir los elementos de las páginas.
+- Se adaptó la estructura del formulario de reservas utilizando componentes y clases de Bootstrap.
+- Se conservaron las validaciones HTML de los campos del formulario.
+- Se mantuvieron los colores corporativos, las tipografías y los estilos propios de Rueda Libre.
+- Se actualizó el archivo `css/styles.css` para evitar duplicar con CSS personalizado las funciones de distribución que ahora realiza Bootstrap.
+- Se conservaron los estilos de las tarjetas, tablas, botones, encabezados, pie de página y acceso fijo a WhatsApp.
+
+### 2. Uso de Bootstrap
+
+Se utilizaron principalmente las siguientes clases:
+
+- `container`: organiza y limita el ancho del contenido.
+- `row`: crea filas para organizar los elementos.
+- `col-12`: permite ocupar todo el ancho disponible.
+- `col-md-*`: establece distribuciones diferentes en pantallas medianas.
+- `col-lg-*`: permite adaptar la distribución a pantallas grandes.
+- `g-4`: establece espacios entre columnas y filas.
+- `form-control`: aplica estilos de Bootstrap a los campos de entrada.
+- `form-select`: adapta las listas desplegables.
+- `form-check`: organiza las casillas de verificación.
+
+### 3. Actualización del CSS
+
+Se reorganizó `css/styles.css` para mantener únicamente los estilos personalizados necesarios para la identidad visual y presentación del proyecto.
+
+Se conservaron:
+
+- Variables de colores corporativos.
+- Tipografías Montserrat y Open Sans.
+- Estilos del encabezado y logo.
+- Apariencia del menú de navegación.
+- Estilos de portada y tarjetas.
+- Presentación de precios y tablas.
+- Apariencia de los formularios.
+- Estilos del pie de página.
+- Botón fijo de WhatsApp.
+
+Se retiraron reglas de distribución que duplicaban las funcionalidades de Bootstrap, como las relacionadas con CSS Grid y Flexbox en la estructura de reservas.
+
+### 4. Pruebas y validación
+
+Se estableció como criterio de revisión comprobar el comportamiento responsive del sitio en tres resoluciones:
+
+- 360 px: dispositivos móviles.
+- 768 px: tabletas y pantallas medianas.
+- 1280 px: computadores de escritorio.
+
+Las páginas que deben validarse son:
+
+- Inicio.
+- Tarifas y rutas.
+- Reservas.
+
+Se debe verificar que las tablas no provoquen desbordamientos, que el formulario conserve sus validaciones y que los elementos mantengan una presentación adecuada en diferentes tamaños de pantalla.
+
+### 5. Comparación entre CSS personalizado y Bootstrap
+
+La migración permite utilizar un sistema de diseño responsive ya establecido, reduciendo la necesidad de escribir reglas propias para columnas, filas y distribución de elementos.
+
+La identidad visual continúa dependiendo del CSS personalizado, mientras que Bootstrap se encarga principalmente de la estructura y adaptación responsive.
+
+**Datos pendientes de completar:**
+
+- Cantidad de líneas de `styles.css` versión 1.5: pendiente de medición.
+- Cantidad de líneas de `styles.css` actualizado: pendiente de medición.
+- Tiempo invertido en la versión anterior: pendiente de registrar.
+- Tiempo invertido en la migración: pendiente de registrar.
+- Conflictos encontrados durante las pruebas: registrar los resultados de la validación.
+
+### 6. Conclusión
+
+La migración de las páginas Tarifas y Reservas permite avanzar hacia una estructura más organizada y responsive mediante Bootstrap 5.3.3.
+
+Se mantiene la identidad visual de Rueda Libre y se reduce la duplicación de código CSS, diferenciando las responsabilidades de cada tecnología: Bootstrap para la distribución y CSS propio para la presentación visual.
+
+**Estado del reto:** migración de HTML y actualización de CSS realizadas. Pendiente completar las pruebas finales, la comparativa de versiones y la publicación o actualización de GitHub Pages.
+
+============================================================
+# Reto 9 – Semana 2, Día 3
+## Variables CSS, Google Fonts y herencia
+============================================================
+
+**Objetivo:**
+Crear y conectar una hoja de estilos externa utilizando variables CSS, Google Fonts y propiedades heredadas para mantener la identidad visual de Rueda Libre en sus tres páginas.
+
+### Actividades realizadas
+
+1. Revisé y organicé las conexiones de estilos en los archivos `index.html`, `paginas/tarifas.html` y `paginas/reservas.html`.
+2. Eliminé las conexiones duplicadas de Google Fonts y de la hoja de estilos `styles.css`.
+3. Verifiqué que cada página tuviera correctamente configuradas las rutas relativas hacia la hoja de estilos externa.
+4. Configuré las fuentes de Google Fonts:
+   - Montserrat 700 para títulos.
+   - Open Sans 400 y 600 para textos.
+5. Organicé las variables CSS dentro de `:root`, incluyendo los cinco colores de marca, las familias tipográficas, los tamaños de texto en `rem` y las variables de espaciado.
+6. Configuré el elemento `body` para aplicar la tipografía, el color
+
+============================================================
+# RETO 10 – Navegación, pseudoclases y accesibilidad
+Semana: 2  Día: 3  
+============================================================
+
+### Objetivo
+Mejorar la experiencia de navegación del sitio web mediante selectores CSS, clases, identificadores, pseudoclases y el control de la especificidad. También se buscó garantizar que los elementos interactivos fueran visibles y accesibles al utilizar el teclado.
+
+### Actividades realizadas
+
+1. **Identificación de la página activa:** se utilizó el identificador `id="menu"` en la navegación y la clase `activo` junto con `aria-current="page"` en el enlace correspondiente a cada página.
+
+2. **Especificidad y cascada CSS:** se revisó el conflicto entre los selectores `#menu a` y `.activo`. Se identificó que `#menu a` tiene una especificidad de 101, mientras que `.activo` tiene una especificidad de 10. Para resolver el conflicto se utilizaron selectores más específicos, sin recurrir a `!important` ni a estilos en línea.
+
+3. **Estilos de navegación:** se utilizaron selectores descendientes para personalizar los enlaces del menú y se definieron estados visuales mediante las pseudoclases `:hover` y `:focus`.
+
+4. **Botones de acción:** se reutilizó la clase `boton-accion` para dar apariencia de botón a los enlaces de reserva. Se agregaron estados para el paso del mouse y el enfoque mediante teclado.
+
+5. **Campos de formulario:** se personalizaron los estados `:hover` y `:focus` de los campos de texto, listas desplegables y casillas de verificación.
+
+6. **Accesibilidad:** se incorporaron indicadores visuales de enfoque para facilitar la navegación mediante la tecla Tab, evitando que el usuario pierda de vista el elemento seleccionado.
+
+7. **Pruebas:** se revisaron las tres páginas del sitio —Inicio, Tarifas y rutas, y Reservas— y se utilizaron las herramientas de desarrollador para inspeccionar los estilos y comprobar los estados interactivos.
+
+### Conceptos aprendidos
+
+- Selectores por identificador (`#`).
+- Selectores por clase (`.`).
+- Selectores descendientes.
+- Pseudoclases `:hover` y `:focus`.
+- Cascada y especificidad CSS.
+- Inspección de reglas CSS desde DevTools.
+- Accesibilidad mediante navegación por teclado.
+- Indicadores visuales de enfoque.
+
+### Resultado
+
+Se mejoró la navegación de Rueda Libre, diferenciando visualmente la página activa y proporcionando respuestas visuales al pasar el mouse o utilizar el teclado.
+También se resolvieron conflictos de especificidad sin utilizar `!important`, manteniendo los estilos organizados y reutilizables.
+
+============================================================
+
+# RETO 11 – Modelo de caja y espaciado con CSS
+
+============================================================
+
+**Objetivo:** Mejorar la distribución visual de Rueda Libre mediante el uso del modelo de caja, unidades relativas y propiedades de espaciado en CSS.
+
+### 1. Modelo de caja
+Se verificó la propiedad `box-sizing: border-box` para que el ancho y alto de los elementos incluyan el contenido, el padding y los bordes. También se revisó la importancia de esta propiedad para controlar mejor las dimensiones de los componentes.
+
+### 2. Ancho y centrado del contenido
+Se creó la clase `.contenido-principal`, utilizando `max-width` con unidades `rem` y márgenes automáticos para limitar el ancho del contenido y mantenerlo centrado en las páginas.
+
+### 3. Sección principal
+Se ajustó la sección de portada mediante `min-height` con unidades `vh`, permitiendo establecer una altura mínima proporcional al tamaño de la ventana del navegador.
+
+### 4. Tarjetas y espaciado
+Se revisaron los estilos de las tarjetas de servicios, rutas y bicicletas. Se utilizaron propiedades como `padding`, `border`, `border-radius` y `gap` para mejorar la separación y presentación de los elementos. Las imágenes se mantienen adaptables al ancho de sus contenedores.
+
+### 5. Tablas
+Se mejoró la presentación de las tablas de tarifas y recorridos mediante el uso de bordes, relleno interno en las celdas y colores de fondo para los encabezados, manteniendo el contraste con los colores corporativos.
+
+### 6. Formularios
+Se ajustaron las etiquetas para que aparezcan encima de los campos, se estableció el ancho completo para los controles y se mejoró la separación entre grupos de información y el espacio interno de los botones.
+
+### 7. Menú de navegación
+Se utilizó Flexbox mediante `display: flex` y `flex-wrap: nowrap` para organizar las opciones del menú en una sola fila.
+
+### 8. Herramientas de desarrollo
+Se utilizó la herramienta DevTools del navegador, en la pestaña Computed, para revisar las dimensiones de los elementos y comparar el comportamiento del modelo de caja antes y después de aplicar `box-sizing: border-box`.
+
+### Resultado
+Se mejoró la distribución del contenido, la legibilidad de las tablas, el espaciado de los formularios y la presentación de las tarjetas. El sitio mantiene su identidad visual y una estructura adaptable a diferentes tamaños de pantalla.
+
+**Estado:** Reto 11 – Implementación realizada. Pendiente registrar las mediciones reales de DevTools y validar las tres páginas.
+
+============================================================
+# RETO 12 – Rueda Libre v1.0: lanzamiento final
+============================================================
+
+**Objetivo:** Aplicar posicionamiento CSS, consolidar los estilos del sitio y preparar la versión final para su publicación.
+
+### 1. Etiqueta Nuevo
+Se agregó la etiqueta «Nuevo» a la tarjeta del servicio de bicicletas eléctricas. Se utilizó `position: relative` en la tarjeta y `position: absolute` en la etiqueta para ubicarla en la esquina superior derecha sin desplazar el contenido.
+
+### 2. Acceso fijo a WhatsApp
+Se configuró un enlace fijo a WhatsApp en las tres páginas del sitio mediante `position: fixed`. Se establecieron las propiedades `right`, `bottom` y `z-index` para mantenerlo visible en la esquina inferior derecha. Se conservaron los atributos para abrir el enlace en otra pestaña y permitir su identificación mediante tecnologías de asistencia.
+
+### 3. Consolidación de estilos
+Se revisó la hoja de estilos `css/styles.css` para mantener una identidad visual compartida entre Inicio, Tarifas y rutas, y Reservas. Se organizaron los estilos mediante secciones y comentarios, reutilizando variables, selectores y componentes comunes.
+
+### 4. Revisión de calidad
+Se realizó una revisión visual y funcional de las tres páginas. Se verificaron la navegación, los enlaces, las imágenes, los estados de interacción, el acceso a WhatsApp y la validación nativa del formulario.
+
+### 5. Publicación
+Se preparó el proyecto para el lanzamiento de Rueda Libre v1.0 mediante Git y GitHub. Se debe verificar la publicación final en GitHub Pages y comprobar que los cambios estén disponibles en el sitio.
+
+---
+
+# CIERRE DE SEMANA – CONSTRUCCIÓN DE RUEDA LIBRE
+
+Durante los doce MiniRetos se desarrolló progresivamente un sitio web informativo para un negocio de alquiler de bicicletas en Medellín.
+
+### Resumen de los MiniRetos
+
+**MiniRetos 1 al 4 – Estructura y contenido**
+- Creación del repositorio y estructura de carpetas.
+- Construcción de la página de inicio.
+- Incorporación de imágenes, listas

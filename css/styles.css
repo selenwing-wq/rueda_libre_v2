@@ -1,0 +1,975 @@
+
+/* =========================================================
+   RUEDA LIBRE
+   SEMANA 2 - DÍA 2 - RETO 8
+   Identidad visual propia + Bootstrap 5.3.3
+   Bootstrap controla la distribución.
+   CSS propio conserva la identidad visual.
+   ========================================================= */
+
+
+/* =========================================================
+   1. VARIABLES DE MARCA
+   ========================================================= */
+
+:root {
+    /* Colores de marca */
+    --verde-ruta: #1E7A4F;
+    --naranja-pedal: #F39A2B;
+    --azul-noche: #14213D;
+    --crema: #FAF6EF;
+    --gris-asfalto: #5B6470;
+
+    /* Tipografías */
+    --fuente-titulos: "Montserrat", Arial, sans-serif;
+    --fuente-textos: "Open Sans", Arial, sans-serif;
+
+    /* Tamaños de texto */
+    --texto-pequeno: 0.875rem;
+    --texto-normal: 1rem;
+    --texto-grande: 1.25rem;
+
+    /* Espaciados */
+    --espacio-pequeno: 0.5rem;
+    --espacio-mediano: 1rem;
+    --espacio-grande: 2rem;
+    --espacio-extra-grande: 3rem;
+
+    /* Otras medidas */
+    --ancho-contenido: 70rem;
+    --radio-borde: 0.75rem;
+    --altura-acceso-whatsapp: 3.25rem;
+
+    
+}
+
+/* =========================================================
+   MODELO DE CAJA GLOBAL
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   2. ESTILOS GENERALES
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    /* Footer siempre al fondo, aunque la página tenga poco contenido */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    font-family: var(--fuente-textos);
+    font-weight: 400;
+    line-height: 1.6;
+
+    color: var(--azul-noche);
+    background-color: var(--crema);
+
+    overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--azul-noche);
+}
+
+
+img,
+picture,
+video,
+iframe {
+    display: block;
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+    border-radius: var(--radio-borde);
+}
+
+a {
+    color: var(--verde-ruta);
+    font-weight: 600;
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    text-decoration-thickness: 0.15em;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 0.2rem solid var(--azul-noche);
+    outline-offset: 0.2rem;
+}
+
+/* =========================================================
+   RETO 11: CONTENEDOR PRINCIPAL
+   ========================================================= */
+
+.contenido-principal {
+    width: 100%;
+    max-width: var(--ancho-contenido);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================================
+   3. ENCABEZADO Y LOGO
+   ========================================================= */
+
+header,
+.encabezado-sitio {
+    padding: var(--espacio-mediano);
+    background-color: var(--azul-noche);
+    color: var(--crema);
+}
+
+header h1,
+header h2,
+header p {
+    color: var(--crema);
+}
+
+header h1 {
+    margin-bottom: 0.35rem;
+}
+
+.texto-marca {
+    min-width: 0;
+}
+
+.texto-marca h1 {
+    margin: 0 0 0.35rem;
+    font-size: var(--texto-grande);
+}
+
+.texto-marca p {
+    margin: 0;
+    font-size: var(--texto-pequeno);
+}
+
+.enlace-logo {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+
+    width: 11rem;
+    max-width: 100%;
+
+    padding: 0.15rem;
+    border: 2px solid var(--verde-ruta);
+    border-radius: var(--radio-borde);
+
+    background-color: var(--crema);
+    text-decoration: none;
+}
+
+.logo-sitio {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+.enlace-logo:focus-visible {
+    outline: 0.2rem solid var(--naranja-pedal);
+    outline-offset: 0.2rem;
+}
+
+
+/* =========================================================
+   4. MENÚ DE NAVEGACIÓN
+   ========================================================= */
+
+#menu {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#menu .nav-link {
+    display: inline-block;
+    padding: 0.45rem 0.8rem;
+    text-align: var(--espacio-grande);
+
+    border-radius: 0.25rem;
+
+    color: var(--crema);
+    font-weight: 600;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+#menu .nav-link:hover {
+    background-color: var(--verde-ruta);
+    color: var(--crema);
+}
+
+#menu .nav-link.activo {
+    background-color: var(--azul-noche);
+    color: var(--naranja-pedal);
+    font-weight: 700;
+}
+
+#menu .nav-link.activo:hover {
+    background-color: var(--azul-noche);
+    color: var(--naranja-pedal);
+}
+
+/* =========================================================
+   ESTADOS DE FOCO DEL MENÚ
+   ========================================================= */
+
+#menu .nav-link:focus {
+    outline: 0.2rem solid var(--naranja-pedal);
+    outline-offset: 0.2rem;
+    box-shadow: none;
+}
+
+/* Foco del enlace activo */
+#menu .nav-link.activo:focus {
+    outline-color: var(--crema);
+}
+
+/* =========================================================
+   5. PORTADA
+   ========================================================= */
+
+.portada {
+    min-height: 60vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: var(--espacio-grande);
+    border-radius: var(--radio-borde);
+
+    background-color: var(--azul-noche);
+    color: var(--crema);
+}
+
+.portada h2 {
+    color: var(--crema);
+}
+
+.portada p {
+    max-width: 42rem;
+}
+
+.imagen-portada {
+    width: 100%;
+    max-height: 28rem;
+    object-fit: cover;
+}
+
+/* Carrusel de servicios y rutas (dentro de la portada) */
+.carrusel-portada {
+    overflow: hidden;
+    border-radius: var(--radio-borde);
+}
+
+.imagen-carrusel {
+    height: 24rem;
+    object-fit: cover;
+}
+
+/* Pie con degradado para que el texto se lea sobre la foto */
+.pie-carrusel {
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    padding: 3rem 4rem 2.75rem;
+
+    background: linear-gradient(to top, rgba(20, 33, 61, 0.95), rgba(20, 33, 61, 0));
+    color: var(--crema);
+    text-align: left;
+}
+
+.pie-carrusel h3 {
+    color: var(--crema);
+}
+
+.tipo-carrusel {
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    padding: 0.15rem 0.6rem;
+
+    border-radius: 999px;
+    background-color: var(--naranja-pedal);
+    color: var(--azul-noche);
+
+    font-size: var(--texto-pequeno);
+    font-weight: 600;
+}
+
+@media (max-width: 575.98px) {
+    .imagen-carrusel {
+        height: 20rem;
+    }
+
+    .pie-carrusel {
+        padding: 2.5rem 3rem 2.5rem;
+    }
+}
+
+
+/* =========================================================
+   6. BOTONES DE ACCIÓN
+   ========================================================= */
+
+.boton-accion {
+    display: inline-block;
+    max-width: 100%;
+
+    padding: 0.8rem 1rem;
+
+    border: 2px solid var(--verde-ruta);
+    border-radius: var(--radio-borde);
+
+    background-color: var(--verde-ruta);
+    color: var(--crema);
+
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+/* Estado al pasar el mouse */
+.boton-accion:hover {
+    border-color: var(--azul-noche);
+    background-color: var(--azul-noche);
+    color: var(--crema);
+    text-decoration: underline;
+}
+
+/* Estado al navegar con teclado */
+.boton-accion:focus {
+    outline: 0.2rem solid var(--naranja-pedal);
+    outline-offset: 0.2rem;
+}
+/* =========================================================
+   7. TARJETAS DE SERVICIOS, RUTAS Y BICICLETAS
+   ========================================================= */
+
+.tarjeta-servicio,
+.tarjeta-ruta,
+.tarjeta-bicicleta {
+    min-width: 0;
+
+    border: 1px solid var(--gris-asfalto);
+    border-radius: var(--radio-borde);
+
+    background-color: var(--crema);
+    color: var(--azul-noche);
+
+    overflow: hidden;
+}
+
+.imagen-tarjeta {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.card-body {
+    color: var(--azul-noche);
+}
+/* Espaciado interior de las tarjetas de servicios */
+.tarjeta-servicio .card-body {
+    padding: var(--espacio-grande);
+}
+
+.card-title,
+.card-text {
+    color: var(--azul-noche);
+}
+
+.introduccion-flota,
+.introduccion-rutas {
+    max-width: 45rem;
+}
+
+
+/* =========================================================
+   8. ETIQUETA NUEVO
+   ========================================================= */
+
+.tarjeta-servicio {
+    position: relative;
+}
+
+.etiqueta-nuevo {
+    position: absolute;
+    top: var(--espacio-mediano);
+    right: var(--espacio-mediano);
+    z-index: 2;
+
+    padding: var(--espacio-pequeno) var(--espacio-mediano);
+
+    border: 2px solid var(--azul-noche);
+    border-radius: 0.25rem;
+
+    background-color: var(--naranja-pedal);
+    color: var(--azul-noche);
+
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   9. PRECIOS Y ENLACES DE RESERVA
+   ========================================================= */
+
+.precio {
+    color: var(--verde-ruta);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.precio span {
+    color: var(--gris-asfalto);
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.enlace-reservar {
+    display: inline-block;
+    padding: 0.7rem 1.2rem;
+
+    border: 2px solid var(--verde-ruta);
+    border-radius: var(--radio-borde);
+
+    background-color: var(--verde-ruta);
+    color: var(--crema);
+
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+}
+
+.enlace-reservar:hover {
+    border-color: var(--azul-noche);
+    background-color: var(--azul-noche);
+    color: var(--crema);
+}
+
+
+/* =========================================================
+   10. BENEFICIOS
+   ========================================================= */
+
+.beneficio {
+    border: 1px solid var(--gris-asfalto);
+    background-color: var(--crema);
+    color: var(--azul-noche);
+}
+
+.numero-beneficio {
+    margin-bottom: var(--espacio-mediano);
+    color: var(--verde-ruta);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   11. LISTAS Y TABLAS
+   ========================================================= */
+
+ul,
+ol {
+    padding-left: 1.35rem;
+}
+
+li {
+    margin-bottom: var(--espacio-pequeno);
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    margin: var(--espacio-mediano) 0 var(--espacio-grande);
+    border-collapse: collapse;
+    table-layout: fixed;
+    background-color: var(--crema);
+    font-size: var(--texto-pequeno);
+}
+
+caption {
+    padding: 0.45rem;
+    color: var(--azul-noche);
+    font-weight: 600;
+    text-align: left;
+}
+
+th,
+td {
+    min-width: 0;
+    padding: var(--espacio-mediano);
+    border: 1px solid var(--gris-asfalto);
+    text-align: left;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+th {
+    background-color: var(--azul-noche);
+    color: var(--crema);
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    outline: 0.1rem solid var(--verde-ruta);
+    outline-offset: -0.1rem;
+}
+
+.tabla-contenedor {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   12. FORMULARIOS
+   Se conservan los estilos visuales propios.
+   Bootstrap controla la distribución de los campos.
+   ========================================================= */
+
+form {
+    width: 100%;
+}
+
+fieldset {
+    min-width: 0;
+    margin: 0 0 var(--espacio-grande);
+    padding: var(--espacio-mediano);
+
+    border: 1px solid var(--gris-asfalto);
+    border-radius: var(--radio-borde);
+}
+
+legend {
+    padding: 0 var(--espacio-pequeno);
+    color: var(--azul-noche);
+    font-weight: 600;
+}
+
+/* Etiquetas de campos normales. */
+form label:not(.form-check-label) {
+    color: var(--azul-noche);
+    font-weight: 600;
+}
+
+/* Campos de texto y selección. */
+form .form-control,
+form .form-select {
+    border-color: var(--gris-asfalto);
+    background-color: var(--crema);
+    color: var(--azul-noche);
+    font-family: var(--fuente-textos);
+}
+
+form .form-control:hover,
+form .form-select:hover {
+    border-color: var(--verde-ruta);
+}
+
+form .form-control:focus,
+form .form-select:focus {
+    border-color: var(--verde-ruta);
+    box-shadow: 0 0 0 0.2rem rgb(30 122 79 / 20%);
+}
+
+/* Casillas de verificación y botones de opción. */
+form .form-check-input {
+    accent-color: var(--verde-ruta);
+}
+
+form .form-check-input:checked {
+    border-color: var(--verde-ruta);
+    background-color: var(--verde-ruta);
+}
+
+form .form-check-label {
+    color: var(--azul-noche);
+    font-weight: 400;
+}
+
+/* =========================================================
+   RETO 11: ORGANIZACIÓN DEL FORMULARIO
+   ========================================================= */
+
+form label:not(.form-check-label) {
+    display: block;
+    width: 100%;
+    margin-bottom: var(--espacio-pequeno);
+}
+
+form .form-control,
+form .form-select {
+    display: block;
+    width: 100%;
+}
+
+form fieldset {
+    margin-bottom: var(--espacio-grande);
+}
+
+form button,
+form input[type="submit"] {
+    display: inline-block;
+    padding: var(--espacio-mediano) var(--espacio-grande);
+}
+
+/* =========================================================
+   ESTADOS HOVER Y FOCUS DE LOS FORMULARIOS
+   ========================================================= */
+
+/* Estado al pasar el mouse por los campos */
+form .form-control:hover,
+form .form-select:hover {
+    border-color: var(--verde-ruta);
+}
+
+/* Estado de foco para campos de texto */
+form .form-control:focus,
+form .form-select:focus {
+    border-color: var(--naranja-pedal);
+    outline: 0.15rem solid var(--naranja-pedal);
+    outline-offset: 0.1rem;
+    box-shadow: none;
+}
+
+/* Estado de foco para casillas de verificación */
+form .form-check-input:focus {
+    border-color: var(--naranja-pedal);
+    outline: 0.15rem solid var(--naranja-pedal);
+    outline-offset: 0.1rem;
+    box-shadow: none;
+}
+
+/* Estado al pasar el mouse por las casillas */
+form .form-check-input:hover {
+    border-color: var(--verde-ruta);
+}
+
+/* Botones de envío. */
+form button,
+form input[type="submit"] {
+    max-width: 100%;
+    padding: var(--espacio-mediano) var(--espacio-grande);
+
+    border: 2px solid var(--verde-ruta);
+    border-radius: var(--radio-borde);
+
+    background-color: var(--verde-ruta);
+    color: var(--crema);
+
+    font-family: var(--fuente-textos);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+    border-color: var(--azul-noche);
+    background-color: var(--azul-noche);
+    color: var(--crema);
+}
+
+form small,
+.ayuda-campo {
+    display: block;
+    margin-top: var(--espacio-pequeno);
+    color: var(--gris-asfalto);
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   13. INFORMACIÓN DE RESERVAS
+   ========================================================= */
+
+.informacion-reservas {
+    min-width: 0;
+    padding: var(--espacio-mediano);
+
+    border: 1px solid var(--gris-asfalto);
+    border-radius: var(--radio-borde);
+
+    background-color: var(--crema);
+}
+
+.informacion-reservas section {
+    margin-bottom: var(--espacio-grande);
+}
+
+.informacion-reservas h2 {
+    font-size: 1.25rem;
+}
+
+.aviso-reserva {
+    margin-bottom: 0;
+    padding-top: var(--espacio-mediano);
+
+    border-top: 1px solid var(--gris-asfalto);
+
+    color: var(--gris-asfalto);
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   14. PIE DE PÁGINA
+   ========================================================= */
+
+footer,
+.pie-sitio {
+    margin-top: auto;
+    padding: var(--espacio-grande) var(--espacio-mediano);
+
+    /* Espacio dentro del footer para que el botón de WhatsApp no tape el texto */
+    padding-bottom: calc(var(--altura-acceso-whatsapp) + var(--espacio-grande));
+
+    background-color: var(--azul-noche);
+    color: var(--crema);
+}
+
+footer h2,
+footer h3,
+footer p {
+    color: var(--crema);
+}
+
+footer p {
+    margin-bottom: var(--espacio-pequeno);
+}
+
+.pie-copyright {
+    margin: var(--espacio-grande) 0 0;
+    text-align: center;
+}
+
+
+/* =========================================================
+   15. ACCESO FIJO A WHATSAPP
+   ========================================================= */
+
+/* =========================================
+   RETO 12 - WHATSAPP FIJO
+========================================= */
+
+.whatsapp-fijo {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 1000;
+
+    display: inline-block;
+    padding: 0.85rem 1.25rem;
+
+    background-color: var(--verde-ruta);
+    color: var(--crema);
+
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.whatsapp-fijo:hover {
+    background-color: var(--azul-noche);
+    color: var(--crema);
+}
+
+.whatsapp-fijo:focus-visible {
+    outline: 3px solid var(--naranja-pedal);
+    outline-offset: 3px;
+}
+
+.whatsapp-fijo:hover {
+    border-color: var(--azul-noche);
+    background-color: var(--azul-noche);
+    color: var(--crema);
+    text-decoration: underline;
+}
+
+.whatsapp-fijo:focus-visible {
+    outline: 0.2rem solid var(--azul-noche);
+    outline-offset: 0.2rem;
+}
+
+
+/* =========================================================
+   16. AJUSTES RESPONSIVE
+   Solo se ajustan tamaños y presentación visual.
+   Bootstrap controla las columnas y distribución.
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+    header,
+    .encabezado-sitio {
+        padding: var(--espacio-grande) 4%;
+    }
+
+    .enlace-logo {
+        width: 12rem;
+    }
+
+    .texto-marca h1 {
+        font-size: 1.7rem;
+    }
+
+    .texto-marca p {
+        font-size: 1rem;
+    }
+
+    /* Mejorar lectura de tablas. */
+    table {
+        font-size: 0.85rem;
+    }
+
+    th,
+    td {
+        padding: 0.6rem;
+    }
+
+    /* Mejorar espacio interior de formularios. */
+    fieldset {
+        padding: var(--espacio-grande);
+    }
+
+    .informacion-reservas {
+        padding: var(--espacio-grande);
+    }
+}
+
+
+@media (min-width: 1200px) {
+
+    .enlace-logo {
+        width: 13rem;
+    }
+
+    table {
+        font-size: 0.95rem;
+    }
+
+    th,
+    td {
+        padding: var(--espacio-mediano);
+    }
+
+}
+/* =========================================
+   RETO 11 - MODELO DE CAJA Y ESPACIADO
+========================================= */
+
+/* Limitar y centrar el contenido principal */
+.contenido-principal {
+    width: 100%;
+    max-width: var(--ancho-contenido);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Etiquetas de formularios */
+form label:not(.form-check-label) {
+    display: block;
+    width: 100%;
+    margin-bottom: var(--espacio-pequeno);
+}
+
+/* Campos del formulario */
+form .form-control,
+form .form-select {
+    display: block;
+    width: 100%;
+}
+
+/* Separación entre grupos */
+form fieldset {
+    margin-bottom: var(--espacio-grande);
+}
+
+/* Botones del formulario */
+form button,
+form input[type="submit"] {
+    display: inline-block;
+    padding: var(--espacio-mediano) var(--espacio-grande);
+}
+
+/* Espaciado interno de las tarjetas de servicios */
+.tarjeta-servicio .card-body {
+    padding: var(--espacio-grande);
+}
+
+/* =========================================
+   RETO 12 - ETIQUETA NUEVO
+========================================= */
+
+.tarjeta-servicio {
+    position: relative;
+}
+
+.etiqueta-nuevo {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 10;
+
+    display: inline-block;
+    padding: 0.4rem 0.85rem;
+
+    background-color: var(--naranja-pedal);
+    color: var(--azul-noche);
+
+    border-radius: 0.5rem;
+
+    font-family: var(--fuente-titulos);
+    font-size: var(--texto-pequeno);
+    font-weight: 700;
+}

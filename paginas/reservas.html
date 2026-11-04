@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solicita una reserva de bicicleta con Rueda Libre en Medellín.">
+
+    <title>Reservas | Rueda Libre</title>
+
+    <!-- Fuentes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS personalizado de Rueda Libre -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+
+<body>
+
+    <!-- ==================================================
+         ENCABEZADO Y NAVEGACIÓN
+
+         CORRECCIÓN: el menú aparecía debajo de la marca y no
+         a la derecha. Causa: el header usaba las clases
+         "contenedor-encabezado" y "encabezado-marca", que no
+         existen en styles.css, así que no hacían nada. Además,
+         los enlaces no tenían la clase "nav-link".
+         Solución: usar la misma grilla de Bootstrap que index.html
+         (row + col-md-7 para la marca y col-md-5 para el menú,
+         con justify-content-md-end en el <ul>).
+         ================================================== -->
+    <header class="encabezado-sitio">
+        <div class="container">
+            <div class="row align-items-center justify-content-between g-3">
+
+                <!-- Marca -->
+                <div class="col-12 col-md-7">
+                    <div class="d-flex flex-column flex-sm-row align-items-center text-center text-sm-start gap-3">
+
+                        <a href="../index.html" class="enlace-logo" aria-label="Rueda Libre - Inicio">
+                            <img src="../img/logo.jpg" class="logo-sitio" alt="Logotipo de Rueda Libre">
+                        </a>
+
+                        <div class="texto-marca">
+                            <h1>Rueda Libre</h1>
+                            <p class="mb-0">Rueda Libre Medellín: Tu pasaporte para descubrir cada rincón a tu propio ritmo. Vive la ciudad desde una perspectiva única y activa.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Menú -->
+                <div class="col-12 col-md-5">
+                    <nav aria-label="Navegación principal">
+                        <ul id="menu" class="nav justify-content-center justify-content-md-end gap-2">
+
+                            <li class="nav-item">
+                                <a href="../index.html" class="nav-link">
+                                    Inicio
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="tarifas.html" class="nav-link">
+                                    Tarifas y rutas
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="reservas.html" class="nav-link activo" aria-current="page">
+                                    Reservas
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="container contenido-principal py-4">
+
+        <!-- Distribución principal con Bootstrap -->
+        <div class="row g-4">
+
+            <!-- Formulario: 8 columnas desde md -->
+            <section id="formulario-reserva" class="col-12 col-md-8">
+
+                <h2>Formulario de reserva</h2>
+                <p>Los campos marcados como obligatorios deben completarse.</p>
+
+                <form action="#" method="post">
+
+                    <fieldset>
+                        <legend>Tus datos</legend>
+
+                        <div class="row g-3">
+
+                            <div class="col-12 col-md-6">
+                                <label for="nombre" class="form-label">Nombre completo *</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="nombre"
+                                    name="nombre"
+                                    autocomplete="name"
+                                    minlength="3"
+                                    required
+                                >
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="documento" class="form-label">Número de documento *</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="documento"
+                                    name="documento"
+                                    inputmode="numeric"
+                                    minlength="6"
+                                    maxlength="10"
+                                    pattern="[0-9]{6,10}"
+                                    title="Ingresa entre 6 y 10 dígitos numéricos."
+                                    aria-describedby="ayuda-documento"
+                                    required
+                                >
+                                <small id="ayuda-documento" class="form-text">
+                                    Entre 6 y 10 dígitos, sin puntos ni espacios.
+                                </small>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="correo" class="form-label">Correo electrónico *</label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="correo"
+                                    name="correo"
+                                    autocomplete="email"
+                                    required
+                                >
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="telefono" class="form-label">Celular *</label>
+                                <input
+                                    type="tel"
+                                    class="form-control"
+                                    id="telefono"
+                                    name="telefono"
+                                    autocomplete="tel"
+                                    inputmode="numeric"
+                                    minlength="10"
+                                    maxlength="10"
+                                    pattern="3[0-9]{9}"
+                                    title="Ingresa un celular colombiano de 10 dígitos que comience por 3."
+                                    aria-describedby="ayuda-telefono"
+                                    required
+                                >
+                                <small id="ayuda-telefono" class="form-text">
+                                    Ingresa 10 dígitos y comienza por 3.
+                                </small>
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Tu alquiler</legend>
+
+                        <div class="row g-3">
+
+                            <div class="col-12 col-md-6">
+                                <label for="fecha" class="form-label">Fecha deseada *</label>
+                                <input
+                                    type="date"
+                                    class="form-control"
+                                    id="fecha"
+                                    name="fecha"
+                                    min="2026-11-01"
+                                    max="2026-12-31"
+                                    required
+                                >
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="tipo_bicicleta" class="form-label">Modelo de bicicleta *</label>
+                                <select
+                                    class="form-select"
+                                    id="tipo_bicicleta"
+                                    name="tipo_bicicleta"
+                                    required
+                                >
+                                    <option value="">Selecciona un modelo</option>
+                                    <option value="urbana_clasica">Urbana Clásica — $10.000 COP / hora</option>
+                                    <option value="urbana_plegable">Urbana Plegable — $12.000 COP / hora</option>
+                                    <option value="montana_trail">Montaña Trail — $15.000 COP / hora</option>
+                                    <option value="gravel_aventura">Gravel Aventura — $18.000 COP / hora</option>
+                                    <option value="electrica_urbana">Eléctrica Urbana — $25.000 COP / hora</option>
+                                    <option value="infantil">Infantil — $8.000 COP / hora</option>
+                                    <option value="tandem">Tándem — $20.000 COP / hora</option>
+                                </select>
+
+                                <small class="form-text">
+                                    Los precios indicados corresponden a una hora de alquiler. Consulta las condiciones de otros planes antes de reservar.
+                                </small>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="duracion" class="form-label">Duración del alquiler *</label>
+                                <select
+                                    class="form-select"
+                                    id="duracion"
+                                    name="duracion"
+                                    required
+                                >
+                                    <option value="">Selecciona una duración</option>
+                                    <option value="1_hora">1 hora</option>
+                                    <option value="medio_dia">Medio día (4 horas)</option>
+                                    <option value="dia_completo">Día completo</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="cantidad" class="form-label">Cantidad de bicicletas *</label>
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="cantidad"
+                                    name="cantidad"
+                                    min="1"
+                                    max="6"
+                                    step="1"
+                                    value="1"
+                                    required
+                                >
+                            </div>
+
+                            <div class="col-12">
+                                <label for="recorrido" class="form-label">
+                                    ¿Quieres un recorrido guiado? *
+                                </label>
+                                <select
+                                    class="form-select"
+                                    id="recorrido"
+                                    name="recorrido"
+                                    required
+                                >
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="ninguno">No, solo quiero alquilar</option>
+                                    <option value="rio_parques">Río y Parques</option>
+                                    <option value="sabores_barrio">Sabores de Barrio</option>
+                                    <option value="reto_palmas">Reto Las Palmas</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="comentarios" class="form-label">
+                                    Comentarios adicionales
+                                </label>
+                                <textarea
+                                    class="form-control"
+                                    id="comentarios"
+                                    name="comentarios"
+                                    rows="4"
+                                    maxlength="300"
+                                    placeholder="Escribe aquí alguna necesidad o pregunta (opcional)."
+                                ></textarea>
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Confirmación</legend>
+
+                        <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="aceptar"
+                                name="aceptar"
+                                value="si"
+                                required
+                            >
+                            <label class="form-check-label" for="aceptar">
+                                Confirmo que los datos ingresados son correctos y acepto
+                                que se contacten conmigo para gestionar la solicitud.
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="boton-accion">
+                        Enviar solicitud de reserva
+                    </button>
+
+                </form>
+            </section>
+
+            <!-- Información: 4 columnas desde md -->
+            <aside class="informacion-reservas col-12 col-md-4">
+
+                <section id="horarios">
+                    <h2>Horarios de atención</h2>
+                    <p>Lunes a viernes: 7:00 a. m. a 7:00 p. m.</p>
+                    <p>Fines de semana y festivos: 6:00 a. m. a 2:00 p. m.</p>
+                </section>
+
+                <section id="contacto">
+                    <h2>¿Necesitas ayuda?</h2>
+                    <p>
+                        Escríbenos a
+                        <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>
+                        para consultar tus dudas.
+                    </p>
+                    <p>
+                        <a href="tarifas.html">Consultar tarifas y recorridos</a>
+                    </p>
+                </section>
+
+                <p class="aviso-reserva">
+                    Enviar este formulario constituye una solicitud; no garantiza
+                    una reserva confirmada.
+                </p>
+
+            </aside>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="pie-contenido">
+
+            <section class="pie-marca" aria-label="Información de Rueda Libre">
+                <h2>Rueda Libre</h2>
+                <p>Muévete, descubre y disfruta Medellín.</p>
+            </section>
+
+            <section class="pie-contacto" aria-label="Contacto">
+                <h2>Contacto</h2>
+                <p>
+                    <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>
+                </p>
+            </section>
+
+            <section class="pie-horarios" aria-label="Horarios de atención">
+                <h2>Horarios</h2>
+                <p>Lunes a viernes: 7:00 a. m. a 7:00 p. m.</p>
+                <p>Fines de semana y festivos: 6:00 a. m. a 2:00 p. m.</p>
+            </section>
+
+        </div>
+
+        <p class="pie-copyright">
+            &copy; 2026 Rueda Libre. Todos los derechos reservados.
+        </p>
+    </footer>
+
+    <a
+    class="whatsapp-fijo"
+    href="https://wa.me/573000000000"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar a Rueda Libre por WhatsApp"
+>
+    WhatsApp
+</a>
+
+</body>
+</html>
