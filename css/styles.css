@@ -183,14 +183,13 @@ header h1 {
     align-items: center;
     justify-content: center;
 
-    width: 11rem;
+    width: 9rem;
     max-width: 100%;
 
-    padding: 0.15rem;
-    border: 2px solid var(--verde-ruta);
-    border-radius: var(--radio-borde);
-
-    background-color: var(--crema);
+    /* Sin caja ni fondo: el logo PNG transparente se integra al header */
+    padding: 0;
+    border: 0;
+    background: transparent;
     text-decoration: none;
 }
 
