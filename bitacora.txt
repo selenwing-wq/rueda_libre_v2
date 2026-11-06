@@ -2761,3 +2761,29 @@ Durante los doce MiniRetos se desarrolló progresivamente un sitio web informati
 - Creación del repositorio y estructura de carpetas.
 - Construcción de la página de inicio.
 - Incorporación de imágenes, listas
+
+
+============================================================
+### Semana 3 – Día 1 – Reto 1: Prototipo Rueda Nocturna
+============================================================
+
+**Objetivo:** Crear un prototipo de la sección principal de una campaña utilizando Tailwind CSS mediante Play CDN.
+
+**Desarrollo:**
+
+1. Creé la carpeta `nocturna/` y el archivo `prototipo.html`.
+2. Construí la estructura básica del documento HTML5.
+3. Incorporé el Play CDN de Tailwind CSS en el encabezado del documento.
+4. Construí la sección principal con la etiqueta de campaña, el título Rueda Nocturna, el subtítulo, los dos datos destacados y el enlace Inscríbete.
+5. Utilicé clases de utilidad de Tailwind para controlar espaciados, tamaños, colores y tipografía.
+6. Construí el enlace Inscríbete con apariencia de botón mediante clases como `bg-orange-500`, `px-8`, `py-4`, `rounded-lg` y `font-bold`.
+
+**Comparación entre Bootstrap y Tailwind:**
+
+En la semana 2 trabajé con Bootstrap para organizar los componentes y utilicé estilos propios para las llamadas a la acción, como la clase `.boton-accion`. Bootstrap también permite crear botones mediante clases predefinidas como `btn` y `btn-primary`.
+
+En este reto utilicé Tailwind para construir el botón directamente en el HTML, combinando clases de utilidad que definen su fondo, color del texto, tamaño, espaciado y bordes.
+
+**Diferencia clave:** Bootstrap es un framework basado en componentes y estilos predefinidos, mientras que Tailwind es un framework utility-first que permite construir diseños combinando clases pequeñas y específicas.
+
+**Resultado:** Se creó el prototipo independiente de Rueda Nocturna utilizando Tailwind CSS Play CDN, sin utilizar hojas de estilo propias ni clases de Bootstrap.

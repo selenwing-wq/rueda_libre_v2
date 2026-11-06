@@ -211,13 +211,13 @@ header h1 {
    4. MENÚ DE NAVEGACIÓN
    ========================================================= */
 
+
 #menu {
-    display: flex;
-    flex-wrap: nowrap;
     margin: 0;
     padding: 0;
     list-style: none;
 }
+
 
 #menu .nav-link {
     display: inline-block;
@@ -248,6 +248,39 @@ header h1 {
     background-color: var(--azul-noche);
     color: var(--naranja-pedal);
 }
+
+
+/* =========================================================
+   BOTÓN DEL MENÚ HAMBURGUESA
+   ========================================================= */
+
+.navbar-toggler {
+    border: 2px solid var(--naranja-pedal);
+    padding: 0.4rem 0.65rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem var(--naranja-pedal);
+}
+
+/* =========================================================
+   MENÚ EN DISPOSITIVOS MÓVILES
+   ========================================================= */
+
+@media (max-width: 767.98px) {
+
+    #menu {
+        width: 100%;
+        padding-top: 0.75rem;
+    }
+
+    #menu .nav-link {
+        display: block;
+        text-align: center;
+    }
+
+}
+
 
 /* =========================================================
    ESTADOS DE FOCO DEL MENÚ

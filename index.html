@@ -51,36 +51,63 @@
                     </div>
                 </div>
 
-                <!-- Menú -->
-                <div class="col-12 col-md-5">
-                    <nav aria-label="Navegación principal">
-                        <ul id="menu" class="nav justify-content-center justify-content-md-end gap-2">
+  
+<!-- Menú de navegación -->
+<div class="col-12 col-md-5">
 
-                            <li class="nav-item">
-                                <a
-                                    href="index.html"
-                                    class="nav-link activo"
-                                    aria-current="page"
-                                >
-                                    Inicio
-                                </a>
-                            </li>
+    <nav class="navbar navbar-expand-md navbar-dark p-0"
+         aria-label="Navegación principal">
 
-                            <li class="nav-item">
-                                <a href="paginas/tarifas.html" class="nav-link">
-                                    Tarifas y rutas
-                                </a>
-                            </li>
+        <!-- Botón del menú hamburguesa -->
+        <button
+            class="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal"
+            aria-expanded="false"
+            aria-label="Abrir o cerrar el menú de navegación">
 
-                            <li class="nav-item">
-                                <a href="paginas/reservas.html" class="nav-link">
-                                    Reservas
-                                </a>
-                            </li>
+            <span class="navbar-toggler-icon"></span>
 
-                        </ul>
-                    </nav>
-                </div>
+        </button>
+
+        <!-- Contenedor de los enlaces -->
+        <div class="collapse navbar-collapse justify-content-md-end"
+             id="menuPrincipal">
+
+            <ul id="menu" class="navbar-nav gap-2">
+
+                <li class="nav-item">
+                    <a href="index.html"
+                       class="nav-link activo"
+                       aria-current="page">
+                        Inicio
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="paginas/tarifas.html"
+                       class="nav-link">
+                        Tarifas y rutas
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="paginas/reservas.html"
+                       class="nav-link">
+                        Reservas
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+</div>
+
 
             </div>
         </div>
