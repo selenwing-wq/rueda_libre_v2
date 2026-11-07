@@ -2815,3 +2815,37 @@ También busqué la clase `bg-pink-500` y comprobé que no aparece en el archivo
 **Aprendizaje:** Tailwind analiza los archivos del proyecto y genera las clases de utilidad que detecta que estamos utilizando. Esto permite generar una hoja CSS con los estilos necesarios, evitando incluir reglas de utilidad que no se utilizan.
 
 **Resultado:** Se configuró Tailwind CSS mediante CLI, se generó `output.css` y se construyeron tres variantes de botones con estados interactivos y navegación mediante teclado.
+
+============================================================
+### Semana 3 – Día 1 – Reto 3: Construcción de cards para rutas nocturnas con Tailwind CSS
+============================================================
+
+**Objetivo:** Construir una sección de rutas con tres tarjetas informativas utilizando exclusivamente clases de utilidad de Tailwind CSS, reutilizando los botones del MiniReto 2.
+
+**Desarrollo:**
+
+1. Creé la sección `Rutas` dentro de `nocturna/index.html`, con el título «Nuestras rutas» y una descripción de la campaña nocturna.
+2. Construí tres tarjetas para las rutas Luces del Centro, Miradores de la Ciudad y Luna en Las Palmas.
+3. Incorporé imágenes nocturnas propias para cada ruta:
+   - `../img/centro.jpg`
+   - `../img/miradores.jpg`
+   - `../img/luna.jpg`
+4. Utilicé `h-56`, `w-full` y `object-cover` para mantener las imágenes con una altura uniforme y ocupar todo el ancho de las tarjetas.
+5. Incorporé etiquetas de dificultad con colores y textos diferentes: Fácil (verde), Medio (amarillo) y Difícil (rojo).
+6. Organicé la información de distancia, duración y punto de encuentro utilizando las etiquetas HTML `dl`, `dt` y `dd`.
+7. Destaqué los precios con tipografía de mayor tamaño y color naranja.
+8. Reutilicé los botones del MiniReto 2, conservando sus estados `hover:` y `focus-visible:`.
+9. Apliqué bordes, esquinas redondeadas, sombras, espaciado y colores mediante utilidades de Tailwind CSS, sin crear CSS propio.
+10. Incorporé los efectos `hover:border-orange-400` y `hover:shadow-xl` para mejorar la interacción visual sin desplazar el contenido.
+
+**Información de las rutas:**
+
+| Ruta | Distancia | Duración | Nivel | Precio |
+|---|---:|---:|---|---:|
+| Luces del Centro | 10 km | 2 horas | Fácil | $55.000 |
+| Miradores de la Ciudad | 16 km | 3 horas | Medio | $75.000 |
+| Luna en Las Palmas | 22 km | 3,5 horas | Difícil | $95.000 |
+
+**Aprendizaje:** Aprendí a construir componentes visuales reutilizando clases de Tailwind CSS, a organizar información con etiquetas semánticas y a crear efectos de interacción mediante la variante `hover:`. También comprendí la importancia de mantener una estructura consistente entre tarjetas para facilitar su mantenimiento y reutilización.
+
+**Resultado:** Se construyó y verificó visualmente la sección de rutas nocturnas con sus tres tarjetas, imágenes, niveles de dificultad, información, precios y botones de inscripción.
