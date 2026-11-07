@@ -2787,3 +2787,31 @@ En este reto utilicé Tailwind para construir el botón directamente en el HTML,
 **Diferencia clave:** Bootstrap es un framework basado en componentes y estilos predefinidos, mientras que Tailwind es un framework utility-first que permite construir diseños combinando clases pequeñas y específicas.
 
 **Resultado:** Se creó el prototipo independiente de Rueda Nocturna utilizando Tailwind CSS Play CDN, sin utilizar hojas de estilo propias ni clases de Bootstrap.
+
+============================================================
+### Semana 3 – Día 1 – Reto 2: Configuración de Tailwind CSS mediante CLI
+============================================================
+
+**Objetivo:** Configurar Tailwind CSS mediante npm y su CLI, generar el archivo CSS de salida y construir tres variantes de botones con estados de interacción.
+
+**Desarrollo:**
+
+1. Verifiqué la instalación de Node.js y npm. Utilicé `npm.cmd` para ejecutar npm desde PowerShell debido a las restricciones de ejecución de scripts de Windows.
+2. Instalé las dependencias de desarrollo `tailwindcss` y `@tailwindcss/cli`.
+3. Creé la carpeta `src/` y el archivo `input.css` con la instrucción `@import "tailwindcss";`.
+4. Creé el archivo `.gitignore` con la regla `node_modules/` para evitar subir las dependencias a GitHub.
+5. Construí `nocturna/index.html` utilizando el CSS generado localmente, sin utilizar Play CDN.
+6. Ejecuté Tailwind CLI en modo observación mediante `--watch`, generando `src/output.css`.
+7. Construí tres variantes de botones: principal, secundario y de contorno.
+8. Incorporé estados `hover` y `focus-visible`, utilizando anillos (`ring`) para proporcionar indicadores visuales de foco al navegar con el teclado.
+9. Probé los botones mediante el mouse y la tecla `Tab`.
+
+**Análisis de generación de clases:**
+
+Al revisar `output.css`, encontré clases utilizadas en el HTML, como `bg-orange-500`, `rounded-lg` y `shadow-lg`, junto con las variantes de interacción `hover:` y `focus-visible:`.
+
+También busqué la clase `bg-pink-500` y comprobé que no aparece en el archivo generado, porque no está siendo utilizada en nuestro HTML.
+
+**Aprendizaje:** Tailwind analiza los archivos del proyecto y genera las clases de utilidad que detecta que estamos utilizando. Esto permite generar una hoja CSS con los estilos necesarios, evitando incluir reglas de utilidad que no se utilizan.
+
+**Resultado:** Se configuró Tailwind CSS mediante CLI, se generó `output.css` y se construyeron tres variantes de botones con estados interactivos y navegación mediante teclado.
