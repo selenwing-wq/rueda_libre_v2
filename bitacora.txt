@@ -2849,3 +2849,58 @@ También busqué la clase `bg-pink-500` y comprobé que no aparece en el archivo
 **Aprendizaje:** Aprendí a construir componentes visuales reutilizando clases de Tailwind CSS, a organizar información con etiquetas semánticas y a crear efectos de interacción mediante la variante `hover:`. También comprendí la importancia de mantener una estructura consistente entre tarjetas para facilitar su mantenimiento y reutilización.
 
 **Resultado:** Se construyó y verificó visualmente la sección de rutas nocturnas con sus tres tarjetas, imágenes, niveles de dificultad, información, precios y botones de inscripción.
+
+============================================================
+### Semana 3 – Día 1 – Reto 4: Kit de componentes con Tailwind CSS
+============================================================
+
+**Objetivo:** Completar un kit de componentes reutilizables y reunirlos en una página independiente para comprobar la consistencia visual y funcional antes de construir la landing page.
+
+**Desarrollo:**
+
+1. Creé el archivo `nocturna/componentes.html` y vinculé la hoja de estilos local `./src/output.css`.
+2. Reuní las tres variantes de botones desarrolladas en el MiniReto 2: principal, secundario y contorno.
+3. Reutilicé la tarjeta de la ruta «Luces del Centro», desarrollada en el Reto 3.
+4. Construí tres alertas:
+   - Información: fondo azul suave y borde lateral azul.
+   - Éxito: fondo verde suave y borde lateral verde, utilizando `role="status"` para comunicar el mensaje a los lectores de pantalla.
+   - Advertencia: fondo amarillo suave y borde lateral amarillo, utilizando `role="alert"`.
+5. Construí dos campos de formulario: correo electrónico y número de celular.
+6. Asocié cada campo con su etiqueta mediante los atributos `for` e `id`.
+7. Incorporé ejemplos, textos de ayuda y estados de foco mediante la variante `focus:`.
+8. Apliqué utilidades de Tailwind CSS para mantener los bordes, sombras, colores, tamaños, tipografía y espaciados consistentes.
+
+**Comparación de enfoques: Play CDN y Tailwind CLI**
+
+- **Play CDN:** permite probar Tailwind directamente desde el navegador sin configurar una instalación local. Es práctico para prototipos y ejercicios iniciales, pero depende de cargar Tailwind desde un servicio externo.
+- **Tailwind CLI:** permite instalar Tailwind como dependencia del proyecto, analizar los archivos HTML y generar una hoja CSS local. Facilita controlar el proceso de compilación y publicar el CSS generado junto con el sitio.
+
+En este proyecto se utiliza Tailwind CLI y el archivo generado `src/output.css`, vinculado desde las páginas HTML.
+
+**Reglas del kit de componentes**
+
+| Elemento | Regla aplicada |
+|---|---|
+| Tarjetas y contenedores | `rounded-2xl` |
+| Botones y campos | `rounded-lg` |
+| Etiquetas | `rounded-full` |
+| Espaciado interno | `p-4` y `p-6` |
+| Separación entre elementos | `gap-4` y `space-y-6` |
+| Fondo principal | `bg-slate-950` |
+| Fondo de componentes | `bg-slate-900` |
+| Texto principal | `text-white` |
+| Texto secundario | `text-slate-300` y `text-slate-400` |
+| Color de marca | `orange-500` y `orange-400` |
+| Estados semánticos | Azul para información, verde para éxito y amarillo para advertencia |
+
+**Verificación de generación de clases:**
+
+Se utilizó Tailwind CLI en modo observación (`--watch`) para analizar `componentes.html` y actualizar `src/output.css`.
+
+Se verificaron las clases correspondientes a los botones, las alertas y los campos de formulario. También se comprobó que las utilidades no utilizadas no se incluyan en el CSS generado.
+
+**Aprendizaje:**
+
+Comprendí la importancia de crear componentes reutilizables y mantener reglas visuales compartidas. También aprendí a utilizar atributos semánticos y de accesibilidad como `label`, `for`, `id`, `aria-describedby` y `role`, además de aplicar estados de interacción mediante `hover:` y `focus:`.
+
+**Resultado:** Se construyó la página `nocturna/componentes.html` con los cuatro tipos de componentes del kit: botones, card, alertas y campos de formulario, utilizando Tailwind CSS y manteniendo una identidad visual consistente.
