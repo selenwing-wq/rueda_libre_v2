@@ -3013,3 +3013,34 @@ Se realizó la inspección de la landing page mediante DevTools en modo disposit
 Se verificó que a 360 px no exista scroll horizontal, que el botón de inscripción permanezca visible y que las secciones se adapten correctamente a los diferentes tamaños de pantalla.
 
 **Resultado:** Landing page Rueda Nocturna adaptada a dispositivos móviles, tablets y escritorio mediante Tailwind CSS.
+
+============================================================
+## Semana 3 – Día 2 – Reto 7: Marca nocturna, tema personalizado y modo oscuro
+============================================================
+
+**Objetivo:** Personalizar la identidad visual de Rueda Libre mediante un tema propio de Tailwind CSS y adaptar la landing page y el kit de componentes para funcionar en modo claro y oscuro.
+
+**Actividades realizadas:**
+
+1. Se configuró el tema personalizado en `nocturna/src/input.css` mediante la directiva `@theme`.
+2. Se definieron los seis colores de marca:
+   - Verde Ruta: `#1E7A4F`.
+   - Naranja Pedal: `#F39A2B`.
+   - Azul Noche: `#14213D`.
+   - Crema: `#FAF6EF`.
+   - Gris Asfalto: `#5B6470`.
+   - Amarillo Farol: `#FFD166`.
+3. Se incorporaron las tipografías Montserrat y Open Sans.
+4. Se actualizaron las clases de Tailwind en `nocturna/index.html` y `nocturna/componentes.html` para utilizar los colores y fuentes personalizados.
+5. Se implementaron variantes `dark:` para adaptar fondos, textos, tarjetas, bordes, botones y campos de formulario al modo oscuro.
+6. Se regeneró el archivo `nocturna/src/output.css` utilizando Tailwind CLI.
+7. Se comprobó visualmente el funcionamiento de los modos claro y oscuro en la landing page y en el kit de componentes.
+
+**Aprendizajes:**
+
+- Comprendí cómo personalizar los colores y las tipografías de Tailwind CSS mediante `@theme`.
+- Aprendí a utilizar las variantes `dark:` para adaptar una interfaz a diferentes preferencias de visualización.
+- Comprendí la importancia de regenerar el CSS cuando se incorporan nuevas clases.
+- Verifiqué cómo Tailwind CLI genera las clases utilizadas en los archivos HTML.
+
+**Resultado:** Reto 7 completado. La landing page y el kit de componentes conservan la identidad visual de Rueda Libre y funcionan correctamente en modo claro y oscuro.
