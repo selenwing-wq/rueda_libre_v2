@@ -2940,3 +2940,76 @@ Comprendí la importancia de crear componentes reutilizables y mantener reglas v
 - Se revisó la presentación general y la distribución de los elementos.
 
 **Resultado:** Landing page Rueda Nocturna construida y validada visual y funcionalmente. Se reutilizaron los componentes anteriores y se aplicaron Flexbox y Grid para organizar el contenido.
+
+============================================================
+### Semana 3 – Día 2 – Reto 6: Adaptación responsive de Rueda Nocturna
+============================================================
+
+**Objetivo:** Adaptar la landing page a dispositivos móviles, tablets y computadores utilizando el enfoque mobile-first de Tailwind CSS.
+
+**Diagnóstico inicial a 360 px:**
+
+Se realizó una inspección de la landing page mediante las herramientas DevTools de Chrome, utilizando el modo dispositivo con un ancho de 360 píxeles.
+
+**Problemas identificados:**
+
+- [Registrar los problemas encontrados en el encabezado].
+- [Registrar los problemas encontrados en el Hero].
+- [Registrar los problemas encontrados en las tarjetas].
+- [Registrar los problemas encontrados en la sección de pasos].
+- [Registrar los problemas encontrados en el footer].
+- [Indicar si se presentó scroll horizontal].
+
+**Correcciones pendientes:**
+
+- Adaptar las distribuciones mediante clases mobile-first.
+- Implementar breakpoints `sm:`, `md:` y `lg:`.
+- Ajustar tamaños de texto, márgenes y rellenos.
+- Ocultar los enlaces de navegación en celular y mantener visible el botón de inscripción.
+- Validar el diseño en cuatro resoluciones.
+
+**Diagnóstico inicial a 360 px:**
+
+Se realizó la inspección de la landing page mediante DevTools en modo dispositivo.
+
+**Hallazgo:**
+- El logo del footer no cargaba correctamente debido a una ruta o referencia incorrecta del archivo de imagen.
+- Se identificó que debía utilizarse la misma ruta del logo del encabezado: `../img/logo.png`.
+
+**Observación:** La distribución del contenido del footer y sus bloques se visualizó correctamente en la captura.
+
+**Objetivo:** Adaptar la landing page a dispositivos móviles, tablets y computadores mediante el enfoque mobile-first de Tailwind CSS.
+
+**Cambios realizados:**
+
+- Se reorganizó el encabezado utilizando Flexbox, con distribución vertical en móviles y horizontal desde `md`.
+- Se ocultaron los enlaces de navegación en dispositivos móviles utilizando `hidden` y se hicieron visibles desde `md:flex`.
+- Se mantuvo visible el botón «Inscríbete» en todas las resoluciones.
+- Se adaptaron las tres tarjetas de rutas utilizando CSS Grid: una columna en móvil, dos desde `sm` y tres desde `lg`.
+- Se adaptaron los cuatro pasos de funcionamiento: una columna en móvil, dos desde `sm` y cuatro desde `lg`.
+- Se ajustaron tamaños de tipografía, rellenos, espacios y botones según los puntos de ruptura.
+- Se revisaron las imágenes y se corrigió la ruta del logo del footer.
+
+**Conceptos aplicados:**
+
+- Enfoque mobile-first.
+- Breakpoints `sm:`, `md:` y `lg:`.
+- Flexbox: `flex-col` y `md:flex-row`.
+- CSS Grid: `grid-cols-1`, `sm:grid-cols-2`, `lg:grid-cols-3` y `lg:grid-cols-4`.
+- Visibilidad responsive: `hidden` y `md:flex`.
+- Espaciado y tipografía responsive.
+
+**Resultados de las pruebas:**
+
+| Resolución | Distribución de rutas | Distribución de pasos | Encabezado | Resultado |
+|---|---|---|---|---|
+| 360 px | 1 columna | 1 columna | Apilado, menú oculto | Correcto |
+| 768 px | 2 columnas | 2 columnas | Horizontal | Correcto |
+| 1024 px | 3 columnas | 4 columnas | Horizontal | Correcto |
+| 1280 px | 3 columnas | 4 columnas | Horizontal | Correcto |
+
+**Validación final:**
+
+Se verificó que a 360 px no exista scroll horizontal, que el botón de inscripción permanezca visible y que las secciones se adapten correctamente a los diferentes tamaños de pantalla.
+
+**Resultado:** Landing page Rueda Nocturna adaptada a dispositivos móviles, tablets y escritorio mediante Tailwind CSS.

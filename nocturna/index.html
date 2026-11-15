@@ -19,19 +19,22 @@
 
     <header class="border-b border-slate-800 bg-slate-950">
 
-        <div class="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-6 px-6 py-5">
+        <div class="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-5 px-4 py-5 sm:px-6 md:flex-row lg:px-8">
 
             <!-- LOGO -->
             <a href="#inicio" class="shrink-0">
                 <img
-                src="../img/logo.png"
-                 alt="Rueda Libre"
-                 class="..."
-                />
+                    src="../img/logo.png"
+                    alt="Rueda Libre"
+                    class="h-auto w-36 md:w-40"
+                >
             </a>
 
             <!-- NAVEGACIÓN -->
-            <nav aria-label="Navegación principal" class="flex flex-wrap items-center gap-6">
+            <nav
+                aria-label="Navegación principal"
+                class="hidden items-center gap-6 md:flex"
+            >
 
                 <a
                     href="#inicio"
@@ -59,7 +62,7 @@
             <!-- BOTÓN PRINCIPAL -->
             <a
                 href="#inscripcion"
-                class="inline-block rounded-lg bg-orange-500 px-8 py-4 text-lg font-bold text-slate-950 shadow-lg transition-colors hover:bg-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+                class="inline-block rounded-lg bg-orange-500 px-6 py-3 text-base font-bold text-slate-950 shadow-lg transition-colors hover:bg-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-slate-950 sm:px-8 sm:py-4 sm:text-lg"
             >
                 Inscríbete
             </a>
@@ -75,57 +78,57 @@
         <!-- 2. SECCIÓN PRINCIPAL / HERO            -->
         <!-- ====================================== -->
 
-        <section id="inicio" class="py-20">
+        <section id="inicio" class="py-12 sm:py-16 lg:py-20">
 
-            <div class="mx-auto w-full max-w-6xl space-y-10 px-6">
+            <div class="mx-auto w-full max-w-6xl space-y-8 px-4 sm:space-y-10 sm:px-6 lg:px-8">
 
-                <div class="max-w-4xl space-y-6">
+                <div class="max-w-4xl space-y-5 sm:space-y-6">
 
-                    <p class="text-sm font-bold uppercase tracking-widest text-orange-400">
+                    <p class="text-xs font-bold uppercase tracking-widest text-orange-400 sm:text-sm">
                         Nuevo · Jueves a sábado
                     </p>
 
-                    <h1 class="text-5xl font-extrabold leading-tight tracking-tight text-white">
+                    <h1 class="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
                         Rueda Nocturna
                     </h1>
 
-                    <p class="max-w-2xl text-xl leading-relaxed text-slate-300">
+                    <p class="max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg lg:text-xl">
                         Descubre Medellín en bici cuando se encienden las luces.
                         Vive una experiencia diferente recorriendo la ciudad
                         bajo las estrellas.
                     </p>
 
-                    <div class="flex flex-wrap gap-4">
+                    <div class="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
 
-                        <p class="w-full max-w-xs rounded-lg bg-slate-800 p-5 text-lg font-semibold text-white shadow-lg">
+                        <p class="w-full max-w-xs rounded-lg bg-slate-800 p-4 text-base font-semibold text-white shadow-lg sm:p-5 sm:text-lg">
                             3 rutas
                         </p>
 
-                        <p class="w-full max-w-xs rounded-lg bg-slate-800 p-5 text-lg font-semibold text-white shadow-lg">
+                        <p class="w-full max-w-xs rounded-lg bg-slate-800 p-4 text-base font-semibold text-white shadow-lg sm:p-5 sm:text-lg">
                             Desde $55.000
                         </p>
 
                     </div>
 
-                    <div class="flex flex-wrap items-center gap-4 pt-4">
+                    <div class="flex flex-col items-stretch gap-4 pt-2 sm:flex-row sm:flex-wrap sm:items-center sm:pt-4">
 
                         <a
                             href="#inscripcion"
-                            class="inline-block rounded-lg bg-orange-500 px-8 py-4 text-lg font-bold text-slate-950 shadow-lg transition-colors hover:bg-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+                            class="inline-block rounded-lg bg-orange-500 px-6 py-3 text-center text-base font-bold text-slate-950 shadow-lg transition-colors hover:bg-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-slate-950 sm:px-8 sm:py-4 sm:text-lg"
                         >
                             Inscríbete
                         </a>
 
                         <a
                             href="#rutas"
-                            class="inline-block rounded-lg bg-slate-700 px-8 py-4 text-lg font-bold text-white shadow-lg transition-colors hover:bg-slate-600 focus:outline-none focus:ring-4 focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+                            class="inline-block rounded-lg bg-slate-700 px-6 py-3 text-center text-base font-bold text-white shadow-lg transition-colors hover:bg-slate-600 focus:outline-none focus:ring-4 focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-950 sm:px-8 sm:py-4 sm:text-lg"
                         >
                             Ver las rutas
                         </a>
 
                         <a
                             href="../paginas/tarifas.html"
-                            class="inline-block rounded-lg border-2 border-orange-400 px-8 py-4 text-lg font-bold text-orange-400 transition-colors hover:bg-orange-400 hover:text-slate-950 focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+                            class="inline-block rounded-lg border-2 border-orange-400 px-6 py-3 text-center text-base font-bold text-orange-400 transition-colors hover:bg-orange-400 hover:text-slate-950 focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-slate-950 sm:px-8 sm:py-4 sm:text-lg"
                         >
                             Consultar tarifas
                         </a>
@@ -143,21 +146,21 @@
         <!-- 3. SECCIÓN DE RUTAS                    -->
         <!-- ====================================== -->
 
-        <section id="rutas" class="py-16">
+        <section id="rutas" class="py-12 sm:py-16 lg:py-20">
 
-            <div class="mx-auto w-full max-w-6xl space-y-10 px-6">
+            <div class="mx-auto w-full max-w-6xl space-y-8 px-4 sm:space-y-10 sm:px-6 lg:px-8">
 
                 <div class="space-y-3 text-center">
 
-                    <p class="text-sm font-bold uppercase tracking-widest text-orange-400">
+                    <p class="text-xs font-bold uppercase tracking-widest text-orange-400 sm:text-sm">
                         Vive Medellín de noche
                     </p>
 
-                    <h2 class="text-4xl font-extrabold tracking-tight text-white">
+                    <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
                         Nuestras rutas
                     </h2>
 
-                    <p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-300">
+                    <p class="mx-auto max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
                         Descubre la ciudad de una manera diferente.
                         Todas nuestras experiencias incluyen bicicleta,
                         casco, luces LED, chaleco reflectivo y guía.
@@ -166,9 +169,9 @@
                 </div>
 
 
-                <!-- CUADRÍCULA DE TRES RUTAS -->
+                <!-- CUADRÍCULA RESPONSIVE DE TRES RUTAS -->
 
-                <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-3">
+                <div class="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
 
 
                     <!-- CARD 1: LUCES DEL CENTRO -->
@@ -181,13 +184,13 @@
                             class="h-56 w-full object-cover"
                         >
 
-                        <div class="space-y-6 p-6">
+                        <div class="space-y-5 p-5 sm:space-y-6 sm:p-6">
 
                             <span class="inline-block rounded-full bg-green-900 px-4 py-2 text-sm font-bold text-green-300">
                                 Fácil
                             </span>
 
-                            <h3 class="text-2xl font-extrabold text-white">
+                            <h3 class="text-xl font-extrabold text-white sm:text-2xl">
                                 Luces del Centro
                             </h3>
 
@@ -222,20 +225,20 @@
 
                             </dl>
 
-                            <div class="flex flex-wrap items-center justify-between gap-4 border-t border-slate-700 pt-5">
+                            <div class="flex flex-col items-start gap-4 border-t border-slate-700 pt-5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
 
                                 <div>
                                     <p class="text-sm font-medium text-slate-400">
                                         Precio por persona
                                     </p>
-                                    <p class="text-3xl font-extrabold text-orange-400">
+                                    <p class="text-2xl font-extrabold text-orange-400 sm:text-3xl">
                                         $55.000
                                     </p>
                                 </div>
 
                                 <a
                                     href="#inscripcion"
-                                    class="inline-block rounded-lg bg-orange-500 px-8 py-4 text-lg font-bold text-slate-950 shadow-lg transition-colors hover:bg-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+                                    class="inline-block rounded-lg bg-orange-500 px-6 py-3 text-base font-bold text-slate-950 shadow-lg transition-colors hover:bg-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-slate-950"
                                 >
                                     Inscríbete
                                 </a>
@@ -257,13 +260,13 @@
                             class="h-56 w-full object-cover"
                         >
 
-                        <div class="space-y-6 p-6">
+                        <div class="space-y-5 p-5 sm:space-y-6 sm:p-6">
 
                             <span class="inline-block rounded-full bg-yellow-900 px-4 py-2 text-sm font-bold text-yellow-300">
                                 Medio
                             </span>
 
-                            <h3 class="text-2xl font-extrabold text-white">
+                            <h3 class="text-xl font-extrabold text-white sm:text-2xl">
                                 Miradores de la Ciudad
                             </h3>
 
@@ -298,20 +301,20 @@
 
                             </dl>
 
-                            <div class="flex flex-wrap items-center justify-between gap-4 border-t border-slate-700 pt-5">
+                            <div class="flex flex-col items-start gap-4 border-t border-slate-700 pt-5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
 
                                 <div>
                                     <p class="text-sm font-medium text-slate-400">
                                         Precio por persona
                                     </p>
-                                    <p class="text-3xl font-extrabold text-orange-400">
+                                    <p class="text-2xl font-extrabold text-orange-400 sm:text-3xl">
                                         $75.000
                                     </p>
                                 </div>
 
                                 <a
                                     href="#inscripcion"
-                                    class="inline-block rounded-lg bg-orange-500 px-8 py-4 text-lg font-bold text-slate-950 shadow-lg transition-colors hover:bg-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+                                    class="inline-block rounded-lg bg-orange-500 px-6 py-3 text-base font-bold text-slate-950 shadow-lg transition-colors hover:bg-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-slate-950"
                                 >
                                     Inscríbete
                                 </a>
@@ -333,13 +336,13 @@
                             class="h-56 w-full object-cover"
                         >
 
-                        <div class="space-y-6 p-6">
+                        <div class="space-y-5 p-5 sm:space-y-6 sm:p-6">
 
                             <span class="inline-block rounded-full bg-red-900 px-4 py-2 text-sm font-bold text-red-300">
                                 Difícil
                             </span>
 
-                            <h3 class="text-2xl font-extrabold text-white">
+                            <h3 class="text-xl font-extrabold text-white sm:text-2xl">
                                 Luna en Las Palmas
                             </h3>
 
@@ -374,20 +377,20 @@
 
                             </dl>
 
-                            <div class="flex flex-wrap items-center justify-between gap-4 border-t border-slate-700 pt-5">
+                            <div class="flex flex-col items-start gap-4 border-t border-slate-700 pt-5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
 
                                 <div>
                                     <p class="text-sm font-medium text-slate-400">
                                         Precio por persona
                                     </p>
-                                    <p class="text-3xl font-extrabold text-orange-400">
+                                    <p class="text-2xl font-extrabold text-orange-400 sm:text-3xl">
                                         $95.000
                                     </p>
                                 </div>
 
                                 <a
                                     href="#inscripcion"
-                                    class="inline-block rounded-lg bg-orange-500 px-8 py-4 text-lg font-bold text-slate-950 shadow-lg transition-colors hover:bg-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+                                    class="inline-block rounded-lg bg-orange-500 px-6 py-3 text-base font-bold text-slate-950 shadow-lg transition-colors hover:bg-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-slate-950"
                                 >
                                     Inscríbete
                                 </a>
@@ -409,21 +412,21 @@
         <!-- 4. SECCIÓN CÓMO FUNCIONA               -->
         <!-- ====================================== -->
 
-        <section id="como-funciona" class="py-16">
+        <section id="como-funciona" class="py-12 sm:py-16 lg:py-20">
 
-            <div class="mx-auto w-full max-w-6xl space-y-10 px-6">
+            <div class="mx-auto w-full max-w-6xl space-y-8 px-4 sm:space-y-10 sm:px-6 lg:px-8">
 
                 <div class="space-y-3 text-center">
 
-                    <p class="text-sm font-bold uppercase tracking-widest text-orange-400">
+                    <p class="text-xs font-bold uppercase tracking-widest text-orange-400 sm:text-sm">
                         Tu aventura en cuatro pasos
                     </p>
 
-                    <h2 class="text-4xl font-extrabold tracking-tight text-white">
+                    <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
                         ¿Cómo funciona?
                     </h2>
 
-                    <p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-300">
+                    <p class="mx-auto max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
                         Es muy sencillo. Sigue estos cuatro pasos
                         y prepárate para disfrutar la ciudad.
                     </p>
@@ -431,20 +434,20 @@
                 </div>
 
 
-                <!-- GRID DE CUATRO PASOS -->
+                <!-- GRID RESPONSIVE DE CUATRO PASOS -->
 
-                <div class="grid grid-cols-1 gap-6 md:grid-cols-4">
+                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
 
 
                     <!-- PASO 1 -->
 
-                    <article class="space-y-4 rounded-2xl border border-slate-700 bg-slate-900 p-6">
+                    <article class="space-y-4 rounded-2xl border border-slate-700 bg-slate-900 p-5 sm:p-6">
 
                         <span class="flex h-12 w-12 items-center justify-center rounded-full bg-orange-500 text-xl font-extrabold text-slate-950">
                             1
                         </span>
 
-                        <h3 class="text-xl font-bold text-white">
+                        <h3 class="text-lg font-bold text-white sm:text-xl">
                             Elige tu ruta
                         </h3>
 
@@ -458,13 +461,13 @@
 
                     <!-- PASO 2 -->
 
-                    <article class="space-y-4 rounded-2xl border border-slate-700 bg-slate-900 p-6">
+                    <article class="space-y-4 rounded-2xl border border-slate-700 bg-slate-900 p-5 sm:p-6">
 
                         <span class="flex h-12 w-12 items-center justify-center rounded-full bg-orange-500 text-xl font-extrabold text-slate-950">
                             2
                         </span>
 
-                        <h3 class="text-xl font-bold text-white">
+                        <h3 class="text-lg font-bold text-white sm:text-xl">
                             Inscríbete
                         </h3>
 
@@ -478,13 +481,13 @@
 
                     <!-- PASO 3 -->
 
-                    <article class="space-y-4 rounded-2xl border border-slate-700 bg-slate-900 p-6">
+                    <article class="space-y-4 rounded-2xl border border-slate-700 bg-slate-900 p-5 sm:p-6">
 
                         <span class="flex h-12 w-12 items-center justify-center rounded-full bg-orange-500 text-xl font-extrabold text-slate-950">
                             3
                         </span>
 
-                        <h3 class="text-xl font-bold text-white">
+                        <h3 class="text-lg font-bold text-white sm:text-xl">
                             Recoge tu equipo
                         </h3>
 
@@ -498,13 +501,13 @@
 
                     <!-- PASO 4 -->
 
-                    <article class="space-y-4 rounded-2xl border border-slate-700 bg-slate-900 p-6">
+                    <article class="space-y-4 rounded-2xl border border-slate-700 bg-slate-900 p-5 sm:p-6">
 
                         <span class="flex h-12 w-12 items-center justify-center rounded-full bg-orange-500 text-xl font-extrabold text-slate-950">
                             4
                         </span>
 
-                        <h3 class="text-xl font-bold text-white">
+                        <h3 class="text-lg font-bold text-white sm:text-xl">
                             ¡Rueda!
                         </h3>
 
@@ -526,23 +529,23 @@
         <!-- 5. FRANJA DE INSCRIPCIÓN               -->
         <!-- ====================================== -->
 
-        <section id="inscripcion" class="py-16">
+        <section id="inscripcion" class="py-12 sm:py-16 lg:py-20">
 
-            <div class="mx-auto w-full max-w-6xl px-6">
+            <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
 
-                <div class="flex flex-wrap items-center justify-between gap-8 rounded-2xl border border-orange-400 bg-slate-900 p-8 md:p-10">
+                <div class="flex flex-col items-start justify-between gap-6 rounded-2xl border border-orange-400 bg-slate-900 p-5 sm:p-8 md:flex-row md:items-center md:gap-8 lg:p-10">
 
                     <div class="max-w-2xl space-y-3">
 
-                        <p class="text-sm font-bold uppercase tracking-widest text-orange-400">
+                        <p class="text-xs font-bold uppercase tracking-widest text-orange-400 sm:text-sm">
                             Tu próxima aventura te espera
                         </p>
 
-                        <h2 class="text-3xl font-extrabold text-white">
+                        <h2 class="text-2xl font-extrabold text-white sm:text-3xl lg:text-4xl">
                             ¿Listo para descubrir Medellín de noche?
                         </h2>
 
-                        <p class="leading-relaxed text-slate-300">
+                        <p class="text-sm leading-relaxed text-slate-300 sm:text-base">
                             Elige tu ruta, reserva tu bicicleta y
                             vive una experiencia diferente.
                         </p>
@@ -551,7 +554,7 @@
 
                     <a
                         href="../paginas/reservas.html"
-                        class="inline-block rounded-lg bg-orange-500 px-8 py-4 text-lg font-bold text-slate-950 shadow-lg transition-colors hover:bg-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+                        class="inline-block w-full rounded-lg bg-orange-500 px-6 py-3 text-center text-base font-bold text-slate-950 shadow-lg transition-colors hover:bg-orange-400 focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-offset-2 focus:ring-offset-slate-950 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
                     >
                         Inscríbete ahora
                     </a>
@@ -571,7 +574,7 @@
 
     <footer class="border-t border-slate-800 bg-slate-950">
 
-        <div class="mx-auto flex w-full max-w-6xl flex-wrap justify-between gap-10 px-6 py-12">
+        <div class="mx-auto flex w-full max-w-6xl flex-col justify-between gap-10 px-4 py-10 sm:flex-row sm:flex-wrap sm:px-6 sm:py-12 lg:px-8">
 
 
             <!-- BLOQUE 1: MARCA -->
@@ -580,9 +583,9 @@
 
                 <a href="#inicio">
                     <img
-                        src="../img/logo.jpg"
+                        src="../img/logo.png"
                         alt="Rueda Libre"
-                        class="w-36"
+                        class="h-auto w-36 md:w-40"
                     >
                 </a>
 
@@ -665,7 +668,7 @@
         </div>
 
 
-        <div class="border-t border-slate-800 px-6 py-5 text-center text-sm text-slate-500">
+        <div class="border-t border-slate-800 px-4 py-5 text-center text-xs text-slate-500 sm:px-6 sm:text-sm">
 
             <p>
                 © Rueda Libre · Rueda Nocturna · Medellín, Colombia
