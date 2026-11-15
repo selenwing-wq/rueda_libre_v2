@@ -2904,3 +2904,39 @@ Se verificaron las clases correspondientes a los botones, las alertas y los camp
 Comprendí la importancia de crear componentes reutilizables y mantener reglas visuales compartidas. También aprendí a utilizar atributos semánticos y de accesibilidad como `label`, `for`, `id`, `aria-describedby` y `role`, además de aplicar estados de interacción mediante `hover:` y `focus:`.
 
 **Resultado:** Se construyó la página `nocturna/componentes.html` con los cuatro tipos de componentes del kit: botones, card, alertas y campos de formulario, utilizando Tailwind CSS y manteniendo una identidad visual consistente.
+
+============================================================
+### Semana 3 – Día 2 – Reto 5: Landing page Rueda Nocturna
+============================================================
+
+**Objetivo:** Construir una landing page completa utilizando Tailwind CSS CLI, aplicando Flexbox, CSS Grid, diseño responsive y reutilización de componentes.
+
+**Desarrollo realizado:**
+
+- Se construyó el encabezado con el logo de Rueda Libre, enlaces de navegación y botón de inscripción.
+- Se desarrolló la sección principal (Hero) con el nombre de la campaña, descripción, indicadores y botones de acción.
+- Se organizaron las tres rutas nocturnas en una cuadrícula de tres columnas para escritorio, utilizando Grid y las clases `grid`, `grid-cols-*` y `gap-*`.
+- Se creó la sección «¿Cómo funciona?» con cuatro pasos: Elige tu ruta, Inscríbete, Recoge tu equipo y Rueda.
+- Se agregó una sección de llamado a la acción para incentivar las inscripciones.
+- Se construyó el footer con tres bloques de contenido.
+- Se reutilizaron estilos y componentes desarrollados en el Reto 4, manteniendo consistencia visual.
+- Se utilizaron etiquetas semánticas e identificadores en las secciones para permitir la navegación mediante enlaces internos.
+- Se aplicaron contenedores con ancho máximo, centrado y espaciado horizontal para mantener la alineación del contenido.
+
+**Conceptos aplicados:**
+
+- **Flexbox:** distribución y alineación de elementos en el encabezado y el footer.
+- **CSS Grid:** organización de las tarjetas de rutas y los cuatro pasos de funcionamiento.
+- **Responsive Design:** adaptación de las columnas mediante variantes como `md:grid-cols-3` y `md:grid-cols-4`.
+- **Tailwind CSS:** aplicación de utilidades para espaciado, colores, tipografía, dimensiones, bordes y estados interactivos.
+- **HTML semántico:** organización del contenido mediante etiquetas como `header`, `main`, `section`, `article` y `footer`.
+
+**Pruebas realizadas:**
+
+- Se verificó la carga correcta del logo (`../img/logo.png`).
+- Se comprobó la visualización de las tres tarjetas de rutas.
+- Se verificó la navegación entre las secciones mediante sus identificadores.
+- Se comprobaron los botones y enlaces de inscripción.
+- Se revisó la presentación general y la distribución de los elementos.
+
+**Resultado:** Landing page Rueda Nocturna construida y validada visual y funcionalmente. Se reutilizaron los componentes anteriores y se aplicaron Flexbox y Grid para organizar el contenido.
