@@ -2692,9 +2692,7 @@ Se mejoró la navegación de Rueda Libre, diferenciando visualmente la página a
 También se resolvieron conflictos de especificidad sin utilizar `!important`, manteniendo los estilos organizados y reutilizables.
 
 ============================================================
-
 # RETO 11 – Modelo de caja y espaciado con CSS
-
 ============================================================
 
 **Objetivo:** Mejorar la distribución visual de Rueda Libre mediante el uso del modelo de caja, unidades relativas y propiedades de espaciado en CSS.
@@ -2764,7 +2762,8 @@ Durante los doce MiniRetos se desarrolló progresivamente un sitio web informati
 
 
 ============================================================
-### Semana 3 – Día 1 – Reto 1: Prototipo Rueda Nocturna
+MINIRETO 1 - DIA 1 SEMANA 3 
+Prototipo Rueda Nocturna
 ============================================================
 
 **Objetivo:** Crear un prototipo de la sección principal de una campaña utilizando Tailwind CSS mediante Play CDN.
@@ -2789,7 +2788,8 @@ En este reto utilicé Tailwind para construir el botón directamente en el HTML,
 **Resultado:** Se creó el prototipo independiente de Rueda Nocturna utilizando Tailwind CSS Play CDN, sin utilizar hojas de estilo propias ni clases de Bootstrap.
 
 ============================================================
-### Semana 3 – Día 1 – Reto 2: Configuración de Tailwind CSS mediante CLI
+MINIRETO 2 - DIA 1 SEMANA 3  
+Configuración de Tailwind CSS mediante CLI
 ============================================================
 
 **Objetivo:** Configurar Tailwind CSS mediante npm y su CLI, generar el archivo CSS de salida y construir tres variantes de botones con estados de interacción.
@@ -2817,7 +2817,8 @@ También busqué la clase `bg-pink-500` y comprobé que no aparece en el archivo
 **Resultado:** Se configuró Tailwind CSS mediante CLI, se generó `output.css` y se construyeron tres variantes de botones con estados interactivos y navegación mediante teclado.
 
 ============================================================
-### Semana 3 – Día 1 – Reto 3: Construcción de cards para rutas nocturnas con Tailwind CSS
+MINIRETO 3 - DIA 1 SEMANA 3 
+Construcción de cards para rutas nocturnas con Tailwind CSS
 ============================================================
 
 **Objetivo:** Construir una sección de rutas con tres tarjetas informativas utilizando exclusivamente clases de utilidad de Tailwind CSS, reutilizando los botones del MiniReto 2.
@@ -2851,7 +2852,8 @@ También busqué la clase `bg-pink-500` y comprobé que no aparece en el archivo
 **Resultado:** Se construyó y verificó visualmente la sección de rutas nocturnas con sus tres tarjetas, imágenes, niveles de dificultad, información, precios y botones de inscripción.
 
 ============================================================
-### Semana 3 – Día 1 – Reto 4: Kit de componentes con Tailwind CSS
+MINIRETO 4 - DIA 1 SEMANA 3 
+Kit de componentes con Tailwind CSS
 ============================================================
 
 **Objetivo:** Completar un kit de componentes reutilizables y reunirlos en una página independiente para comprobar la consistencia visual y funcional antes de construir la landing page.
@@ -2906,7 +2908,8 @@ Comprendí la importancia de crear componentes reutilizables y mantener reglas v
 **Resultado:** Se construyó la página `nocturna/componentes.html` con los cuatro tipos de componentes del kit: botones, card, alertas y campos de formulario, utilizando Tailwind CSS y manteniendo una identidad visual consistente.
 
 ============================================================
-### Semana 3 – Día 2 – Reto 5: Landing page Rueda Nocturna
+MINIRETO 5 - DIA 2 SEMANA 3
+Landing page Rueda Nocturna
 ============================================================
 
 **Objetivo:** Construir una landing page completa utilizando Tailwind CSS CLI, aplicando Flexbox, CSS Grid, diseño responsive y reutilización de componentes.
@@ -2942,7 +2945,8 @@ Comprendí la importancia de crear componentes reutilizables y mantener reglas v
 **Resultado:** Landing page Rueda Nocturna construida y validada visual y funcionalmente. Se reutilizaron los componentes anteriores y se aplicaron Flexbox y Grid para organizar el contenido.
 
 ============================================================
-### Semana 3 – Día 2 – Reto 6: Adaptación responsive de Rueda Nocturna
+MINIRETO 6 - DIA 2 SEMANA 3
+Adaptación responsive de Rueda Nocturna
 ============================================================
 
 **Objetivo:** Adaptar la landing page a dispositivos móviles, tablets y computadores utilizando el enfoque mobile-first de Tailwind CSS.
@@ -3015,7 +3019,8 @@ Se verificó que a 360 px no exista scroll horizontal, que el botón de inscripc
 **Resultado:** Landing page Rueda Nocturna adaptada a dispositivos móviles, tablets y escritorio mediante Tailwind CSS.
 
 ============================================================
-## Semana 3 – Día 2 – Reto 7: Marca nocturna, tema personalizado y modo oscuro
+MINIRETO 7 - DIA 2 SEMANA 3 
+Marca nocturna, tema personalizado y modo oscuro
 ============================================================
 
 **Objetivo:** Personalizar la identidad visual de Rueda Libre mediante un tema propio de Tailwind CSS y adaptar la landing page y el kit de componentes para funcionar en modo claro y oscuro.
@@ -3046,8 +3051,8 @@ Se verificó que a 360 px no exista scroll horizontal, que el botón de inscripc
 **Resultado:** Reto 7 completado. La landing page y el kit de componentes conservan la identidad visual de Rueda Libre y funcionan correctamente en modo claro y oscuro.
 
 ============================================================
-## Semana 3 · Día 2 · Reto 8
-### Refactorización, optimización y comparación entre Bootstrap y Tailwind CSS
+MINIRETO 8 - DIA 2 SEMANA 3
+Refactorización, optimización y comparación entre Bootstrap y Tailwind CSS
 ============================================================
 
 ### 1. OBJETIVO
@@ -3245,4 +3250,26 @@ Integración de Rueda Nocturna con el sitio Bootstrap
 
 **Aprendizaje:** Comprendí mejor cómo funcionan las rutas relativas entre carpetas, cómo integrar páginas desarrolladas con diferentes tecnologías y la importancia de verificar los enlaces y el diseño responsive antes de publicar.
 
+============================================================
+MINIRETO 11 - DIA 3 SEMANA 3
+Sección de planes Rueda Nocturna
+============================================================
 
+**Tiempo empleado:** 40 minutos.
+
+**Actividades realizadas:**
+- Creé la sección «Planes Rueda Nocturna» en `nocturna/index.html`.
+- Construí tres tarjetas con los planes Individual, Pareja y Grupo.
+- Organicé las tarjetas con CSS Grid: una columna en dispositivos móviles y tres columnas desde el breakpoint `lg`.
+- Apliqué Flexbox para organizar el contenido verticalmente y mantener los botones alineados al final de cada tarjeta.
+- Destaqué el plan Pareja con un borde más grueso, un fondo diferente y la etiqueta «Más elegido».
+- Utilicé rellenos, bordes y separaciones coherentes con el sistema visual del proyecto.
+- Incorporé variantes `dark:` para conservar la legibilidad en modo oscuro.
+- Verifiqué el diseño responsive en 360, 768, 1024 y 1280 píxeles.
+- Comprobé mediante DevTools que las tres tarjetas tienen el mismo ancho y un padding de 24 px.
+
+**Resultado:** Sección de planes implementada y funcionando correctamente. Las tres tarjetas mantienen la misma altura, los botones quedan alineados y el plan Pareja se distingue visualmente.
+
+**Aprendizaje:** Reforcé el uso de Box Model, Grid y Flexbox con Tailwind, especialmente la combinación de `flex-col`, `mt-auto`, `grid-cols-1`, `lg:grid-cols-3` y las variantes `dark:`.
+
+**Estado:** Completado y validado.
