@@ -3204,4 +3204,21 @@ Se completó la refactorización de la landing Rueda Nocturna, se implementaron 
 
 La landing conserva su diseño, funcionamiento responsive y adaptación a los modos claro y oscuro.
 
+============================================================
+MINIRETO 9 - DIA 3 SEMANA 3
+Formulario de inscripcion para Rueda Nocturna
+============================================================
 
+- Se creo un formulario semantico utilizando form, fieldset, legend y label.
+- Se organizaron los datos en tres grupos: datos personales, informacion de la ruta y experiencia/condiciones.
+- Se agregaron campos para nombre, correo, celular, ruta, dia, acompanantes, experiencia, bicicleta propia y aceptacion de condiciones.
+- Se implementaron validaciones HTML5: required, minlength, pattern, min y max.
+- Se reutilizaron los estilos del kit de componentes con Tailwind CSS.
+- Se aplicaron estilos responsive mediante grid y md.
+- Se implementaron variantes para modo claro y oscuro.
+- Se probaron campos vacios, datos invalidos y formulario completo.
+- Se comprobo la navegacion con Tab y Shift + Tab.
+- Se verifico el funcionamiento en diferentes resoluciones.
+- Resultado: pruebas satisfactorias.
+- Nota: el formulario realiza validacion en el navegador, pero aun no almacena inscripciones porque no tiene conexion a un backend.
+- Tiempo empleado: pendiente de registrar.
