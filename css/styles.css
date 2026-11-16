@@ -19,6 +19,22 @@
     --azul-noche: #14213D;
     --crema: #FAF6EF;
     --gris-asfalto: #5B6470;
+        /* Colores de marca para Bootstrap */
+    --bs-primary: var(--verde-ruta);
+    --bs-primary-rgb: 30, 122, 79;
+
+    --bs-secondary: var(--naranja-pedal);
+    --bs-secondary-rgb: 243, 154, 43;
+
+    --bs-dark: var(--azul-noche);
+    --bs-dark-rgb: 20, 33, 61;
+
+    --bs-light: var(--crema);
+    --bs-light-rgb: 250, 246, 239;
+
+    /* Tipografías para Bootstrap */
+    --bs-body-font-family: var(--fuente-textos);
+    --bs-heading-font-family: var(--fuente-titulos);
 
     /* Tipografías */
     --fuente-titulos: "Montserrat", Arial, sans-serif;

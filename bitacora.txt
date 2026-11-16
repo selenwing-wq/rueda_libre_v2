@@ -3224,3 +3224,25 @@ Formulario de inscripcion para Rueda Nocturna
 - Tiempo empleado: 27 minutos.
 
 
+============================================================
+MINIRETO 10 - DIA 3 SEMANA 3
+Integración de Rueda Nocturna con el sitio Bootstrap
+============================================================
+
+**Tiempo empleado:** 45 minutos.
+
+**Actividades realizadas:**
+- Agregué el enlace de Rueda Nocturna al menú de navegación de las tres páginas del sitio Bootstrap.
+- Incorporé una séptima diapositiva al carrusel principal para promocionar Rueda Nocturna.
+- Corregí los enlaces del logo para regresar correctamente a la página de inicio.
+- Verifiqué los enlaces entre la landing de Rueda Nocturna y las páginas de reservas.
+- Unifiqué los colores y las tipografías entre Bootstrap y Tailwind.
+- Actualicé los datos de contacto: WhatsApp 3117925300 y correo hola@ruedalibre.com.
+- Revisé las rutas relativas de imágenes y enlaces.
+- Realicé pruebas de navegación y visualización responsive.
+
+**Resultado:** El sitio Bootstrap y la landing Rueda Nocturna quedaron integrados, con navegación entre ambas experiencias y una identidad visual consistente.
+
+**Aprendizaje:** Comprendí mejor cómo funcionan las rutas relativas entre carpetas, cómo integrar páginas desarrolladas con diferentes tecnologías y la importancia de verificar los enlaces y el diseño responsive antes de publicar.
+
+
