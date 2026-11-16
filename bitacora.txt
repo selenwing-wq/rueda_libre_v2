@@ -3221,4 +3221,6 @@ Formulario de inscripcion para Rueda Nocturna
 - Se verifico el funcionamiento en diferentes resoluciones.
 - Resultado: pruebas satisfactorias.
 - Nota: el formulario realiza validacion en el navegador, pero aun no almacena inscripciones porque no tiene conexion a un backend.
-- Tiempo empleado: pendiente de registrar.
+- Tiempo empleado: 27 minutos.
+
+
