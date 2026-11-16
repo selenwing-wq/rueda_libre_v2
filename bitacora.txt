@@ -3044,3 +3044,164 @@ Se verificó que a 360 px no exista scroll horizontal, que el botón de inscripc
 - Verifiqué cómo Tailwind CLI genera las clases utilizadas en los archivos HTML.
 
 **Resultado:** Reto 7 completado. La landing page y el kit de componentes conservan la identidad visual de Rueda Libre y funcionan correctamente en modo claro y oscuro.
+
+============================================================
+## Semana 3 · Día 2 · Reto 8
+### Refactorización, optimización y comparación entre Bootstrap y Tailwind CSS
+============================================================
+
+### 1. OBJETIVO
+
+Refactorizar la landing page de Rueda Nocturna para mejorar la organización, legibilidad y reutilización del código Tailwind CSS.
+
+Identificar patrones de clases repetidas, crear componentes reutilizables para los botones mediante `@layer components` y `@apply`, generar una versión minificada del CSS y comparar su tamaño y características con los recursos de Bootstrap utilizados en el sitio principal de Rueda Libre.
+
+### 2. ARCHIVOS MODIFICADOS
+
+- `nocturna/index.html`
+- `nocturna/src/input.css`
+- `nocturna/src/output.css`
+- `bitacora.txt`
+
+### 3. CAMBIOS REALIZADOS
+
+**3.1. Refactorización de botones**
+
+Se identificaron ocho botones en la landing page y se agruparon según su función visual:
+
+| Variante | Cantidad | Clase reutilizable |
+|---|---:|---|
+| Botón principal naranja | 6 | `btn-primary` |
+| Botón secundario verde | 1 | `btn-secondary` |
+| Botón de contorno | 1 | `btn-outline` |
+| **Total** | **8** | **3 variantes** |
+
+Se utilizaron `@layer components` y `@apply` en `input.css` para definir las tres clases reutilizables.
+
+Esto permitió centralizar los estilos de los botones, conservar sus estados de interacción y reducir la repetición de utilidades en el HTML.
+
+**3.2. Organización de clases Tailwind**
+
+Se revisaron las clases de los elementos de la landing y se organizaron teniendo en cuenta estas categorías:
+
+- **Layout:** estructura, distribución y alineación.
+- **Spacing:** márgenes, rellenos y separación.
+- **Typography:** tamaño, peso y estilo del texto.
+- **Color:** fondos, bordes y colores del texto.
+- **States:** hover, focus, responsive y modo oscuro.
+
+Se identificaron otros patrones repetidos:
+
+| Elemento | Frecuencia observada | Decisión |
+|---|---:|---|
+| Enlaces de navegación | 3 | Mantener estilos consistentes |
+| Tarjetas de rutas | 3 | Conservar el marcado Tailwind |
+| Tarjetas de pasos | 4 | Mantener una estructura uniforme |
+| Botones | 8 | Crear tres variantes reutilizables |
+
+Para las tarjetas se conservó el marcado Tailwind, ya que sus estilos responden a diferentes necesidades de estructura, contenido e interacción.
+
+### 4. MINIFICACIÓN Y MEDICIÓN DEL CSS
+
+Se generó una versión minificada del archivo CSS mediante el siguiente comando, ejecutado desde la carpeta `nocturna`:
+
+```powershell
+npx.cmd @tailwindcss/cli -i ./src/input.css -o ./src/output.css --minify
+```
+
+**Resultado de la medición:**
+
+| Recurso | Tamaño |
+|---|---:|
+| Tailwind CSS (`output.css`) minificado | 33.099 bytes (aprox. 33,1 kB) |
+
+La minificación permite reducir el peso del archivo CSS al eliminar espacios y optimizar su contenido, facilitando su entrega al navegador.
+
+El archivo `output.css` se conserva en el proyecto porque es el CSS generado que necesita la página para funcionar cuando se publique.
+
+### 5. COMPARACIÓN: BOOTSTRAP VS. TAILWIND CSS
+
+Se utilizaron las herramientas de desarrollador del navegador (DevTools), específicamente la pestaña Network, para consultar los tamaños de los recursos cargados por el sitio principal de Rueda Libre.
+
+**Mediciones observadas de Bootstrap:**
+
+| Recurso | Tamaño |
+|---|---:|
+| `bootstrap.min.css` | 23,1 kB |
+| `bootstrap.bundle.min.js` | 21,6 kB |
+| **Total de ambos recursos** | **44,7 kB** |
+
+**Tabla comparativa**
+
+| Criterio | Bootstrap | Tailwind CSS |
+|---|---|---|
+| Curva de aprendizaje | Más sencillo al inicio porque ofrece componentes y estilos prediseñados. | Requiere aprender las clases utilitarias y sus variantes, pero permite construir los estilos de manera progresiva. |
+| Personalización | Permite personalizar componentes, aunque parte de estilos y estructuras predefinidas. | Ofrece mayor control sobre los estilos, colores, tipografías, espaciados y estados de los elementos. |
+| Tamaño final | Se midieron 23,1 kB de CSS y 21,6 kB de JavaScript, para un total de 44,7 kB. | El archivo CSS minificado generado para Rueda Nocturna fue de 33.099 bytes (aprox. 33,1 kB). |
+| Casos de uso | Adecuado para desarrollar rápidamente sitios que necesitan componentes prediseñados, como formularios, menús y modales. | Adecuado para interfaces personalizadas, diseños con identidad visual propia y control detallado del responsive y los temas. |
+
+**Nota sobre las mediciones:** los 33.099 bytes corresponden al archivo CSS generado por Tailwind. Los 44,7 kB de Bootstrap corresponden a la suma de CSS y JavaScript observados en DevTools. Por tanto, la comparación sirve como referencia del peso de los recursos medidos, pero no representa una comparación estrictamente equivalente entre archivos del mismo tipo. Los tamaños de DevTools pueden ser aproximados o corresponder a datos de transferencia.
+
+### 6. ANÁLISIS Y JUSTIFICACIÓN
+
+Para el proyecto Rueda Libre se considera conveniente utilizar ambas tecnologías según las necesidades de cada sección.
+
+**Bootstrap en el sitio principal:**
+
+Es una alternativa útil para construir rápidamente interfaces que requieren componentes prediseñados y una estructura conocida. Facilita el desarrollo inicial y permite aprovechar elementos listos para utilizar.
+
+**Tailwind CSS en Rueda Nocturna:**
+
+Se considera la opción más conveniente para esta landing porque permite desarrollar una identidad visual propia, utilizar los colores y tipografías de Rueda Libre, controlar los puntos de quiebre responsive y adaptar los elementos al modo claro y oscuro.
+
+Además, el uso de `@layer components` y `@apply` permite reutilizar estilos frecuentes sin perder la flexibilidad de Tailwind.
+
+**Conclusión:** Tailwind CSS es la alternativa seleccionada para la landing Rueda Nocturna debido a su capacidad de personalización, consistencia visual y control sobre los estilos. Bootstrap sigue siendo una herramienta válida para las páginas que se benefician de sus componentes prediseñados.
+
+### 7. PRUEBAS Y VALIDACIONES
+
+| Prueba | Resultado |
+|---|---|
+| Visualización en móvil de 360 px | Correcta |
+| Visualización en tablet de 768 px | Correcta |
+| Visualización en escritorio de 1024 px | Correcta |
+| Visualización en escritorio de 1280 px | Correcta |
+| Modo claro | Correcto |
+| Modo oscuro | Correcto |
+| Botones principales, secundarios y outline | Correctos |
+| Estados hover y focus | Conservados |
+| Tarjetas de rutas y pasos | Correctas |
+| Navegación y enlaces | Correctos |
+| Generación del CSS minificado | Correcta |
+| Verificación de las clases de botones en `output.css` | Correcta |
+
+### 8. APRENDIZAJES
+
+- Comprendí la importancia de identificar patrones repetidos antes de refactorizar el código.
+- Aprendí a utilizar `@layer components` y `@apply` para crear clases reutilizables en Tailwind CSS.
+- Reforcé la organización de clases utilitarias por categorías para mejorar la lectura del HTML.
+- Comprendí la función de la minificación y cómo medir el tamaño del CSS generado.
+- Aprendí a utilizar DevTools y Network para consultar los recursos y sus tamaños.
+- Identifiqué las diferencias entre Bootstrap y Tailwind CSS en términos de aprendizaje, personalización, tamaño y casos de uso.
+- Comprendí que no siempre es necesario convertir todos los elementos en componentes: algunas estructuras pueden mantenerse directamente con clases utilitarias.
+
+### 9. CONTROL DE VERSIONES
+
+Una vez revisados los cambios, los archivos correspondientes deben quedar registrados en Git.
+
+Comandos utilizados para revisar y guardar los cambios:
+
+```powershell
+git status
+git add bitacora.txt nocturna/index.html nocturna/src/input.css nocturna/src/output.css
+git commit -m "Refactoriza landing y compara Bootstrap con Tailwind"
+git push origin main
+```
+
+### 10. RESULTADO FINAL
+
+Se completó la refactorización de la landing Rueda Nocturna, se implementaron tres variantes reutilizables de botones, se organizó el código Tailwind, se generó el CSS minificado y se realizó una comparación entre Bootstrap y Tailwind CSS con mediciones obtenidas del navegador.
+
+La landing conserva su diseño, funcionamiento responsive y adaptación a los modos claro y oscuro.
+
+

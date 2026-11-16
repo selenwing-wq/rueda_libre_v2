@@ -32,3 +32,28 @@
     --font-open-sans: "Open Sans", Arial, sans-serif;
 
 }
+
+/* ====================================== */
+/* COMPONENTES REUTILIZABLES              */
+/* ====================================== */
+
+@layer components {
+
+    /* BOTÓN PRINCIPAL NARANJA */
+
+    .btn-primary {
+        @apply inline-block rounded-lg bg-naranja-pedal px-6 py-3 text-base font-bold text-azul-noche shadow-lg transition-colors hover:bg-amarillo-farol focus:outline-none focus:ring-4 focus:ring-naranja-pedal/50 focus:ring-offset-2 focus:ring-offset-crema dark:focus:ring-offset-azul-noche sm:px-8 sm:py-4 sm:text-lg;
+    }
+    /* BOTÓN SECUNDARIO VERDE */
+
+    .btn-secondary {
+        @apply inline-block rounded-lg bg-verde-ruta px-6 py-3 text-center text-base font-bold text-crema shadow-lg transition-colors hover:bg-azul-noche focus:outline-none focus:ring-4 focus:ring-verde-ruta/40 focus:ring-offset-2 focus:ring-offset-crema dark:hover:bg-verde-ruta dark:focus:ring-offset-azul-noche;
+    }
+
+    /* BOTÓN OUTLINE */
+
+    .btn-outline {
+        @apply inline-block rounded-lg border-2 border-verde-ruta px-6 py-3 text-center text-base font-bold text-verde-ruta transition-colors hover:bg-verde-ruta hover:text-crema focus:outline-none focus:ring-4 focus:ring-verde-ruta/30 focus:ring-offset-2 focus:ring-offset-crema dark:border-amarillo-farol dark:text-amarillo-farol dark:hover:bg-amarillo-farol dark:hover:text-azul-noche dark:focus:ring-offset-azul-noche;
+    }
+
+}
